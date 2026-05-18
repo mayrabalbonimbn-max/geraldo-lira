@@ -1,0 +1,118 @@
+{
+  "fonte": {
+    "nome": "CATALOGO PEAD ASPERBRAS.pdf",
+    "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+    "status": "rascunho_para_revisao",
+    "observacao": "Inventario inicial criado a partir do PDF PEAD. Nao foi aplicado ao catalogo visivel."
+  },
+  "produtos": [
+    {
+      "id": "tubos-pead-barras",
+      "nome": "Tubos PEAD em barras",
+      "categoria": "Tubos PEAD",
+      "descricao": "Tubos de polietileno de alta densidade fornecidos em barras, com ampla variedade de bitolas e classes de pressao.",
+      "aplicacao": "Redes tecnicas, adutoras, saneamento basico, irrigacao e transporte de fluidos conforme especificacao do projeto.",
+      "beneficiosTecnicos": [
+        "Alta durabilidade",
+        "Resistencia a corrosao, impactos, abrasao e raios UV",
+        "Material leve para transporte e manuseio",
+        "Vida util estimada superior a 50 anos"
+      ],
+      "imagem": "public/produtos/pead/tubos-pead-barras.jpg",
+      "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+      "paginaOrigem": [2, 3, 4],
+      "palavrasChave": ["pead", "barras", "polietileno", "alta densidade", "tubos", "saneamento", "adutora", "irrigacao"],
+      "statusImagem": "precisa_revisao"
+    },
+    {
+      "id": "tubos-pead-bobinas",
+      "nome": "Tubos PEAD em bobinas",
+      "categoria": "Tubos PEAD",
+      "descricao": "Tubos PEAD fornecidos em bobinas, indicados para reduzir o numero de emendas e agilizar instalacoes.",
+      "aplicacao": "Instalacoes com necessidade de trechos longos, menor numero de conexoes e menor tempo de montagem.",
+      "beneficiosTecnicos": [
+        "Menor numero de emendas",
+        "Maior estanqueidade",
+        "Reducao do tempo de instalacao",
+        "Flexibilidade para areas de dificil acesso"
+      ],
+      "imagem": "public/produtos/pead/tubos-pead-bobinas.jpg",
+      "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+      "paginaOrigem": [2, 3, 4],
+      "palavrasChave": ["pead", "bobinas", "polietileno", "alta densidade", "estanqueidade", "instalacao", "emendas"],
+      "statusImagem": "boa"
+    },
+    {
+      "id": "tubos-pead-adutora",
+      "nome": "Tubos PEAD para adutora e rede de agua",
+      "categoria": "Tubos PEAD",
+      "descricao": "Linha de tubos PEAD para captacao, estacoes elevatorias, distribuicao de agua, emissarios submarinos e recuperacao de tubos por encamisamento.",
+      "aplicacao": "Agua-adutora, rede de distribuicao de agua, linhas de captacao, estacoes elevatorias e emissarios submarinos.",
+      "beneficiosTecnicos": [
+        "Alta resistencia mecanica",
+        "Alta resistencia a pressao",
+        "Flexibilidade para absorver impactos e cargas externas",
+        "Baixa perda de carga pela superficie interna lisa"
+      ],
+      "imagem": "public/produtos/pead/tubos-pead-adutora.jpg",
+      "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+      "paginaOrigem": [3],
+      "palavrasChave": ["pead", "adutora", "agua", "captacao", "estacao elevatoria", "distribuicao", "emissario", "encamisamento"],
+      "statusImagem": "precisa_revisao"
+    },
+    {
+      "id": "tubos-pead-ramal-predial",
+      "nome": "Tubos PEAD para ramal predial",
+      "categoria": "Tubos PEAD",
+      "descricao": "Linha de tubos PEAD para ramal predial de agua, no trecho entre a tubulacao publica e o cavalete residencial.",
+      "aplicacao": "Ligacoes prediais de agua e ramais entre rede publica e cavalete residencial.",
+      "beneficiosTecnicos": [
+        "Flexibilidade",
+        "Resistencia mecanica",
+        "Melhor absorcao de cargas de terra e trafego",
+        "Instalacao pratica em redes prediais"
+      ],
+      "imagem": "public/produtos/pead/tubos-pead-ramal-predial.jpg",
+      "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+      "paginaOrigem": [3],
+      "palavrasChave": ["pead", "ramal predial", "agua", "cavalete", "ligacao predial", "rede publica", "residencial"],
+      "statusImagem": "precisa_revisao"
+    },
+    {
+      "id": "tubos-pead-esgoto-aguas-pluviais",
+      "nome": "Tubos PEAD para esgoto e aguas pluviais",
+      "categoria": "Tubos PEAD",
+      "descricao": "Linha de tubos PEAD para redes coletoras de esgoto, redes de agua pluvial, transporte de residuos industriais e recuperacao de tubos.",
+      "aplicacao": "Redes coletoras de esgoto, aguas pluviais, transporte de residuos industriais e encamisamento.",
+      "beneficiosTecnicos": [
+        "Alta resistencia mecanica",
+        "Baixa rugosidade",
+        "Reducao de sedimentacao e incrustacoes",
+        "Flexibilidade para absorver impactos e cargas externas"
+      ],
+      "imagem": "public/produtos/pead/tubos-pead-esgoto-aguas-pluviais.jpg",
+      "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+      "paginaOrigem": [3],
+      "palavrasChave": ["pead", "esgoto", "agua pluvial", "residuos industriais", "rede coletora", "encamisamento", "baixa rugosidade"],
+      "statusImagem": "precisa_revisao"
+    },
+    {
+      "id": "tubos-pead-irrigacao",
+      "nome": "Tubos PEAD para irrigacao",
+      "categoria": "Tubos PEAD",
+      "descricao": "Linha de tubos PE para captacao de agua de reservatorios e redes de irrigacao localizada ou por aspersao.",
+      "aplicacao": "Irrigacao localizada, irrigacao por aspersao e captacao em rios, pocos e reservatorios.",
+      "beneficiosTecnicos": [
+        "Boa resistencia quimica",
+        "Resistencia a luz solar",
+        "Uso enterrado ou aparente",
+        "Aplicacao em redes de irrigacao e captacao"
+      ],
+      "imagem": "public/produtos/pead/tubos-pead-irrigacao.jpg",
+      "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
+      "paginaOrigem": [3],
+      "palavrasChave": ["pead", "irrigacao", "captacao", "reservatorio", "aspersao", "irrigacao localizada", "rio", "poco"],
+      "statusImagem": "precisa_revisao"
+    }
+  ]
+}

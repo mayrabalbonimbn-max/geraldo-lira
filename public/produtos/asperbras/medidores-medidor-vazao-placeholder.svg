@@ -1,0 +1,16 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="28" fill="#F8FAFC"/>
+  <rect x="156" y="188" width="888" height="524" rx="24" fill="#FFFFFF" stroke="#D8DEE8" stroke-width="3"/>
+  <path d="M274 454H926" stroke="#1C2E4A" stroke-width="34" stroke-linecap="round"/>
+  <path d="M285 454H915" stroke="#4C83A3" stroke-width="8" stroke-linecap="round" stroke-dasharray="22 26"/>
+  <rect x="455" y="292" width="290" height="324" rx="52" fill="#223655"/>
+  <rect x="489" y="326" width="222" height="256" rx="34" fill="#F8FAFC"/>
+  <path d="M600 375C651.915 375 694 417.085 694 469C694 520.915 651.915 563 600 563C548.085 563 506 520.915 506 469C506 417.085 548.085 375 600 375Z" fill="#E9EFF5"/>
+  <path d="M600 469L648 421" stroke="#223655" stroke-width="14" stroke-linecap="round"/>
+  <path d="M544 470C544 439.072 569.072 414 600 414C630.928 414 656 439.072 656 470" stroke="#4C83A3" stroke-width="12" stroke-linecap="round"/>
+  <rect x="330" y="380" width="124" height="148" rx="18" fill="#223655"/>
+  <rect x="746" y="380" width="124" height="148" rx="18" fill="#223655"/>
+  <path d="M360 454H454" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
+  <path d="M746 454H840" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
+  <text x="600" y="660" fill="#667085" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" text-anchor="middle">Imagem técnica sob revisão</text>
+</svg>
