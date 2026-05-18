@@ -18,10 +18,23 @@
         "Material leve para transporte e manuseio",
         "Vida util estimada superior a 50 anos"
       ],
-      "imagem": "public/produtos/pead/tubos-pead-barras.jpg",
+      "imagem": "/produtos/asperbras/pead-tubos-pead-barras.jpg",
       "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
-      "paginaOrigem": [2, 3, 4],
-      "palavrasChave": ["pead", "barras", "polietileno", "alta densidade", "tubos", "saneamento", "adutora", "irrigacao"],
+      "paginaOrigem": [
+        2,
+        3,
+        4
+      ],
+      "palavrasChave": [
+        "pead",
+        "barras",
+        "polietileno",
+        "alta densidade",
+        "tubos",
+        "saneamento",
+        "adutora",
+        "irrigacao"
+      ],
       "statusImagem": "precisa_revisao"
     },
     {
@@ -36,10 +49,22 @@
         "Reducao do tempo de instalacao",
         "Flexibilidade para areas de dificil acesso"
       ],
-      "imagem": "public/produtos/pead/tubos-pead-bobinas.jpg",
+      "imagem": "/produtos/asperbras/pead-tubos-pead-bobinas.jpg",
       "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
-      "paginaOrigem": [2, 3, 4],
-      "palavrasChave": ["pead", "bobinas", "polietileno", "alta densidade", "estanqueidade", "instalacao", "emendas"],
+      "paginaOrigem": [
+        2,
+        3,
+        4
+      ],
+      "palavrasChave": [
+        "pead",
+        "bobinas",
+        "polietileno",
+        "alta densidade",
+        "estanqueidade",
+        "instalacao",
+        "emendas"
+      ],
       "statusImagem": "boa"
     },
     {
@@ -54,10 +79,21 @@
         "Flexibilidade para absorver impactos e cargas externas",
         "Baixa perda de carga pela superficie interna lisa"
       ],
-      "imagem": "public/produtos/pead/tubos-pead-adutora.jpg",
+      "imagem": "/produtos/asperbras/pead-tubos-pead-adutora.jpg",
       "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
-      "paginaOrigem": [3],
-      "palavrasChave": ["pead", "adutora", "agua", "captacao", "estacao elevatoria", "distribuicao", "emissario", "encamisamento"],
+      "paginaOrigem": [
+        3
+      ],
+      "palavrasChave": [
+        "pead",
+        "adutora",
+        "agua",
+        "captacao",
+        "estacao elevatoria",
+        "distribuicao",
+        "emissario",
+        "encamisamento"
+      ],
       "statusImagem": "precisa_revisao"
     },
     {
@@ -72,10 +108,20 @@
         "Melhor absorcao de cargas de terra e trafego",
         "Instalacao pratica em redes prediais"
       ],
-      "imagem": "public/produtos/pead/tubos-pead-ramal-predial.jpg",
+      "imagem": "/produtos/asperbras/pead-tubos-pead-ramal-predial.jpg",
       "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
-      "paginaOrigem": [3],
-      "palavrasChave": ["pead", "ramal predial", "agua", "cavalete", "ligacao predial", "rede publica", "residencial"],
+      "paginaOrigem": [
+        3
+      ],
+      "palavrasChave": [
+        "pead",
+        "ramal predial",
+        "agua",
+        "cavalete",
+        "ligacao predial",
+        "rede publica",
+        "residencial"
+      ],
       "statusImagem": "precisa_revisao"
     },
     {
@@ -90,10 +136,20 @@
         "Reducao de sedimentacao e incrustacoes",
         "Flexibilidade para absorver impactos e cargas externas"
       ],
-      "imagem": "public/produtos/pead/tubos-pead-esgoto-aguas-pluviais.jpg",
+      "imagem": "/produtos/asperbras/pead-tubos-pead-esgoto-aguas-pluviais.jpg",
       "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
-      "paginaOrigem": [3],
-      "palavrasChave": ["pead", "esgoto", "agua pluvial", "residuos industriais", "rede coletora", "encamisamento", "baixa rugosidade"],
+      "paginaOrigem": [
+        3
+      ],
+      "palavrasChave": [
+        "pead",
+        "esgoto",
+        "agua pluvial",
+        "residuos industriais",
+        "rede coletora",
+        "encamisamento",
+        "baixa rugosidade"
+      ],
       "statusImagem": "precisa_revisao"
     },
     {
@@ -108,10 +164,21 @@
         "Uso enterrado ou aparente",
         "Aplicacao em redes de irrigacao e captacao"
       ],
-      "imagem": "public/produtos/pead/tubos-pead-irrigacao.jpg",
+      "imagem": "/produtos/asperbras/pead-tubos-pead-irrigacao.jpg",
       "pdf": "public/catalogos/catalogo-pead-asperbras.pdf",
-      "paginaOrigem": [3],
-      "palavrasChave": ["pead", "irrigacao", "captacao", "reservatorio", "aspersao", "irrigacao localizada", "rio", "poco"],
+      "paginaOrigem": [
+        3
+      ],
+      "palavrasChave": [
+        "pead",
+        "irrigacao",
+        "captacao",
+        "reservatorio",
+        "aspersao",
+        "irrigacao localizada",
+        "rio",
+        "poco"
+      ],
       "statusImagem": "precisa_revisao"
     }
   ]

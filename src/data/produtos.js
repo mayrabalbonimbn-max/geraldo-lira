@@ -10,7 +10,7 @@
     "subcategoria": "Poços de Inspeção",
     "descricao": "Poço de inspeção rotomoldado DN600, indicado para sistemas de saneamento que exigem acesso técnico para inspeção, manutenção e conexão de redes. Modelo com múltiplas entradas para diferentes configurações de instalação.",
     "aplicacao": "Inspeção, manutenção e conexão de redes de saneamento.",
-    "imagem": "/produtos/asperbras/saneamento-01_poco_inspecao_dn600_multiplas_entradas.webp",
+    "imagem": "/produtos/asperbras/saneamento-01-poco-inspecao-dn600-multiplas-entradas.webp",
     "palavrasChave": [
       "01",
       "poço",
@@ -32,7 +32,7 @@
     "subcategoria": "Poços de Inspeção",
     "descricao": "Poço de inspeção DN600 com configuração de 3 entradas e 1 saída, desenvolvido para facilitar a interligação de tubulações em redes de esgoto, drenagem e saneamento.",
     "aplicacao": "Interligação de tubulações em redes de esgoto, drenagem e saneamento.",
-    "imagem": "/produtos/asperbras/saneamento-02_poco_inspecao_dn600_3_entradas_1_saida.webp",
+    "imagem": "/produtos/asperbras/saneamento-02-poco-inspecao-dn600-3-entradas-1-saida.webp",
     "palavrasChave": [
       "02",
       "poço",
@@ -56,7 +56,7 @@
     "subcategoria": "Poços de Inspeção",
     "descricao": "Poço de inspeção DN600 com entradas em ângulo, ideal para instalações que precisam de flexibilidade no direcionamento das tubulações e melhor adaptação ao traçado da obra.",
     "aplicacao": "Instalações com mudanças de direção e adaptação ao traçado da obra.",
-    "imagem": "/produtos/asperbras/saneamento-03_poco_inspecao_dn600_entradas_angulo.webp",
+    "imagem": "/produtos/asperbras/saneamento-03-poco-inspecao-dn600-entradas-angulo.webp",
     "palavrasChave": [
       "03",
       "poço",
@@ -79,7 +79,7 @@
     "subcategoria": "Poços de Visita",
     "descricao": "Poço de visita DN800 para redes de saneamento, projetado para permitir acesso interno, inspeção e manutenção de sistemas enterrados com maior capacidade estrutural e operacional.",
     "aplicacao": "Acesso interno, inspeção e manutenção de sistemas enterrados.",
-    "imagem": "/produtos/asperbras/saneamento-04_poco_visita_dn800.webp",
+    "imagem": "/produtos/asperbras/saneamento-04-poco-visita-dn800.webp",
     "palavrasChave": [
       "04",
       "poço",
@@ -101,7 +101,7 @@
     "subcategoria": "Poços de Visita",
     "descricao": "Poço de visita DN800 com configuração de 3 entradas e 1 saída, indicado para pontos de conexão, inspeção e manutenção em redes coletoras e sistemas de drenagem.",
     "aplicacao": "Pontos de conexão, inspeção e manutenção em redes coletoras e drenagem.",
-    "imagem": "/produtos/asperbras/saneamento-05_poco_visita_dn800_3_entradas.webp",
+    "imagem": "/produtos/asperbras/saneamento-05-poco-visita-dn800-3-entradas.webp",
     "palavrasChave": [
       "05",
       "poço",
@@ -124,7 +124,7 @@
     "subcategoria": "Poços de Visita",
     "descricao": "Poço de visita DN1000 rotomoldado, indicado para aplicações em redes de saneamento que demandam maior volume, acesso técnico e facilidade de manutenção.",
     "aplicacao": "Redes de saneamento com maior volume, acesso técnico e manutenção.",
-    "imagem": "/produtos/asperbras/saneamento-06_poco_visita_dn1000.webp",
+    "imagem": "/produtos/asperbras/saneamento-06-poco-visita-dn1000.webp",
     "palavrasChave": [
       "06",
       "poço",
@@ -146,7 +146,7 @@
     "subcategoria": "Poços de Visita",
     "descricao": "Poço de visita DN1000 com entradas em ângulo e saída, desenvolvido para obras que exigem conexões em diferentes direções e integração eficiente entre tubulações.",
     "aplicacao": "Obras com conexões em diferentes direções e integração entre tubulações.",
-    "imagem": "/produtos/asperbras/saneamento-07_poco_visita_dn1000_3_entradas.webp",
+    "imagem": "/produtos/asperbras/saneamento-07-poco-visita-dn1000-3-entradas.webp",
     "palavrasChave": [
       "07",
       "poço",
@@ -169,7 +169,7 @@
     "subcategoria": "Poços de Visita",
     "descricao": "Poço de visita DN1500 de grande porte, com múltiplas entradas e saída, indicado para sistemas de saneamento com maior demanda de conexão, inspeção e manutenção.",
     "aplicacao": "Sistemas de saneamento com alta demanda de conexão, inspeção e manutenção.",
-    "imagem": "/produtos/asperbras/saneamento-08_poco_visita_dn1500.webp",
+    "imagem": "/produtos/asperbras/saneamento-08-poco-visita-dn1500.webp",
     "palavrasChave": [
       "08",
       "poço",
@@ -192,7 +192,7 @@
     "subcategoria": "Interceptores de Gordura",
     "descricao": "Interceptor de gordura enterrável para retenção e separação de resíduos gordurosos antes do descarte na rede, contribuindo para a proteção do sistema hidráulico e redução de obstruções.",
     "aplicacao": "Retenção e separação de gordura antes do descarte na rede.",
-    "imagem": "/produtos/asperbras/saneamento-09_interceptor_gordura_enterravel.webp",
+    "imagem": "/produtos/asperbras/saneamento-09-interceptor-gordura-enterravel.webp",
     "palavrasChave": [
       "09",
       "interceptor",
@@ -214,7 +214,7 @@
     "subcategoria": "Estações Elevatórias",
     "descricao": "Estação elevatória rotomoldada para sistemas de saneamento, utilizada no bombeamento e condução de efluentes quando há necessidade de vencer desníveis no terreno ou transportar o fluxo para pontos mais altos.",
     "aplicacao": "Bombeamento e condução de efluentes em terrenos com desnível.",
-    "imagem": "/produtos/asperbras/saneamento-10_estacao_elevatoria.webp",
+    "imagem": "/produtos/asperbras/saneamento-10-estacao-elevatoria.webp",
     "palavrasChave": [
       "10",
       "estação",
@@ -236,7 +236,7 @@
     "subcategoria": "Estações Elevatórias",
     "descricao": "Estação elevatória rotomoldada para sistemas de saneamento, indicada para bombeamento e condução de efluentes em situações com desnível ou necessidade de elevação do fluxo.",
     "aplicacao": "Bombeamento e condução de efluentes em redes com desnível.",
-    "imagem": "/produtos/asperbras/saneamento-11_estacao_elevatoria_detalhe_variacoes.png",
+    "imagem": "/produtos/asperbras/saneamento-11-estacao-elevatoria-detalhe-variacoes.png",
     "palavrasChave": [
       "11",
       "estação",
@@ -258,7 +258,7 @@
     "subcategoria": "Caixas Abrigo para VRP",
     "descricao": "Caixa abrigo rotomoldada para válvula reguladora de pressão, desenvolvida para proteger o conjunto hidráulico e facilitar o acesso técnico para inspeção e manutenção.",
     "aplicacao": "Proteção e acesso técnico para conjunto hidráulico com válvula reguladora de pressão.",
-    "imagem": "/produtos/asperbras/saneamento-12_caixa_abrigo_valvula_reguladora_pressao.png",
+    "imagem": "/produtos/asperbras/saneamento-12-caixa-abrigo-valvula-reguladora-pressao.png",
     "palavrasChave": [
       "12",
       "caixa abrigo",
@@ -280,7 +280,7 @@
     "subcategoria": "Caixas Abrigo para VRP",
     "descricao": "Vista superior da caixa abrigo para válvula reguladora de pressão, destacando o formato da tampa, reforço estrutural e passagem para tubulação.",
     "aplicacao": "Visualização técnica da tampa, reforço estrutural e passagem de tubulação da caixa abrigo para VRP.",
-    "imagem": "/produtos/asperbras/saneamento-13_caixa_abrigo_vrp_tampa_visao_superior.png",
+    "imagem": "/produtos/asperbras/saneamento-13-caixa-abrigo-vrp-tampa-visao-superior.png",
     "palavrasChave": [
       "13",
       "caixa abrigo",
@@ -301,7 +301,7 @@
     "subcategoria": "TIL / Prolongador",
     "descricao": "TIL para sistemas de saneamento, usado como ponto de inspeção e interligação de tubulações em rede enterrada.",
     "aplicacao": "Ponto de inspeção e interligação de tubulações em rede enterrada.",
-    "imagem": "/produtos/asperbras/saneamento-14_til.png",
+    "imagem": "/produtos/asperbras/saneamento-14-til.png",
     "palavrasChave": [
       "14",
       "til",
@@ -322,7 +322,7 @@
     "subcategoria": "TIL / Prolongador",
     "descricao": "Prolongador usado para ajustar a altura de acesso em sistemas enterrados, compatibilizando o produto com o nível final do terreno.",
     "aplicacao": "Ajuste de altura de acesso em sistemas enterrados conforme o nível final do terreno.",
-    "imagem": "/produtos/asperbras/saneamento-15_prolongador.png",
+    "imagem": "/produtos/asperbras/saneamento-15-prolongador.png",
     "palavrasChave": [
       "15",
       "prolongador",
@@ -342,7 +342,7 @@
     "subcategoria": "Caixa de Gordura e Caixa de Passagem",
     "descricao": "Caixa de gordura para retenção de resíduos gordurosos antes do descarte na rede, ajudando a reduzir obstruções.",
     "aplicacao": "Retenção de gordura e redução de obstruções antes do descarte na rede.",
-    "imagem": "/produtos/asperbras/saneamento-16_caixa_de_gordura.png",
+    "imagem": "/produtos/asperbras/saneamento-16-caixa-de-gordura.png",
     "palavrasChave": [
       "16",
       "caixa de gordura",
@@ -363,7 +363,7 @@
     "subcategoria": "Caixa de Gordura e Caixa de Passagem",
     "descricao": "Caixa de passagem indicada para facilitar conexão, inspeção e manutenção de trechos da tubulação.",
     "aplicacao": "Conexão, inspeção e manutenção de trechos de tubulação.",
-    "imagem": "/produtos/asperbras/saneamento-17_caixa_de_passagem.png",
+    "imagem": "/produtos/asperbras/saneamento-17-caixa-de-passagem.png",
     "palavrasChave": [
       "17",
       "caixa de passagem",
@@ -383,7 +383,7 @@
     "subcategoria": "Juntas e Vedações",
     "descricao": "Anel de vedação para conexões em sistemas de saneamento, auxiliando na estanqueidade entre componentes.",
     "aplicacao": "Vedação e estanqueidade entre componentes de sistemas de saneamento.",
-    "imagem": "/produtos/asperbras/saneamento-18_anel_de_vedacao.png",
+    "imagem": "/produtos/asperbras/saneamento-18-anel-de-vedacao.png",
     "palavrasChave": [
       "18",
       "anel",
@@ -403,7 +403,7 @@
     "subcategoria": "Juntas e Vedações",
     "descricao": "Junta PVC/PVC para conexão de tubulações, indicada para união entre componentes do sistema.",
     "aplicacao": "União entre tubulações e componentes em PVC.",
-    "imagem": "/produtos/asperbras/saneamento-19_junta_pvc_pvc.png",
+    "imagem": "/produtos/asperbras/saneamento-19-junta-pvc-pvc.png",
     "palavrasChave": [
       "19",
       "junta",
@@ -423,7 +423,7 @@
     "subcategoria": "Juntas e Vedações",
     "descricao": "Adaptador PVC/PVC para adequação entre tubulações e conexões com diferentes medidas.",
     "aplicacao": "Adequação entre tubulações e conexões com diferentes medidas.",
-    "imagem": "/produtos/asperbras/saneamento-20_adaptador_pvc_pvc.png",
+    "imagem": "/produtos/asperbras/saneamento-20-adaptador-pvc-pvc.png",
     "palavrasChave": [
       "20",
       "adaptador",
@@ -443,7 +443,7 @@
     "subcategoria": "Juntas e Vedações",
     "descricao": "Luva longa para união e prolongamento de trechos de tubulação.",
     "aplicacao": "União e prolongamento de trechos de tubulação.",
-    "imagem": "/produtos/asperbras/saneamento-21_luva_longa.png",
+    "imagem": "/produtos/asperbras/saneamento-21-luva-longa.png",
     "palavrasChave": [
       "21",
       "luva",
@@ -463,7 +463,7 @@
     "subcategoria": "Serras Copo",
     "descricao": "Serras copo para abertura técnica em componentes de saneamento, conforme o diâmetro necessário da tubulação.",
     "aplicacao": "Abertura técnica em componentes de saneamento conforme o diâmetro da tubulação.",
-    "imagem": "/produtos/asperbras/saneamento-22_serras_copo.png",
+    "imagem": "/produtos/asperbras/saneamento-22-serras-copo.png",
     "palavrasChave": [
       "22",
       "serras copo",
@@ -489,7 +489,7 @@
       "Saneamento básico",
       "Irrigação"
     ],
-    "imagem": "/produtos/asperbras/pead-01_hero_tubos_pead_listras_laranja_azul.webp",
+    "imagem": "/produtos/asperbras/pead-01-hero-tubos-pead-listras-laranja-azul.webp",
     "palavrasChave": [
       "pead",
       "01",
@@ -517,7 +517,7 @@
       "Água-adutora",
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/pead-02_tubos_pead_barras_preto.webp",
+    "imagem": "/produtos/asperbras/pead-02-tubos-pead-barras-preto.webp",
     "palavrasChave": [
       "pead",
       "02",
@@ -544,7 +544,7 @@
       "Água-adutora",
       "Ramal predial"
     ],
-    "imagem": "/produtos/asperbras/pead-03_tubos_pead_barras_azul.webp",
+    "imagem": "/produtos/asperbras/pead-03-tubos-pead-barras-azul.webp",
     "palavrasChave": [
       "pead",
       "03",
@@ -572,7 +572,7 @@
       "Águas pluviais",
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/pead-04_tubos_pead_barras_preto_listra_ocre.webp",
+    "imagem": "/produtos/asperbras/pead-04-tubos-pead-barras-preto-listra-ocre.webp",
     "palavrasChave": [
       "pead",
       "04",
@@ -599,7 +599,7 @@
       "Água-adutora",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/pead-05_tubos_pead_barras_preto_listra_azul.webp",
+    "imagem": "/produtos/asperbras/pead-05-tubos-pead-barras-preto-listra-azul.webp",
     "palavrasChave": [
       "pead",
       "05",
@@ -626,7 +626,7 @@
       "Ramal predial",
       "Água-adutora"
     ],
-    "imagem": "/produtos/asperbras/pead-06_tubos_pead_bobina_azul.webp",
+    "imagem": "/produtos/asperbras/pead-06-tubos-pead-bobina-azul.webp",
     "palavrasChave": [
       "pead",
       "06",
@@ -654,7 +654,7 @@
       "Distribuição de água",
       "Irrigação"
     ],
-    "imagem": "/produtos/asperbras/pead-07_tubos_pead_bobina_preto_listra_azul.webp",
+    "imagem": "/produtos/asperbras/pead-07-tubos-pead-bobina-preto-listra-azul.webp",
     "palavrasChave": [
       "pead",
       "07",
@@ -682,7 +682,7 @@
       "Irrigação",
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/pead-08_tubos_pead_bobina_preto.webp",
+    "imagem": "/produtos/asperbras/pead-08-tubos-pead-bobina-preto.webp",
     "palavrasChave": [
       "pead",
       "08",
@@ -709,7 +709,7 @@
       "Esgoto",
       "Irrigação"
     ],
-    "imagem": "/produtos/asperbras/pead-09_tubos_pead_stack_banner_final.webp",
+    "imagem": "/produtos/asperbras/pead-09-tubos-pead-stack-banner-final.webp",
     "palavrasChave": [
       "pead",
       "09",
@@ -732,7 +732,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tubo MPVC DEFOFO para sistemas de adução e distribuição de água, com alta resistência a impactos e junta elástica integrada.",
     "aplicacao": "Sistemas de adução e distribuição de água.",
-    "imagem": "/produtos/asperbras/tubos-03_tubo-mpvc-defofo.png",
+    "imagem": "/produtos/asperbras/tubos-03-tubo-mpvc-defofo.png",
     "palavrasChave": [
       "tubos",
       "mpvc",
@@ -754,7 +754,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tubo PVC PBA com junta elástica integrada, indicado para sistemas enterrados de adução e distribuição de água.",
     "aplicacao": "Sistemas enterrados de adução e distribuição de água.",
-    "imagem": "/produtos/asperbras/tubos-04_tubo-pvc-pba-junta-elastica.png",
+    "imagem": "/produtos/asperbras/tubos-04-tubo-pvc-pba-junta-elastica.png",
     "palavrasChave": [
       "tubos",
       "pvc",
@@ -776,7 +776,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Conexão para derivação com redução de diâmetro em redes PBA de distribuição de água.",
     "aplicacao": "Derivação com redução de diâmetro em redes PBA de água.",
-    "imagem": "/produtos/asperbras/tubos-05_te-reducao-bbb-pba.png",
+    "imagem": "/produtos/asperbras/tubos-05-te-reducao-bbb-pba.png",
     "palavrasChave": [
       "tê",
       "te",
@@ -798,7 +798,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Curva longa para mudança suave de direção em sistemas de adução e distribuição de água.",
     "aplicacao": "Mudança suave de direção em redes PBA de água.",
-    "imagem": "/produtos/asperbras/tubos-06_curva-longa-22-pb-pba.png",
+    "imagem": "/produtos/asperbras/tubos-06-curva-longa-22-pb-pba.png",
     "palavrasChave": [
       "curva longa",
       "22",
@@ -819,7 +819,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Curva longa para mudança de direção da tubulação em redes PBA.",
     "aplicacao": "Mudança de direção em tubulações PBA de água.",
-    "imagem": "/produtos/asperbras/tubos-07_curva-longa-45-pb-pba.png",
+    "imagem": "/produtos/asperbras/tubos-07-curva-longa-45-pb-pba.png",
     "palavrasChave": [
       "curva longa",
       "45",
@@ -840,7 +840,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Curva longa para alterações mais acentuadas de direção em redes enterradas de água.",
     "aplicacao": "Alteração de direção em redes enterradas de água.",
-    "imagem": "/produtos/asperbras/tubos-08_curva-longa-90-pb-pba.png",
+    "imagem": "/produtos/asperbras/tubos-08-curva-longa-90-pb-pba.png",
     "palavrasChave": [
       "curva longa",
       "90",
@@ -861,7 +861,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Redução para transição entre diferentes diâmetros em redes de distribuição de água.",
     "aplicacao": "Transição entre diferentes diâmetros em redes de água.",
-    "imagem": "/produtos/asperbras/tubos-09_reducao-pb-pba.png",
+    "imagem": "/produtos/asperbras/tubos-09-reducao-pb-pba.png",
     "palavrasChave": [
       "redução",
       "pb",
@@ -881,7 +881,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Colar para derivação de rede e conexão auxiliar em tubulações PBA.",
     "aplicacao": "Derivação de rede e conexão auxiliar em tubulações PBA.",
-    "imagem": "/produtos/asperbras/tubos-10_colar-de-tomada-com-trava-pba.png",
+    "imagem": "/produtos/asperbras/tubos-10-colar-de-tomada-com-trava-pba.png",
     "palavrasChave": [
       "colar de tomada",
       "trava",
@@ -901,7 +901,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Anel toroidal para vedação em juntas elásticas de sistemas de adução de água.",
     "aplicacao": "Vedação em juntas elásticas de sistemas de adução de água.",
-    "imagem": "/produtos/asperbras/tubos-11_anel-vedacao-je-adutora-toroidal.png",
+    "imagem": "/produtos/asperbras/tubos-11-anel-vedacao-je-adutora-toroidal.png",
     "palavrasChave": [
       "anel",
       "vedação",
@@ -921,7 +921,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tê para ramificação da rede em instalações de adução e distribuição de água.",
     "aplicacao": "Ramificação em instalações de adução e distribuição de água.",
-    "imagem": "/produtos/asperbras/tubos-12_te-bbb-pba.png",
+    "imagem": "/produtos/asperbras/tubos-12-te-bbb-pba.png",
     "palavrasChave": [
       "tê",
       "te",
@@ -942,7 +942,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Luva para união, manutenção e reparo de trechos em redes de água.",
     "aplicacao": "União, manutenção e reparo de trechos em redes de água.",
-    "imagem": "/produtos/asperbras/tubos-13_luva-de-correr-pba.png",
+    "imagem": "/produtos/asperbras/tubos-13-luva-de-correr-pba.png",
     "palavrasChave": [
       "luva de correr",
       "pba",
@@ -962,7 +962,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Peça de fechamento para extremidades de tubulações em redes PBA.",
     "aplicacao": "Fechamento de extremidades em tubulações PBA.",
-    "imagem": "/produtos/asperbras/tubos-14_cap-pba.png",
+    "imagem": "/produtos/asperbras/tubos-14-cap-pba.png",
     "palavrasChave": [
       "cap",
       "pba",
@@ -982,7 +982,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tubo coletor de esgoto ocre de parede maciça, indicado para redes sanitárias sem pressão interna.",
     "aplicacao": "Redes sanitárias sem pressão interna.",
-    "imagem": "/produtos/asperbras/tubos-15_tubo-pvc-coletor-esgoto-ocre-parede-macica.png",
+    "imagem": "/produtos/asperbras/tubos-15-tubo-pvc-coletor-esgoto-ocre-parede-macica.png",
     "palavrasChave": [
       "tubo pvc",
       "coletor",
@@ -1002,7 +1002,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tubo corrugado de dupla parede para redes coletoras de esgoto, com maior leveza e resistência estrutural.",
     "aplicacao": "Redes coletoras de esgoto com leveza e resistência estrutural.",
-    "imagem": "/produtos/asperbras/tubos-16_tubo-pvc-coletor-esgoto-ocre-dupla-parede-corrugado.png",
+    "imagem": "/produtos/asperbras/tubos-16-tubo-pvc-coletor-esgoto-ocre-dupla-parede-corrugado.png",
     "palavrasChave": [
       "tubo pvc",
       "coletor",
@@ -1022,7 +1022,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Anel de vedação para coletor corrugado, usado para estanqueidade das juntas em sistemas de esgoto.",
     "aplicacao": "Estanqueidade das juntas em sistemas de esgoto corrugado.",
-    "imagem": "/produtos/asperbras/tubos-17_anel-vedacao-jee-coletor-corrugado.png",
+    "imagem": "/produtos/asperbras/tubos-17-anel-vedacao-jee-coletor-corrugado.png",
     "palavrasChave": [
       "anel",
       "vedação",
@@ -1042,7 +1042,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tubo coletor de esgoto pressurizado, indicado para redes que exigem condução sob pressão.",
     "aplicacao": "Redes de esgoto com condução sob pressão.",
-    "imagem": "/produtos/asperbras/tubos-18_tubo-pvc-coletor-esgoto-ocre-pressurizado.png",
+    "imagem": "/produtos/asperbras/tubos-18-tubo-pvc-coletor-esgoto-ocre-pressurizado.png",
     "palavrasChave": [
       "tubo pvc",
       "coletor",
@@ -1062,7 +1062,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Curva curta em PVC ocre para mudança de direção em redes sanitárias.",
     "aplicacao": "Mudança de direção em redes sanitárias.",
-    "imagem": "/produtos/asperbras/tubos-19_curva-curta-45-pb-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-19-curva-curta-45-pb-esgoto.png",
     "palavrasChave": [
       "curva curta",
       "45",
@@ -1082,7 +1082,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Curva curta em PVC ocre para alteração de direção em tubulações de esgoto.",
     "aplicacao": "Alteração de direção em tubulações de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-20_curva-curta-90-pb-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-20-curva-curta-90-pb-esgoto.png",
     "palavrasChave": [
       "curva curta",
       "90",
@@ -1102,7 +1102,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Luva para união, reparo e manutenção de trechos de tubulação de esgoto.",
     "aplicacao": "União, reparo e manutenção de trechos de tubulação de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-21_luva-de-correr-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-21-luva-de-correr-esgoto.png",
     "palavrasChave": [
       "luva de correr",
       "esgoto",
@@ -1122,7 +1122,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tê usado para derivações e interligações em redes coletoras de esgoto.",
     "aplicacao": "Derivações e interligações em redes coletoras de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-22_te-pbb-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-22-te-pbb-esgoto.png",
     "palavrasChave": [
       "tê",
       "te",
@@ -1142,7 +1142,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tê para conexão de ramais em redes sanitárias enterradas.",
     "aplicacao": "Conexão de ramais em redes sanitárias enterradas.",
-    "imagem": "/produtos/asperbras/tubos-23_te-bbb-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-23-te-bbb-esgoto.png",
     "palavrasChave": [
       "tê",
       "te",
@@ -1162,7 +1162,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Junção angular para conexão de ramais em redes coletoras de esgoto.",
     "aplicacao": "Conexão angular de ramais em redes coletoras de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-24_juncao-45-bbb-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-24-juncao-45-bbb-esgoto.png",
     "palavrasChave": [
       "junção",
       "juncao",
@@ -1182,7 +1182,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Tê redução para derivações com mudança de diâmetro em redes sanitárias.",
     "aplicacao": "Derivações com mudança de diâmetro em redes sanitárias.",
-    "imagem": "/produtos/asperbras/tubos-25_te-reducao-bbb-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-25-te-reducao-bbb-esgoto.png",
     "palavrasChave": [
       "tê",
       "te",
@@ -1202,7 +1202,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Anel toroidal para vedação entre componentes de sistemas de esgoto.",
     "aplicacao": "Vedação entre componentes de sistemas de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-26_anel-vedacao-bolsa-je-toroidal-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-26-anel-vedacao-bolsa-je-toroidal-esgoto.png",
     "palavrasChave": [
       "anel",
       "vedação",
@@ -1222,7 +1222,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "CAP para fechamento de extremidades em redes coletoras de esgoto.",
     "aplicacao": "Fechamento de extremidades em redes coletoras de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-27_cap-coletor-esgoto.png",
+    "imagem": "/produtos/asperbras/tubos-27-cap-coletor-esgoto.png",
     "palavrasChave": [
       "cap",
       "coletor",
@@ -1241,7 +1241,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Componente usado para ligação predial à rede coletora de esgoto.",
     "aplicacao": "Ligação predial à rede coletora de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-28_til-de-ligacao-predial-com-tampao.png",
+    "imagem": "/produtos/asperbras/tubos-28-til-de-ligacao-predial-com-tampao.png",
     "palavrasChave": [
       "til",
       "ligação predial",
@@ -1260,7 +1260,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Luva simples para conexão e acabamento em sistemas de ligação predial.",
     "aplicacao": "Conexão e acabamento em sistemas de ligação predial.",
-    "imagem": "/produtos/asperbras/tubos-29_luva-simples-para-til.png",
+    "imagem": "/produtos/asperbras/tubos-29-luva-simples-para-til.png",
     "palavrasChave": [
       "luva simples",
       "til",
@@ -1279,7 +1279,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Selim para derivação de tubulação em redes sanitárias.",
     "aplicacao": "Derivação de tubulação em redes sanitárias.",
-    "imagem": "/produtos/asperbras/tubos-30_selim-compacto.png",
+    "imagem": "/produtos/asperbras/tubos-30-selim-compacto.png",
     "palavrasChave": [
       "selim",
       "compacto",
@@ -1299,7 +1299,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Selim com trava para derivação segura entre tubulações de esgoto.",
     "aplicacao": "Derivação segura entre tubulações de esgoto.",
-    "imagem": "/produtos/asperbras/tubos-31_selim-com-trava-dn150-dn100.png",
+    "imagem": "/produtos/asperbras/tubos-31-selim-com-trava-dn150-dn100.png",
     "palavrasChave": [
       "selim",
       "trava",
@@ -1319,7 +1319,7 @@
     "subcategoria": "Catálogo Tubos",
     "descricao": "Acessório de vedação e fixação para selim com trava.",
     "aplicacao": "Vedação e fixação para selim com trava.",
-    "imagem": "/produtos/asperbras/tubos-32_anel-do-selim-com-trava.png",
+    "imagem": "/produtos/asperbras/tubos-32-anel-do-selim-com-trava.png",
     "palavrasChave": [
       "anel",
       "selim",
@@ -1343,7 +1343,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/tubos-33_tubos-azuis-empilhados-hero.jpg",
+    "imagem": "/produtos/asperbras/tubos-33-tubos-azuis-empilhados-hero.jpg",
     "palavrasChave": [
       "33",
       "tubos azuis",
@@ -1369,7 +1369,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/tubos-34_tubos-ocre-coletor-esgoto.jpg",
+    "imagem": "/produtos/asperbras/tubos-34-tubos-ocre-coletor-esgoto.jpg",
     "palavrasChave": [
       "34",
       "tubos ocre",
@@ -1394,7 +1394,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/tubos-35_linha-produtos-saneamento.jpg",
+    "imagem": "/produtos/asperbras/tubos-35-linha-produtos-saneamento.jpg",
     "palavrasChave": [
       "35",
       "linha saneamento",
@@ -1419,7 +1419,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/tubos-40_tubos-azuis-fechamento.jpg",
+    "imagem": "/produtos/asperbras/tubos-40-tubos-azuis-fechamento.jpg",
     "palavrasChave": [
       "40",
       "tubos azuis",
@@ -1445,7 +1445,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p02_abracadeira_de_inox_para_reparo_rapido.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p02-abracadeira-de-inox-para-reparo-rapido.webp",
     "palavrasChave": [
       "abraçadeira",
       "abracadeira",
@@ -1472,7 +1472,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p02_produtos_iniciais_da_apresentacao_recorte_1.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p02-produtos-iniciais-da-apresentacao-recorte-1.webp",
     "palavrasChave": [
       "abraçadeira",
       "abracadeira",
@@ -1498,7 +1498,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p02_produtos_iniciais_da_apresentacao_recorte_2.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p02-produtos-iniciais-da-apresentacao-recorte-2.webp",
     "palavrasChave": [
       "otimização",
       "otimizacao",
@@ -1525,7 +1525,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p02_produtos_iniciais_da_apresentacao_recorte_3.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p02-produtos-iniciais-da-apresentacao-recorte-3.webp",
     "palavrasChave": [
       "tanque",
       "aço vitrificado",
@@ -1550,7 +1550,7 @@
       "Saneamento básico",
       "Distribuição de água"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p02_tanque_de_aco_vitrificado.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p02-tanque-de-aco-vitrificado.webp",
     "palavrasChave": [
       "tanque",
       "aço vitrificado",
@@ -1575,7 +1575,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p04_sbl_sistema_de_bombeamento_em_linha.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p04-sbl-sistema-de-bombeamento-em-linha.webp",
     "palavrasChave": [
       "sbl",
       "sistema de bombeamento em linha",
@@ -1600,7 +1600,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p04_sbl_sistema_em_linha_render_com_tubulacao.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p04-sbl-sistema-em-linha-render-com-tubulacao.webp",
     "palavrasChave": [
       "sbl",
       "render",
@@ -1626,7 +1626,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p13_conjunto_hidraulico_em_inox_foto.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p13-conjunto-hidraulico-em-inox-foto.webp",
     "palavrasChave": [
       "conjunto hidráulico",
       "hidraulico",
@@ -1649,7 +1649,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p30_sbl_su_render_do_equipamento.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p30-sbl-su-render-do-equipamento.webp",
     "palavrasChave": [
       "sbl-su",
       "sbl su",
@@ -1672,7 +1672,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p32_sbl_su_equipamento_fabricado.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p32-sbl-su-equipamento-fabricado.webp",
     "palavrasChave": [
       "sbl-su",
       "sbl su",
@@ -1696,7 +1696,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p34_sbl_sv_render_do_equipamento.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p34-sbl-sv-render-do-equipamento.webp",
     "palavrasChave": [
       "sbl-sv",
       "sbl sv",
@@ -1720,7 +1720,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p36_sbl_sv_detalhe_do_equipamento_fabricado.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p36-sbl-sv-detalhe-do-equipamento-fabricado.webp",
     "palavrasChave": [
       "sbl-sv",
       "sbl sv",
@@ -1745,7 +1745,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p38_sbl_ss_render_do_equipamento.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p38-sbl-ss-render-do-equipamento.webp",
     "palavrasChave": [
       "sbl-ss",
       "sbl ss",
@@ -1768,7 +1768,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p40_sbl_ss_equipamento_fabricado.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p40-sbl-ss-equipamento-fabricado.webp",
     "palavrasChave": [
       "sbl-ss",
       "sbl ss",
@@ -1793,7 +1793,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p42_sbl_tri_render_do_equipamento.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p42-sbl-tri-render-do-equipamento.webp",
     "palavrasChave": [
       "sbl-tri",
       "sbl tri",
@@ -1817,7 +1817,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p46_mini_sbl_render_do_equipamento.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p46-mini-sbl-render-do-equipamento.webp",
     "palavrasChave": [
       "mini-sbl",
       "mini sbl",
@@ -1841,7 +1841,7 @@
     "aplicacoes": [
       "Saneamento básico"
     ],
-    "imagem": "/produtos/asperbras/improv-sbl-p81_modelos_de_bombeamento_sbl.webp",
+    "imagem": "/produtos/asperbras/improv-sbl-p81-modelos-de-bombeamento-sbl.webp",
     "palavrasChave": [
       "modelos sbl",
       "bombeamento sbl",
@@ -2071,7 +2071,7 @@
     "subcategoria": "Instalação",
     "descricao": "Sequência visual de instalação com abertura de entrada, vedação, encaixe de tubo, teste e finalização.",
     "aplicacao": "Apoio visual para instalação de poço de visita e poço de inspeção.",
-    "imagem": "/produtos/asperbras/saneamento-26_instalacao_poco_visita_inspecao.webp",
+    "imagem": "/produtos/asperbras/saneamento-26-instalacao-poco-visita-inspecao.webp",
     "palavrasChave": [
       "26",
       "instalação",
@@ -2092,7 +2092,7 @@
     "subcategoria": "Instalação",
     "descricao": "Imagem de instalação da caixa abrigo para válvula reguladora de pressão.",
     "aplicacao": "Apoio visual para instalação de caixa abrigo para VRP.",
-    "imagem": "/produtos/asperbras/saneamento-27_instalacao_caixa_abrigo_vrp.webp",
+    "imagem": "/produtos/asperbras/saneamento-27-instalacao-caixa-abrigo-vrp.webp",
     "palavrasChave": [
       "27",
       "instalação",
@@ -2112,7 +2112,7 @@
     "subcategoria": "Instalação",
     "descricao": "Imagem de poço de visita aplicado em drenagem e contexto de obra.",
     "aplicacao": "Apoio visual para aplicação de poço de visita em drenagem.",
-    "imagem": "/produtos/asperbras/saneamento-28_instalacao_poco_visita_drenagem.webp",
+    "imagem": "/produtos/asperbras/saneamento-28-instalacao-poco-visita-drenagem.webp",
     "palavrasChave": [
       "28",
       "instalação",
@@ -2131,7 +2131,7 @@
     "subcategoria": "Institucional",
     "descricao": "Imagem institucional do catálogo com tubos, conexões e aplicação em irrigação.",
     "aplicacao": "Apoio institucional para apresentação de tubos, conexões e aplicação em irrigação.",
-    "imagem": "/produtos/asperbras/saneamento-29_banner_institucional_tubos_conexoes.webp",
+    "imagem": "/produtos/asperbras/saneamento-29-banner-institucional-tubos-conexoes.webp",
     "palavrasChave": [
       "29",
       "banner",
@@ -2151,7 +2151,7 @@
     "subcategoria": "História e estrutura",
     "descricao": "Imagem histórica ligada ao início da operação, indicada para seção de trajetória, confiança e experiência da marca.",
     "aplicacao": "Apoio institucional para trajetória, confiança e experiência da marca.",
-    "imagem": "/produtos/asperbras/trabalhos-36_fabrica-historica-1966.jpg",
+    "imagem": "/produtos/asperbras/trabalhos-36-fabrica-historica-1966.jpg",
     "palavrasChave": [
       "36",
       "história",
@@ -2173,7 +2173,7 @@
     "subcategoria": "História e estrutura",
     "descricao": "Imagem aérea de unidade fabril, boa para mostrar estrutura, operação e evolução industrial.",
     "aplicacao": "Apoio institucional para estrutura, operação e evolução industrial.",
-    "imagem": "/produtos/asperbras/trabalhos-37_unidade-fabril-1985.jpg",
+    "imagem": "/produtos/asperbras/trabalhos-37-unidade-fabril-1985.jpg",
     "palavrasChave": [
       "37",
       "unidade fabril",
@@ -2193,7 +2193,7 @@
     "subcategoria": "Estrutura industrial",
     "descricao": "Imagem aérea da unidade atual, indicada para seção institucional com foco em capacidade produtiva e estrutura.",
     "aplicacao": "Apoio institucional para capacidade produtiva, estrutura e operação atual.",
-    "imagem": "/produtos/asperbras/trabalhos-38_unidade-asperbras-atual.jpg",
+    "imagem": "/produtos/asperbras/trabalhos-38-unidade-asperbras-atual.jpg",
     "palavrasChave": [
       "38",
       "asperbras",
@@ -2212,7 +2212,7 @@
     "subcategoria": "Atendimento especializado",
     "descricao": "Imagem de profissionais em ambiente industrial ao lado de produto rotomoldado, indicada para atendimento, suporte técnico e confiança.",
     "aplicacao": "Apoio institucional para atendimento, suporte técnico e confiança.",
-    "imagem": "/produtos/asperbras/trabalhos-39_atendimento-tecnico-em-fabrica.jpg",
+    "imagem": "/produtos/asperbras/trabalhos-39-atendimento-tecnico-em-fabrica.jpg",
     "palavrasChave": [
       "39",
       "atendimento técnico",
