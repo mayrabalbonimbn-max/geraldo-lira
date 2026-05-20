@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin do catálogo | Geraldo Lira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="assets/iconify-icon.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page">
+    <header class="site-header admin-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">GL</span>
+          <span>
+            <strong>Geraldo Lira</strong>
+            <small>Admin do catálogo</small>
+          </span>
+        </a>
+        <div class="admin-header-actions">
+          <a class="btn btn-small btn-secondary" href="/">Ver site</a>
+          <button class="btn btn-small btn-dark" id="logout-button" type="button" hidden>Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-login-section" id="login-view">
+        <div class="admin-login-panel">
+          <div class="section-label">
+            <iconify-icon icon="solar:lock-keyhole-linear" width="18"></iconify-icon>
+            <span>Acesso administrativo</span>
+          </div>
+          <h1>Entrar no painel</h1>
+          <form class="admin-form" id="login-form">
+            <label>
+              <span>Email</span>
+              <input id="login-email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Senha</span>
+              <input id="login-password" type="password" autocomplete="current-password" required />
+            </label>
+            <button class="btn btn-primary" type="submit">
+              <span>Entrar</span>
+              <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
+            </button>
+          </form>
+          <p class="admin-message" id="login-message" role="status"></p>
+        </div>
+      </section>
+
+      <section class="admin-dashboard" id="admin-view" hidden>
+        <div class="container admin-shell">
+          <div class="admin-title-row">
+            <div>
+              <div class="section-label">
+                <iconify-icon icon="solar:box-linear" width="18"></iconify-icon>
+                <span>Produtos</span>
+              </div>
+              <h1>Catálogo administrável</h1>
+            </div>
+            <button class="btn btn-primary" id="new-product-button" type="button">
+              <span>Novo produto</span>
+              <iconify-icon icon="solar:add-circle-linear" width="20"></iconify-icon>
+            </button>
+          </div>
+
+          <p class="admin-message" id="admin-message" role="status"></p>
+
+          <div class="admin-grid">
+            <section class="admin-list-panel" aria-label="Produtos cadastrados">
+              <div class="admin-list-head">
+                <strong id="product-count">0 produtos</strong>
+                <button class="admin-link-button" id="refresh-products-button" type="button">Atualizar</button>
+              </div>
+              <div class="admin-product-list" id="product-list"></div>
+            </section>
+
+            <section class="admin-editor-panel" aria-label="Editor de produto">
+              <form class="admin-form" id="product-form">
+                <input id="product-id" type="hidden" />
+                <input id="product-image-url" type="hidden" />
+                <input id="product-image-path" type="hidden" />
+
+                <div class="admin-editor-head">
+                  <h2 id="editor-title">Novo produto</h2>
+                  <button class="admin-link-button admin-danger" id="clear-form-button" type="button">Limpar</button>
+                </div>
+
+                <label>
+                  <span>Nome</span>
+                  <input id="product-name" type="text" required />
+                </label>
+
+                <label>
+                  <span>Descrição</span>
+                  <textarea id="product-description" rows="5"></textarea>
+                </label>
+
+                <div class="admin-field-grid">
+                  <label>
+                    <span>Categoria</span>
+                    <input id="product-category" type="text" />
+                  </label>
+                  <label>
+                    <span>Filtro</span>
+                    <input id="product-filter" type="text" />
+                  </label>
+                </div>
+
+                <div class="admin-field-grid">
+                  <label>
+                    <span>Ordem</span>
+                    <input id="product-sort-order" type="number" min="0" step="1" value="0" />
+                  </label>
+                  <label class="admin-check">
+                    <input id="product-is-published" type="checkbox" checked />
+                    <span>Publicado no site</span>
+                  </label>
+                </div>
+
+                <label>
+                  <span>Imagem</span>
+                  <input id="product-image-file" type="file" accept="image/*" />
+                </label>
+
+                <div class="admin-image-preview" id="image-preview">
+                  <span>Sem imagem</span>
+                </div>
+
+                <div class="admin-form-actions">
+                  <button class="btn btn-primary" type="submit">
+                    <span>Salvar produto</span>
+                    <iconify-icon icon="solar:diskette-linear" width="20"></iconify-icon>
+                  </button>
+                  <button class="btn btn-secondary" id="remove-image-button" type="button">Remover imagem</button>
+                  <button class="btn btn-secondary" id="unpublish-button" type="button">Despublicar</button>
+                  <button class="btn btn-secondary admin-danger-button" id="delete-product-button" type="button">Excluir</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module">
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
+      const loginView = document.querySelector("#login-view");
+      const adminView = document.querySelector("#admin-view");
+      const loginForm = document.querySelector("#login-form");
+      const productForm = document.querySelector("#product-form");
+      const productList = document.querySelector("#product-list");
+      const logoutButton = document.querySelector("#logout-button");
+      const loginMessage = document.querySelector("#login-message");
+      const adminMessage = document.querySelector("#admin-message");
+      const productCount = document.querySelector("#product-count");
+      const imagePreview = document.querySelector("#image-preview");
+      let products = [];
+      let authToken = "";
+
+      const fields = {
+        id: document.querySelector("#product-id"),
+        name: document.querySelector("#product-name"),
+        description: document.querySelector("#product-description"),
+        category: document.querySelector("#product-category"),
+        filter: document.querySelector("#product-filter"),
+        sortOrder: document.querySelector("#product-sort-order"),
+        isPublished: document.querySelector("#product-is-published"),
+        imageFile: document.querySelector("#product-image-file"),
+        imageUrl: document.querySelector("#product-image-url"),
+        imagePath: document.querySelector("#product-image-path"),
+      };
+
+      function setMessage(target, message, type = "") {
+        target.textContent = message || "";
+        target.dataset.type = type;
+      }
+
+      function slugify(value) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "")
+          .slice(0, 80);
+      }
+
+      function escapeHtml(value) {
+        const div = document.createElement("div");
+        div.textContent = value || "";
+        return div.innerHTML;
+      }
+
+      function imagePreviewUrl(url) {
+        if (!url) return "";
+        if (/^https?:\/\//i.test(url)) return url;
+        if (apiBaseUrl && url.startsWith("/uploads/")) return `${apiBaseUrl}${url}`;
+        return url;
+      }
+
+      async function apiRequest(path, options = {}) {
+        const headers = new Headers(options.headers || {});
+        headers.set("Accept", "application/json");
+
+        if (authToken) {
+          headers.set("Authorization", `Bearer ${authToken}`);
+        }
+
+        if (options.body && !(options.body instanceof FormData)) {
+          headers.set("Content-Type", "application/json");
+        }
+
+        const response = await fetch(`${apiBaseUrl}${path}`, {
+          ...options,
+          headers,
+        });
+
+        const data = await response.json().catch(() => null);
+        if (!response.ok) {
+          throw new Error(data?.error || `Erro ${response.status}`);
+        }
+
+        return data;
+      }
+
+      function showAdminView() {
+        loginView.hidden = true;
+        adminView.hidden = false;
+        logoutButton.hidden = false;
+      }
+
+      function showLoginView() {
+        loginView.hidden = false;
+        adminView.hidden = true;
+        logoutButton.hidden = true;
+      }
+
+      function updateImagePreview(url) {
+        if (!url) {
+          imagePreview.innerHTML = "<span>Sem imagem</span>";
+          return;
+        }
+
+        imagePreview.innerHTML = `<img src="${escapeHtml(imagePreviewUrl(url))}" alt="Preview da imagem do produto" />`;
+      }
+
+      function resetForm() {
+        productForm.reset();
+        fields.id.value = "";
+        fields.imageUrl.value = "";
+        fields.imagePath.value = "";
+        fields.sortOrder.value = "0";
+        fields.isPublished.checked = true;
+        document.querySelector("#editor-title").textContent = "Novo produto";
+        updateImagePreview("");
+      }
+
+      function fillForm(product) {
+        fields.id.value = product.id;
+        fields.name.value = product.name || "";
+        fields.description.value = product.description || "";
+        fields.category.value = product.category || "";
+        fields.filter.value = product.filter || "";
+        fields.sortOrder.value = product.sort_order || 0;
+        fields.isPublished.checked = Boolean(product.is_published);
+        fields.imageUrl.value = product.image_url || "";
+        fields.imagePath.value = product.image_path || "";
+        fields.imageFile.value = "";
+        document.querySelector("#editor-title").textContent = "Editar produto";
+        updateImagePreview(product.image_url || "");
+      }
+
+      function renderProductList() {
+        productCount.textContent = `${products.length} ${products.length === 1 ? "produto" : "produtos"}`;
+
+        if (!products.length) {
+          productList.innerHTML = '<p class="admin-empty-list">Nenhum produto cadastrado ainda.</p>';
+          return;
+        }
+
+        productList.innerHTML = products.map((product) => `
+          <button class="admin-product-row" type="button" data-product-id="${escapeHtml(product.id)}">
+            <span class="admin-row-thumb">
+              ${product.image_url ? `<img src="${escapeHtml(imagePreviewUrl(product.image_url))}" alt="" />` : "<iconify-icon icon=\"solar:box-linear\" width=\"22\"></iconify-icon>"}
+            </span>
+            <span>
+              <strong>${escapeHtml(product.name)}</strong>
+              <small>${escapeHtml(product.category || "Sem categoria")} · ${product.is_published ? "Publicado" : "Despublicado"}</small>
+            </span>
+          </button>
+        `).join("");
+      }
+
+      async function loadProducts() {
+        products = await apiRequest("/api/admin/products");
+        renderProductList();
+      }
+
+      async function uploadImage(productId, file) {
+        const formData = new FormData();
+        formData.append("image", file);
+        return apiRequest(`/api/admin/products/${productId}/image`, {
+          method: "POST",
+          body: formData,
+        });
+      }
+
+      async function saveProduct(event) {
+        event.preventDefault();
+        setMessage(adminMessage, "Salvando produto...");
+
+        try {
+          const existingId = fields.id.value;
+          const payload = {
+            name: fields.name.value.trim(),
+            description: fields.description.value.trim(),
+            category: fields.category.value.trim(),
+            filter: fields.filter.value.trim(),
+            is_published: fields.isPublished.checked,
+            sort_order: Number(fields.sortOrder.value || 0),
+          };
+
+          let product = await apiRequest(
+            existingId ? `/api/admin/products/${existingId}` : "/api/admin/products",
+            {
+              method: existingId ? "PUT" : "POST",
+              body: JSON.stringify(payload),
+            },
+          );
+
+          if (fields.imageFile.files[0]) {
+            product = await uploadImage(product.id, fields.imageFile.files[0]);
+          }
+
+          setMessage(adminMessage, "Produto salvo com sucesso.", "success");
+          await loadProducts();
+          fillForm(product);
+        } catch (error) {
+          setMessage(adminMessage, error.message || "Não foi possível salvar o produto.", "error");
+        }
+      }
+
+      async function unpublishProduct() {
+        if (!fields.id.value) return;
+        try {
+          const product = await apiRequest(`/api/admin/products/${fields.id.value}/publish`, {
+            method: "PATCH",
+            body: JSON.stringify({ is_published: false }),
+          });
+          setMessage(adminMessage, "Produto despublicado.", "success");
+          await loadProducts();
+          fillForm(product);
+        } catch (error) {
+          setMessage(adminMessage, error.message, "error");
+        }
+      }
+
+      async function deleteProduct() {
+        if (!fields.id.value) return;
+        const confirmed = window.confirm("Despublicar este produto do site publico?");
+        if (!confirmed) return;
+
+        try {
+          await apiRequest(`/api/admin/products/${fields.id.value}`, {
+            method: "DELETE",
+          });
+          setMessage(adminMessage, "Produto despublicado.", "success");
+          resetForm();
+          await loadProducts();
+        } catch (error) {
+          setMessage(adminMessage, error.message, "error");
+        }
+      }
+
+      async function removeCurrentImage() {
+        if (!fields.id.value) {
+          fields.imageFile.value = "";
+          fields.imageUrl.value = "";
+          fields.imagePath.value = "";
+          updateImagePreview("");
+          return;
+        }
+
+        try {
+          const product = await apiRequest(`/api/admin/products/${fields.id.value}/image`, {
+            method: "DELETE",
+          });
+          setMessage(adminMessage, "Imagem removida.", "success");
+          await loadProducts();
+          fillForm(product);
+        } catch (error) {
+          setMessage(adminMessage, error.message, "error");
+        }
+      }
+
+      loginForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        setMessage(loginMessage, "Entrando...");
+
+        try {
+          const data = await apiRequest("/api/auth/login", {
+            method: "POST",
+            body: JSON.stringify({
+              email: document.querySelector("#login-email").value.trim(),
+              password: document.querySelector("#login-password").value,
+            }),
+          });
+
+          authToken = data.token;
+          showAdminView();
+          resetForm();
+          setMessage(loginMessage, "");
+          await loadProducts();
+        } catch (error) {
+          setMessage(loginMessage, error.message, "error");
+        }
+      });
+
+      logoutButton.addEventListener("click", () => {
+        authToken = "";
+        showLoginView();
+      });
+
+      productForm.addEventListener("submit", saveProduct);
+      document.querySelector("#new-product-button").addEventListener("click", resetForm);
+      document.querySelector("#clear-form-button").addEventListener("click", resetForm);
+      document.querySelector("#refresh-products-button").addEventListener("click", loadProducts);
+      document.querySelector("#unpublish-button").addEventListener("click", unpublishProduct);
+      document.querySelector("#delete-product-button").addEventListener("click", deleteProduct);
+      document.querySelector("#remove-image-button").addEventListener("click", removeCurrentImage);
+
+      fields.imageFile.addEventListener("change", () => {
+        const file = fields.imageFile.files[0];
+        if (!file) {
+          updateImagePreview(fields.imageUrl.value);
+          return;
+        }
+        updateImagePreview(URL.createObjectURL(file));
+      });
+
+      productList.addEventListener("click", (event) => {
+        const row = event.target.closest("[data-product-id]");
+        if (!row) return;
+        const product = products.find((item) => item.id === row.dataset.productId);
+        if (product) fillForm(product);
+      });
+
+      showLoginView();
+    </script>
+  </body>
+</html>

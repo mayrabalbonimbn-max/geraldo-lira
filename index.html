@@ -454,7 +454,8 @@
     </main>
 
     <script src="./src/data/produtos.js"></script>
-    <script>
+    <script type="module">
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
       const pages = document.querySelectorAll("[data-page]");
       const navToggle = document.querySelector("#mobile-nav-toggle");
       const validPages = ["inicio", "catalogo", "trabalhos", "pdfs", "sobre", "contato"];
@@ -486,7 +487,7 @@
         "Distribuição de água",
         "Saneamento básico",
       ];
-      const catalogProducts = window.catalogProductsData || [];
+      let catalogProducts = window.catalogProductsData || [];
       const workItems = window.workItemsData || [];
       const catalogState = {
         category: "Todos",
@@ -509,6 +510,52 @@
         const div = document.createElement("div");
         div.textContent = value || "";
         return div.innerHTML;
+      }
+
+      function publicAssetUrl(url) {
+        if (!url) return "";
+        if (/^https?:\/\//i.test(url)) return url;
+        if (apiBaseUrl && url.startsWith("/uploads/")) return `${apiBaseUrl}${url}`;
+        return url;
+      }
+
+      function mapApiProduct(product, index) {
+        const sortNumber = Number(product.sort_order || index + 1);
+        const category = product.category || "Produtos sob consulta";
+        const filter = product.filter || category;
+
+        return {
+          id: product.slug || product.id,
+          numero: String(sortNumber).padStart(2, "0"),
+          nome: product.name || "Produto sem nome",
+          categoria: category,
+          subcategoria: product.subcategory || category,
+          descricao: product.description || "Consulte disponibilidade, especificações e aplicação técnica.",
+          aplicacao: product.application || filter || category,
+          imagem: publicAssetUrl(product.image_url || ""),
+          palavrasChave: product.keywords || [],
+          filtro: filter,
+          rotulo: product.image_url ? `Produto ${String(sortNumber).padStart(2, "0")}` : "Consulta técnica",
+        };
+      }
+
+      async function loadCatalogProductsFromApi() {
+        // Em producao, a API propria em /api/products e a fonte principal.
+        // Este fallback estatico existe apenas para desenvolvimento enquanto
+        // o backend/PostgreSQL ainda nao estiverem disponiveis.
+        try {
+          const response = await fetch(`${apiBaseUrl}/api/products`, {
+            headers: { Accept: "application/json" },
+          });
+
+          if (!response.ok) throw new Error(`API respondeu ${response.status}`);
+          const data = await response.json();
+          if (Array.isArray(data) && data.length > 0) {
+            catalogProducts = data.map(mapApiProduct);
+          }
+        } catch (error) {
+          console.warn("Nao foi possivel carregar o catalogo pela API. Usando fallback estatico.", error);
+        }
       }
 
       function getProductDisplayCategory(product) {
@@ -822,9 +869,14 @@
         showPage(window.location.hash.replace("#", ""), false);
       });
 
-      setupCatalog();
-      renderWorkItems();
-      showPage(window.location.hash.replace("#", ""), false);
+      async function initSite() {
+        await loadCatalogProductsFromApi();
+        setupCatalog();
+        renderWorkItems();
+        showPage(window.location.hash.replace("#", ""), false);
+      }
+
+      initSite();
     </script>
 
     <footer class="site-footer">

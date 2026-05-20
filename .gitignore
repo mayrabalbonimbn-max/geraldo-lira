@@ -1,1 +1,8 @@
 .DS_Store
+.env
+dist/
+node_modules/
+server/.env
+server/node_modules/
+server/storage/catalog-products/*
+!server/storage/catalog-products/.gitkeep
