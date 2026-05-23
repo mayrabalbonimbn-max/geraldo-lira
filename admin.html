@@ -58,24 +58,92 @@
           <div class="admin-title-row">
             <div>
               <div class="section-label">
-                <iconify-icon icon="solar:box-linear" width="18"></iconify-icon>
-                <span>Produtos</span>
+                <iconify-icon icon="solar:chart-2-linear" width="18"></iconify-icon>
+                <span>Painel administrativo</span>
               </div>
               <h1>Catálogo administrável</h1>
             </div>
-            <button class="btn btn-primary" id="new-product-button" type="button">
-              <span>Novo produto</span>
-              <iconify-icon icon="solar:add-circle-linear" width="20"></iconify-icon>
-            </button>
+            <div class="admin-title-actions">
+              <button class="btn btn-secondary" id="export-json-button" type="button">
+                <span>Exportar JSON</span>
+                <iconify-icon icon="solar:download-linear" width="20"></iconify-icon>
+              </button>
+              <button class="btn btn-secondary" id="export-csv-button" type="button">
+                <span>Exportar CSV</span>
+                <iconify-icon icon="solar:file-text-linear" width="20"></iconify-icon>
+              </button>
+              <button class="btn btn-primary" id="new-product-button" type="button">
+                <span>Novo produto</span>
+                <iconify-icon icon="solar:add-circle-linear" width="20"></iconify-icon>
+              </button>
+            </div>
           </div>
 
           <p class="admin-message" id="admin-message" role="status"></p>
+
+          <section class="admin-summary" aria-label="Resumo do catálogo">
+            <article class="admin-stat-card">
+              <small>Total de produtos</small>
+              <strong id="stat-total-products">0</strong>
+            </article>
+            <article class="admin-stat-card">
+              <small>Publicados</small>
+              <strong id="stat-published-products">0</strong>
+            </article>
+            <article class="admin-stat-card">
+              <small>Ocultos</small>
+              <strong id="stat-hidden-products">0</strong>
+            </article>
+            <article class="admin-stat-card">
+              <small>Categorias/filtros</small>
+              <strong id="stat-taxonomies">0</strong>
+            </article>
+          </section>
+
+          <section class="admin-recent-panel" aria-label="Últimos produtos criados ou editados">
+            <div class="admin-list-head">
+              <strong>Últimas alterações</strong>
+              <span id="last-refresh-label">Ainda não carregado</span>
+            </div>
+            <div class="admin-recent-list" id="recent-products"></div>
+          </section>
 
           <div class="admin-grid">
             <section class="admin-list-panel" aria-label="Produtos cadastrados">
               <div class="admin-list-head">
                 <strong id="product-count">0 produtos</strong>
                 <button class="admin-link-button" id="refresh-products-button" type="button">Atualizar</button>
+              </div>
+              <div class="admin-filters" aria-label="Busca e filtros administrativos">
+                <label>
+                  <span>Buscar por nome</span>
+                  <input id="product-search" type="search" placeholder="Digite parte do nome" />
+                </label>
+                <div class="admin-field-grid">
+                  <label>
+                    <span>Categoria</span>
+                    <select id="category-filter">
+                      <option value="">Todas</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Status</span>
+                    <select id="status-filter">
+                      <option value="all">Todos</option>
+                      <option value="published">Publicados</option>
+                      <option value="hidden">Ocultos</option>
+                    </select>
+                  </label>
+                </div>
+                <label>
+                  <span>Ordenar por</span>
+                  <select id="sort-filter">
+                    <option value="sort_order">Ordem</option>
+                    <option value="name">Nome</option>
+                    <option value="updated_at">Data de edição</option>
+                    <option value="created_at">Data de criação</option>
+                  </select>
+                </label>
               </div>
               <div class="admin-product-list" id="product-list"></div>
             </section>
@@ -88,7 +156,7 @@
 
                 <div class="admin-editor-head">
                   <h2 id="editor-title">Novo produto</h2>
-                  <button class="admin-link-button admin-danger" id="clear-form-button" type="button">Limpar</button>
+                  <span class="admin-dirty-badge" id="dirty-badge" hidden>Alterações não salvas</span>
                 </div>
 
                 <label>
@@ -104,13 +172,15 @@
                 <div class="admin-field-grid">
                   <label>
                     <span>Categoria</span>
-                    <input id="product-category" type="text" />
+                    <input id="product-category" type="text" list="category-options" placeholder="Selecione ou digite uma nova" />
                   </label>
                   <label>
                     <span>Filtro</span>
-                    <input id="product-filter" type="text" />
+                    <input id="product-filter" type="text" list="filter-options" placeholder="Selecione ou digite um novo" />
                   </label>
                 </div>
+                <datalist id="category-options"></datalist>
+                <datalist id="filter-options"></datalist>
 
                 <div class="admin-field-grid">
                   <label>
@@ -123,9 +193,14 @@
                   </label>
                 </div>
 
+                <label class="admin-check">
+                  <input id="product-is-featured" type="checkbox" />
+                  <span>Destacar produto no admin</span>
+                </label>
+
                 <label>
                   <span>Imagem</span>
-                  <input id="product-image-file" type="file" accept="image/*" />
+                  <input id="product-image-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" />
                 </label>
 
                 <div class="admin-image-preview" id="image-preview">
@@ -137,9 +212,9 @@
                     <span>Salvar produto</span>
                     <iconify-icon icon="solar:diskette-linear" width="20"></iconify-icon>
                   </button>
-                  <button class="btn btn-secondary" id="remove-image-button" type="button">Remover imagem</button>
-                  <button class="btn btn-secondary" id="unpublish-button" type="button">Despublicar</button>
-                  <button class="btn btn-secondary admin-danger-button" id="delete-product-button" type="button">Excluir</button>
+                  <button class="btn btn-secondary" id="cancel-edit-button" type="button">Cancelar/voltar</button>
+                  <button class="btn btn-secondary" id="clear-image-selection-button" type="button">Limpar seleção de imagem</button>
+                  <button class="btn btn-secondary" id="toggle-publish-button" type="button">Ocultar do site</button>
                 </div>
               </form>
             </section>
@@ -160,8 +235,26 @@
       const adminMessage = document.querySelector("#admin-message");
       const productCount = document.querySelector("#product-count");
       const imagePreview = document.querySelector("#image-preview");
+      const recentProducts = document.querySelector("#recent-products");
+      const lastRefreshLabel = document.querySelector("#last-refresh-label");
+      const dirtyBadge = document.querySelector("#dirty-badge");
+      const togglePublishButton = document.querySelector("#toggle-publish-button");
+      const filterControls = {
+        search: document.querySelector("#product-search"),
+        category: document.querySelector("#category-filter"),
+        status: document.querySelector("#status-filter"),
+        sort: document.querySelector("#sort-filter"),
+      };
+      const stats = {
+        total: document.querySelector("#stat-total-products"),
+        published: document.querySelector("#stat-published-products"),
+        hidden: document.querySelector("#stat-hidden-products"),
+        taxonomies: document.querySelector("#stat-taxonomies"),
+      };
       let products = [];
       let authToken = "";
+      let formSnapshot = "";
+      let isFormDirty = false;
 
       const fields = {
         id: document.querySelector("#product-id"),
@@ -171,10 +264,13 @@
         filter: document.querySelector("#product-filter"),
         sortOrder: document.querySelector("#product-sort-order"),
         isPublished: document.querySelector("#product-is-published"),
+        isFeatured: document.querySelector("#product-is-featured"),
         imageFile: document.querySelector("#product-image-file"),
         imageUrl: document.querySelector("#product-image-url"),
         imagePath: document.querySelector("#product-image-path"),
       };
+
+      const allowedImageTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
 
       function setMessage(target, message, type = "") {
         target.textContent = message || "";
@@ -197,11 +293,67 @@
         return div.innerHTML;
       }
 
+      function normalizeText(value) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
+      }
+
       function imagePreviewUrl(url) {
         if (!url) return "";
         if (/^https?:\/\//i.test(url)) return url;
         if (apiBaseUrl && url.startsWith("/uploads/")) return `${apiBaseUrl}${url}`;
         return url;
+      }
+
+      function formatDate(value) {
+        if (!value) return "Sem data";
+        return new Intl.DateTimeFormat("pt-BR", {
+          dateStyle: "short",
+          timeStyle: "short",
+        }).format(new Date(value));
+      }
+
+      function productStatusLabel(product) {
+        return product.is_published ? "Publicado no site" : "Oculto do site";
+      }
+
+      function currentFormSnapshot() {
+        return JSON.stringify({
+          id: fields.id.value,
+          name: fields.name.value,
+          description: fields.description.value,
+          category: fields.category.value,
+          filter: fields.filter.value,
+          sortOrder: fields.sortOrder.value,
+          isPublished: fields.isPublished.checked,
+          isFeatured: fields.isFeatured.checked,
+          imageUrl: fields.imageUrl.value,
+          imagePath: fields.imagePath.value,
+          imageFile: fields.imageFile.value,
+        });
+      }
+
+      function markFormClean() {
+        formSnapshot = currentFormSnapshot();
+        isFormDirty = false;
+        dirtyBadge.hidden = true;
+      }
+
+      function updateDirtyState() {
+        isFormDirty = currentFormSnapshot() !== formSnapshot;
+        dirtyBadge.hidden = !isFormDirty;
+      }
+
+      function confirmDiscardChanges() {
+        return !isFormDirty || window.confirm("Existem alterações não salvas. Deseja descartá-las?");
+      }
+
+      function handleExpiredSession(message = "Sua sessão expirou. Entre novamente para continuar.") {
+        authToken = "";
+        showLoginView();
+        setMessage(loginMessage, message, "error");
       }
 
       async function apiRequest(path, options = {}) {
@@ -223,6 +375,9 @@
 
         const data = await response.json().catch(() => null);
         if (!response.ok) {
+          if (response.status === 401 && authToken) {
+            handleExpiredSession();
+          }
           throw new Error(data?.error || `Erro ${response.status}`);
         }
 
@@ -250,18 +405,23 @@
         imagePreview.innerHTML = `<img src="${escapeHtml(imagePreviewUrl(url))}" alt="Preview da imagem do produto" />`;
       }
 
-      function resetForm() {
+      function resetForm(force = false) {
+        if (!force && isFormDirty && !confirmDiscardChanges()) return;
         productForm.reset();
         fields.id.value = "";
         fields.imageUrl.value = "";
         fields.imagePath.value = "";
         fields.sortOrder.value = "0";
         fields.isPublished.checked = true;
+        fields.isFeatured.checked = false;
         document.querySelector("#editor-title").textContent = "Novo produto";
         updateImagePreview("");
+        togglePublishButton.textContent = "Ocultar do site";
+        markFormClean();
       }
 
-      function fillForm(product) {
+      function fillForm(product, force = false) {
+        if (!force && isFormDirty && !confirmDiscardChanges()) return;
         fields.id.value = product.id;
         fields.name.value = product.name || "";
         fields.description.value = product.description || "";
@@ -269,40 +429,130 @@
         fields.filter.value = product.filter || "";
         fields.sortOrder.value = product.sort_order || 0;
         fields.isPublished.checked = Boolean(product.is_published);
+        fields.isFeatured.checked = Boolean(product.is_featured);
         fields.imageUrl.value = product.image_url || "";
         fields.imagePath.value = product.image_path || "";
         fields.imageFile.value = "";
         document.querySelector("#editor-title").textContent = "Editar produto";
+        togglePublishButton.textContent = product.is_published ? "Ocultar do site" : "Publicar no site";
         updateImagePreview(product.image_url || "");
+        markFormClean();
+      }
+
+      function uniqueValues(key) {
+        return [...new Set(products.map((product) => product[key]).filter(Boolean))]
+          .sort((a, b) => String(a).localeCompare(String(b), "pt-BR"));
+      }
+
+      function refreshTaxonomyOptions() {
+        const categories = uniqueValues("category");
+        const filters = uniqueValues("filter");
+        const currentFilterValue = filterControls.category.value;
+        filterControls.category.innerHTML = [
+          '<option value="">Todas</option>',
+          ...categories.map((category) => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`),
+        ].join("");
+        filterControls.category.value = categories.includes(currentFilterValue) ? currentFilterValue : "";
+
+        document.querySelector("#category-options").innerHTML = categories
+          .map((category) => `<option value="${escapeHtml(category)}"></option>`)
+          .join("");
+        document.querySelector("#filter-options").innerHTML = filters
+          .map((filter) => `<option value="${escapeHtml(filter)}"></option>`)
+          .join("");
+      }
+
+      function filteredProducts() {
+        const query = normalizeText(filterControls.search.value.trim());
+        const category = filterControls.category.value;
+        const status = filterControls.status.value;
+        const sortBy = filterControls.sort.value;
+
+        return products
+          .filter((product) => {
+            const matchesName = !query || normalizeText(product.name).includes(query);
+            const matchesCategory = !category || product.category === category;
+            const matchesStatus =
+              status === "all" ||
+              (status === "published" && product.is_published) ||
+              (status === "hidden" && !product.is_published);
+            return matchesName && matchesCategory && matchesStatus;
+          })
+          .sort((a, b) => {
+            if (sortBy === "name") return String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
+            if (sortBy === "updated_at" || sortBy === "created_at") {
+              return new Date(b[sortBy] || 0) - new Date(a[sortBy] || 0);
+            }
+            return Number(a.sort_order || 0) - Number(b.sort_order || 0) ||
+              String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
+          });
+      }
+
+      function renderDashboard() {
+        const published = products.filter((product) => product.is_published).length;
+        const hidden = products.length - published;
+        const taxonomyTotal = new Set([
+          ...products.map((product) => product.category).filter(Boolean),
+          ...products.map((product) => product.filter).filter(Boolean),
+        ]).size;
+        stats.total.textContent = products.length;
+        stats.published.textContent = published;
+        stats.hidden.textContent = hidden;
+        stats.taxonomies.textContent = taxonomyTotal;
+
+        const recent = [...products]
+          .sort((a, b) => new Date(b.updated_at || b.created_at || 0) - new Date(a.updated_at || a.created_at || 0))
+          .slice(0, 5);
+
+        recentProducts.innerHTML = recent.length
+          ? recent.map((product) => `
+              <button class="admin-recent-item" type="button" data-product-id="${escapeHtml(product.id)}">
+                <strong>${escapeHtml(product.name)}</strong>
+                <span>${escapeHtml(productStatusLabel(product))} · ${escapeHtml(formatDate(product.updated_at || product.created_at))}</span>
+              </button>
+            `).join("")
+          : '<p class="admin-empty-list">Nenhuma alteração recente.</p>';
       }
 
       function renderProductList() {
-        productCount.textContent = `${products.length} ${products.length === 1 ? "produto" : "produtos"}`;
+        const visibleProducts = filteredProducts();
+        productCount.textContent = `${visibleProducts.length} de ${products.length} ${products.length === 1 ? "produto" : "produtos"}`;
 
-        if (!products.length) {
-          productList.innerHTML = '<p class="admin-empty-list">Nenhum produto cadastrado ainda.</p>';
+        if (!visibleProducts.length) {
+          productList.innerHTML = '<p class="admin-empty-list">Nenhum produto encontrado com estes filtros.</p>';
           return;
         }
 
-        productList.innerHTML = products.map((product) => `
-          <button class="admin-product-row" type="button" data-product-id="${escapeHtml(product.id)}">
+        productList.innerHTML = visibleProducts.map((product) => `
+          <div class="admin-product-row" role="button" tabindex="0" data-product-id="${escapeHtml(product.id)}">
             <span class="admin-row-thumb">
               ${product.image_url ? `<img src="${escapeHtml(imagePreviewUrl(product.image_url))}" alt="" />` : "<iconify-icon icon=\"solar:box-linear\" width=\"22\"></iconify-icon>"}
             </span>
-            <span>
+            <span class="admin-row-main">
               <strong>${escapeHtml(product.name)}</strong>
-              <small>${escapeHtml(product.category || "Sem categoria")} · ${product.is_published ? "Publicado" : "Despublicado"}</small>
+              <small>${escapeHtml(product.category || "Sem categoria")} · ${escapeHtml(productStatusLabel(product))}${product.is_featured ? " · Destaque" : ""}</small>
             </span>
-          </button>
+            <span class="admin-row-order">
+              <small>Ordem</small>
+              <input class="admin-order-input" type="number" min="0" step="1" value="${Number(product.sort_order || 0)}" data-order-product-id="${escapeHtml(product.id)}" aria-label="Ordem de ${escapeHtml(product.name)}" />
+            </span>
+          </div>
         `).join("");
       }
 
       async function loadProducts() {
         products = await apiRequest("/api/admin/products");
+        refreshTaxonomyOptions();
+        renderDashboard();
         renderProductList();
+        lastRefreshLabel.textContent = `Atualizado em ${formatDate(new Date().toISOString())}`;
       }
 
       async function uploadImage(productId, file) {
+        if (!allowedImageTypes.has(file.type)) {
+          throw new Error("Envie uma imagem JPG, PNG, WEBP ou GIF.");
+        }
+
         const formData = new FormData();
         formData.append("image", file);
         return apiRequest(`/api/admin/products/${productId}/image`, {
@@ -323,6 +573,7 @@
             category: fields.category.value.trim(),
             filter: fields.filter.value.trim(),
             is_published: fields.isPublished.checked,
+            is_featured: fields.isFeatured.checked,
             sort_order: Number(fields.sortOrder.value || 0),
           };
 
@@ -340,63 +591,92 @@
 
           setMessage(adminMessage, "Produto salvo com sucesso.", "success");
           await loadProducts();
-          fillForm(product);
+          fillForm(product, true);
         } catch (error) {
-          setMessage(adminMessage, error.message || "Não foi possível salvar o produto.", "error");
+          setMessage(adminMessage, error.message || "Não foi possível salvar o produto. Revise os campos e tente novamente.", "error");
         }
       }
 
-      async function unpublishProduct() {
+      async function togglePublishState() {
         if (!fields.id.value) return;
+        if (isFormDirty && !confirmDiscardChanges()) return;
         try {
+          const currentProduct = products.find((item) => item.id === fields.id.value);
+          const nextState = !Boolean(currentProduct?.is_published);
           const product = await apiRequest(`/api/admin/products/${fields.id.value}/publish`, {
             method: "PATCH",
-            body: JSON.stringify({ is_published: false }),
+            body: JSON.stringify({ is_published: nextState }),
           });
-          setMessage(adminMessage, "Produto despublicado.", "success");
+          setMessage(adminMessage, nextState ? "Produto publicado no site." : "Produto oculto do site.", "success");
           await loadProducts();
-          fillForm(product);
+          fillForm(product, true);
         } catch (error) {
           setMessage(adminMessage, error.message, "error");
         }
       }
 
-      async function deleteProduct() {
-        if (!fields.id.value) return;
-        const confirmed = window.confirm("Despublicar este produto do site publico?");
-        if (!confirmed) return;
-
+      async function updateProductOrder(productId, sortOrder) {
+        const product = products.find((item) => item.id === productId);
+        if (!product) return;
         try {
-          await apiRequest(`/api/admin/products/${fields.id.value}`, {
-            method: "DELETE",
+          const updated = await apiRequest(`/api/admin/products/${productId}`, {
+            method: "PUT",
+            body: JSON.stringify({
+              name: product.name,
+              description: product.description || "",
+              category: product.category || "",
+              filter: product.filter || "",
+              is_published: Boolean(product.is_published),
+              is_featured: Boolean(product.is_featured),
+              sort_order: Number(sortOrder || 0),
+            }),
           });
-          setMessage(adminMessage, "Produto despublicado.", "success");
-          resetForm();
+          setMessage(adminMessage, "Ordem atualizada.", "success");
           await loadProducts();
+          if (fields.id.value === productId) fillForm(updated, true);
         } catch (error) {
           setMessage(adminMessage, error.message, "error");
+          renderProductList();
         }
       }
 
-      async function removeCurrentImage() {
-        if (!fields.id.value) {
-          fields.imageFile.value = "";
-          fields.imageUrl.value = "";
-          fields.imagePath.value = "";
-          updateImagePreview("");
+      function clearImageSelection() {
+        fields.imageFile.value = "";
+        updateImagePreview(fields.imageUrl.value);
+        updateDirtyState();
+        setMessage(adminMessage, "Seleção de imagem limpa. A imagem cadastrada foi mantida.", "success");
+      }
+
+      function exportProducts(format) {
+        if (!products.length) {
+          setMessage(adminMessage, "Não há produtos para exportar.", "error");
           return;
         }
 
-        try {
-          const product = await apiRequest(`/api/admin/products/${fields.id.value}/image`, {
-            method: "DELETE",
-          });
-          setMessage(adminMessage, "Imagem removida.", "success");
-          await loadProducts();
-          fillForm(product);
-        } catch (error) {
-          setMessage(adminMessage, error.message, "error");
+        const filename = `produtos-catalogo-${new Date().toISOString().slice(0, 10)}.${format}`;
+        let content = "";
+        let type = "application/json;charset=utf-8";
+
+        if (format === "json") {
+          content = JSON.stringify(products, null, 2);
+        } else {
+          type = "text/csv;charset=utf-8";
+          const columns = ["id", "name", "slug", "description", "category", "filter", "image_url", "is_published", "is_featured", "sort_order", "created_at", "updated_at"];
+          const escapeCsv = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
+          content = [
+            columns.join(","),
+            ...products.map((product) => columns.map((column) => escapeCsv(product[column])).join(",")),
+          ].join("\n");
         }
+
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(url);
+        setMessage(adminMessage, `Exportação ${format.toUpperCase()} gerada.`, "success");
       }
 
       loginForm.addEventListener("submit", async (event) => {
@@ -414,8 +694,10 @@
 
           authToken = data.token;
           showAdminView();
-          resetForm();
           setMessage(loginMessage, "");
+          productForm.reset();
+          markFormClean();
+          resetForm(true);
           await loadProducts();
         } catch (error) {
           setMessage(loginMessage, error.message, "error");
@@ -423,17 +705,27 @@
       });
 
       logoutButton.addEventListener("click", () => {
+        if (isFormDirty && !confirmDiscardChanges()) return;
         authToken = "";
         showLoginView();
+        setMessage(loginMessage, "Você saiu do painel com segurança.", "success");
       });
 
       productForm.addEventListener("submit", saveProduct);
+      productForm.addEventListener("input", updateDirtyState);
+      productForm.addEventListener("change", updateDirtyState);
       document.querySelector("#new-product-button").addEventListener("click", resetForm);
-      document.querySelector("#clear-form-button").addEventListener("click", resetForm);
       document.querySelector("#refresh-products-button").addEventListener("click", loadProducts);
-      document.querySelector("#unpublish-button").addEventListener("click", unpublishProduct);
-      document.querySelector("#delete-product-button").addEventListener("click", deleteProduct);
-      document.querySelector("#remove-image-button").addEventListener("click", removeCurrentImage);
+      document.querySelector("#toggle-publish-button").addEventListener("click", togglePublishState);
+      document.querySelector("#cancel-edit-button").addEventListener("click", resetForm);
+      document.querySelector("#clear-image-selection-button").addEventListener("click", clearImageSelection);
+      document.querySelector("#export-json-button").addEventListener("click", () => exportProducts("json"));
+      document.querySelector("#export-csv-button").addEventListener("click", () => exportProducts("csv"));
+
+      Object.values(filterControls).forEach((control) => {
+        control.addEventListener("input", renderProductList);
+        control.addEventListener("change", renderProductList);
+      });
 
       fields.imageFile.addEventListener("change", () => {
         const file = fields.imageFile.files[0];
@@ -441,17 +733,56 @@
           updateImagePreview(fields.imageUrl.value);
           return;
         }
+        if (!allowedImageTypes.has(file.type)) {
+          fields.imageFile.value = "";
+          updateImagePreview(fields.imageUrl.value);
+          setMessage(adminMessage, "Envie uma imagem JPG, PNG, WEBP ou GIF.", "error");
+          updateDirtyState();
+          return;
+        }
         updateImagePreview(URL.createObjectURL(file));
+        updateDirtyState();
       });
 
       productList.addEventListener("click", (event) => {
+        if (event.target.closest("[data-order-product-id]")) return;
         const row = event.target.closest("[data-product-id]");
         if (!row) return;
         const product = products.find((item) => item.id === row.dataset.productId);
         if (product) fillForm(product);
       });
 
+      productList.addEventListener("keydown", (event) => {
+        if (!["Enter", " "].includes(event.key)) return;
+        if (event.target.closest("[data-order-product-id]")) return;
+        const row = event.target.closest("[data-product-id]");
+        if (!row) return;
+        event.preventDefault();
+        const product = products.find((item) => item.id === row.dataset.productId);
+        if (product) fillForm(product);
+      });
+
+      productList.addEventListener("change", (event) => {
+        const input = event.target.closest("[data-order-product-id]");
+        if (!input) return;
+        updateProductOrder(input.dataset.orderProductId, input.value);
+      });
+
+      recentProducts.addEventListener("click", (event) => {
+        const row = event.target.closest("[data-product-id]");
+        if (!row) return;
+        const product = products.find((item) => item.id === row.dataset.productId);
+        if (product) fillForm(product);
+      });
+
+      window.addEventListener("beforeunload", (event) => {
+        if (!isFormDirty) return;
+        event.preventDefault();
+        event.returnValue = "";
+      });
+
       showLoginView();
+      markFormClean();
     </script>
   </body>
 </html>

@@ -23,6 +23,7 @@ const productSelect = `
   image_url,
   image_path,
   is_published,
+  is_featured,
   sort_order,
   created_at,
   updated_at
@@ -65,6 +66,7 @@ function productPayload(body) {
     image_url: body.image_url || null,
     image_path: body.image_path || null,
     is_published: typeof body.is_published === "boolean" ? body.is_published : body.is_published === "true",
+    is_featured: typeof body.is_featured === "boolean" ? body.is_featured : body.is_featured === "true",
     sort_order: Number.isFinite(Number(body.sort_order)) ? Number(body.sort_order) : 0,
   };
 }
@@ -138,9 +140,9 @@ export async function createProduct(request, response, next) {
 
     const result = await query(`
       insert into products
-        (name, slug, description, category, "filter", image_url, image_path, is_published, sort_order)
+        (name, slug, description, category, "filter", image_url, image_path, is_published, is_featured, sort_order)
       values
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
       returning ${productSelect}
     `, [
       payload.name,
@@ -151,6 +153,7 @@ export async function createProduct(request, response, next) {
       payload.image_url,
       payload.image_path,
       payload.is_published,
+      payload.is_featured,
       payload.sort_order,
     ]);
 
@@ -175,8 +178,9 @@ export async function updateProduct(request, response, next) {
         category = $4,
         "filter" = $5,
         is_published = $6,
-        sort_order = $7
-      where id = $8
+        is_featured = $7,
+        sort_order = $8
+      where id = $9
       returning ${productSelect}
     `, [
       payload.name,
@@ -185,6 +189,7 @@ export async function updateProduct(request, response, next) {
       payload.category,
       payload.filter,
       payload.is_published,
+      payload.is_featured,
       payload.sort_order,
       request.params.id,
     ]);
