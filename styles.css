@@ -2490,7 +2490,15 @@ dd {
 }
 
 .admin-danger-button {
+  border-color: #f0b8b2;
   color: #b42318;
+  background: #fff4f2;
+}
+
+.admin-danger-button:hover {
+  border-color: #b42318;
+  color: #8a1f14;
+  background: #ffe9e6;
 }
 
 .admin-dirty-badge {

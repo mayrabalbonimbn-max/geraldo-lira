@@ -1,10 +1,10 @@
 import { Router } from "express";
 import {
   createProduct,
+  deleteProduct,
   deleteProductImage,
   listAdminProducts,
   setProductPublishState,
-  softDeleteProduct,
   updateProduct,
   uploadProductImage,
 } from "../controllers/products.controller.js";
@@ -18,7 +18,7 @@ router.use(requireAdmin);
 router.get("/products", listAdminProducts);
 router.post("/products", createProduct);
 router.put("/products/:id", updateProduct);
-router.delete("/products/:id", softDeleteProduct);
+router.delete("/products/:id", deleteProduct);
 router.patch("/products/:id/publish", setProductPublishState);
 router.post("/products/:id/image", uploadMiddleware.single("image"), uploadProductImage);
 router.delete("/products/:id/image", deleteProductImage);

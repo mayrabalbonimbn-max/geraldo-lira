@@ -215,6 +215,7 @@
                   <button class="btn btn-secondary" id="cancel-edit-button" type="button">Cancelar/voltar</button>
                   <button class="btn btn-secondary" id="clear-image-selection-button" type="button">Limpar seleção de imagem</button>
                   <button class="btn btn-secondary" id="toggle-publish-button" type="button">Ocultar do site</button>
+                  <button class="btn btn-secondary admin-danger-button" id="delete-product-button" type="button">Excluir definitivamente</button>
                 </div>
               </form>
             </section>
@@ -640,6 +641,36 @@
         }
       }
 
+      async function deleteProductPermanently() {
+        if (!fields.id.value) {
+          setMessage(adminMessage, "Selecione um produto antes de excluir.", "error");
+          return;
+        }
+
+        const productName = fields.name.value || "este produto";
+        const confirmed = window.confirm("Tem certeza que deseja excluir definitivamente este produto? Essa ação não pode ser desfeita.");
+        if (!confirmed) return;
+
+        const typedConfirmation = window.prompt(`Para confirmar a exclusão definitiva de "${productName}", digite EXCLUIR.`);
+        if (typedConfirmation !== "EXCLUIR") {
+          setMessage(adminMessage, "Exclusão cancelada. O produto foi mantido.", "error");
+          return;
+        }
+
+        try {
+          const result = await apiRequest(`/api/admin/products/${fields.id.value}`, {
+            method: "DELETE",
+          });
+
+          resetForm(true);
+          await loadProducts();
+          const warning = result.image_warning ? ` ${result.image_warning}` : "";
+          setMessage(adminMessage, `Produto excluído definitivamente.${warning}`, result.image_warning ? "error" : "success");
+        } catch (error) {
+          setMessage(adminMessage, error.message || "Não foi possível excluir o produto.", "error");
+        }
+      }
+
       function clearImageSelection() {
         fields.imageFile.value = "";
         updateImagePreview(fields.imageUrl.value);
@@ -719,6 +750,7 @@
       document.querySelector("#toggle-publish-button").addEventListener("click", togglePublishState);
       document.querySelector("#cancel-edit-button").addEventListener("click", resetForm);
       document.querySelector("#clear-image-selection-button").addEventListener("click", clearImageSelection);
+      document.querySelector("#delete-product-button").addEventListener("click", deleteProductPermanently);
       document.querySelector("#export-json-button").addEventListener("click", () => exportProducts("json"));
       document.querySelector("#export-csv-button").addEventListener("click", () => exportProducts("csv"));
 

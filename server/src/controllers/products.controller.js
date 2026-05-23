@@ -79,11 +79,35 @@ function assertProductName(payload) {
   }
 }
 
-async function removeImageFile(imagePath) {
-  if (!imagePath || !imagePath.startsWith("catalog-products/")) return;
+async function removeImageFileIfUnused(imagePath) {
+  if (!imagePath || !imagePath.startsWith("catalog-products/")) {
+    return { image_deleted: false, image_retained: false };
+  }
+
+  const usageResult = await query(
+    "select 1 from products where image_path = $1 limit 1",
+    [imagePath],
+  );
+
+  if (usageResult.rowCount > 0) {
+    return { image_deleted: false, image_retained: true };
+  }
 
   const filename = path.basename(imagePath);
-  await unlink(path.join(storageDir, filename)).catch(() => {});
+  const filePath = path.join(storageDir, filename);
+
+  try {
+    await unlink(filePath);
+    return { image_deleted: true, image_retained: false };
+  } catch (error) {
+    const warning = `Operacao concluida, mas nao foi possivel apagar a imagem ${imagePath}.`;
+    console.warn(warning, error);
+    return {
+      image_deleted: false,
+      image_retained: false,
+      image_warning: warning,
+    };
+  }
 }
 
 export async function listPublishedProducts(_request, response, next) {
@@ -223,6 +247,34 @@ export async function softDeleteProduct(request, response, next) {
   }
 }
 
+export async function deleteProduct(request, response, next) {
+  try {
+    const currentResult = await query(`
+      select ${productSelect}
+      from products
+      where id = $1
+      limit 1
+    `, [request.params.id]);
+
+    const product = currentResult.rows[0];
+    if (!product) {
+      return response.status(404).json({ error: "Produto nao encontrado." });
+    }
+
+    await query("delete from products where id = $1", [request.params.id]);
+    const imageResult = await removeImageFileIfUnused(product.image_path);
+
+    response.json({
+      success: true,
+      message: "Produto excluido definitivamente.",
+      product,
+      ...imageResult,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
 export async function setProductPublishState(request, response, next) {
   try {
     const isPublished = Boolean(request.body.is_published);
@@ -276,7 +328,7 @@ export async function uploadProductImage(request, response, next) {
       returning ${productSelect}
     `, [imageUrl, imagePath, request.params.id]);
 
-    await removeImageFile(product.image_path);
+    await removeImageFileIfUnused(product.image_path);
 
     response.json(result.rows[0]);
   } catch (error) {
@@ -301,7 +353,7 @@ export async function deleteProductImage(request, response, next) {
       return response.status(404).json({ error: "Produto nao encontrado." });
     }
 
-    await removeImageFile(previousImagePath);
+    await removeImageFileIfUnused(previousImagePath);
 
     response.json(product);
   } catch (error) {
