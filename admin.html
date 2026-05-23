@@ -256,6 +256,21 @@
       let authToken = "";
       let formSnapshot = "";
       let isFormDirty = false;
+      const defaultTaxonomyOptions = [
+        "REDES DE ESGOTO",
+        "POÇOS DE INSPEÇÃO",
+        "POÇOS DE VISITA",
+        "INTERCEPTORES",
+        "DRENAGEM",
+        "ESTAÇÕES ELEVATÓRIAS",
+        "CATÁLOGOS TÉCNICOS",
+        "ETE",
+        "ETA",
+        "AUTOMAÇÃO",
+        "FERRO FUNDIDO",
+        "REGISTROS E VÁLVULAS",
+        "BERÇO PARA REDES DE ESGOTO",
+      ];
 
       const fields = {
         id: document.querySelector("#product-id"),
@@ -441,7 +456,10 @@
       }
 
       function uniqueValues(key) {
-        return [...new Set(products.map((product) => product[key]).filter(Boolean))]
+        return [...new Set([
+          ...defaultTaxonomyOptions,
+          ...products.map((product) => product[key]).filter(Boolean),
+        ])]
           .sort((a, b) => String(a).localeCompare(String(b), "pt-BR"));
       }
 
