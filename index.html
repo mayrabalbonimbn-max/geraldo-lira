@@ -435,18 +435,18 @@
                 <iconify-icon icon="solar:document-add-linear" width="18"></iconify-icon>
                 <span>Bloco de solicitação</span>
               </div>
-              <form class="request-form">
+              <form class="request-form" data-whatsapp-number="5584999723810">
                 <label>
                   <span>Nome</span>
-                  <input type="text" placeholder="Seu nome ou empresa" />
+                  <input name="name" type="text" placeholder="Seu nome ou empresa" />
                 </label>
                 <label>
                   <span>Contato</span>
-                  <input type="text" placeholder="WhatsApp ou e-mail" />
+                  <input name="contact" type="text" placeholder="WhatsApp ou e-mail" />
                 </label>
                 <label>
                   <span>Material ou aplicação</span>
-                  <textarea rows="5" placeholder="Ex.: tubos, conexões, válvulas, drenagem, obra, aplicação..."></textarea>
+                  <textarea name="message" rows="5" placeholder="Ex.: tubos, conexões, válvulas, drenagem, obra, aplicação..."></textarea>
                 </label>
                 <button class="btn btn-primary" type="submit">
                   <span>Preparar solicitação</span>
@@ -882,7 +882,19 @@
       document.querySelectorAll(".request-form").forEach((form) => {
         form.addEventListener("submit", (event) => {
           event.preventDefault();
-          showPage("contato");
+          const formData = new FormData(form);
+          const name = String(formData.get("name") || "").trim();
+          const contact = String(formData.get("contact") || "").trim();
+          const message = String(formData.get("message") || "").trim();
+          const whatsappNumber = form.dataset.whatsappNumber || "5584999723810";
+          const whatsappMessage = [
+            "Olá, gostaria de solicitar uma cotação.",
+            name ? `Nome: ${name}` : "",
+            contact ? `Contato: ${contact}` : "",
+            message ? `Material ou aplicação: ${message}` : "",
+          ].filter(Boolean).join("\n");
+
+          window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener,noreferrer");
         });
       });
 
