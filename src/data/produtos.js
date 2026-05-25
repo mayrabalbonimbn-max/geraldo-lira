@@ -210,7 +210,7 @@
     "id": "10-estacao-elevatoria",
     "numero": "10",
     "nome": "Estação Elevatória",
-    "categoria": "Saneamento",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Estações Elevatórias",
     "descricao": "Estação elevatória rotomoldada para sistemas de saneamento, utilizada no bombeamento e condução de efluentes quando há necessidade de vencer desníveis no terreno ou transportar o fluxo para pontos mais altos.",
     "aplicacao": "Bombeamento e condução de efluentes em terrenos com desnível.",
@@ -226,13 +226,13 @@
       "desnível",
       "saneamento"
     ],
-    "filtro": "Equipamentos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "11-estacao-elevatoria-detalhe-variacoes",
     "numero": "11",
     "nome": "Estação elevatória - detalhe e variações",
-    "categoria": "Saneamento",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Estações Elevatórias",
     "descricao": "Estação elevatória rotomoldada para sistemas de saneamento, indicada para bombeamento e condução de efluentes em situações com desnível ou necessidade de elevação do fluxo.",
     "aplicacao": "Bombeamento e condução de efluentes em redes com desnível.",
@@ -248,7 +248,7 @@
       "efluentes",
       "desnível"
     ],
-    "filtro": "Equipamentos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "12-caixa-abrigo-valvula-reguladora-pressao",
@@ -1491,7 +1491,7 @@
     "numero": "02",
     "rotulo": "IMPROV 02",
     "nome": "Otimização de sistemas de bombeamento",
-    "categoria": "Sistemas de Bombeamento",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Medição e controle",
     "descricao": "Sistema técnico para otimização de bombeamento, voltado à medição, controle operacional e melhoria da eficiência do sistema.",
     "aplicacao": "Medição, controle operacional e melhoria de eficiência em bombeamento.",
@@ -1510,7 +1510,7 @@
       "eficiencia",
       "operação"
     ],
-    "filtro": "Sistemas de Bombeamento"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-tanque-aco-vitrificado-recorte",
@@ -1568,7 +1568,7 @@
     "numero": "04",
     "rotulo": "SBL 04",
     "nome": "SBL — Sistema de Bombeamento em Linha",
-    "categoria": "SBL / Equipamentos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Elevatória de esgoto",
     "descricao": "Sistema de Bombeamento em Linha para elevatória de esgoto, com funcionamento automático, fabricação nacional, assistência técnica e possibilidade de monitoramento remoto.",
     "aplicacao": "Bombeamento em linha para elevatórias de esgoto.",
@@ -1586,14 +1586,14 @@
       "monitoramento remoto",
       "automático"
     ],
-    "filtro": "SBL / Equipamentos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-elevatoria-esgoto-render",
     "numero": "04",
     "rotulo": "SBL 04",
     "nome": "SBL para elevatória de esgoto",
-    "categoria": "SBL / Equipamentos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Render técnico",
     "descricao": "Render técnico do SBL aplicado em elevatória de esgoto, mostrando o conjunto hidráulico, bombas e tubulações integradas.",
     "aplicacao": "Visualização técnica de conjunto hidráulico, bombas e tubulações integradas.",
@@ -1612,14 +1612,14 @@
       "bombas",
       "tubulações"
     ],
-    "filtro": "SBL / Equipamentos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-conjunto-hidraulico-inox",
     "numero": "13",
     "rotulo": "SBL 13",
     "nome": "Conjunto hidráulico em inox",
-    "categoria": "SBL / Componentes",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Conjunto hidráulico",
     "descricao": "Conjunto hidráulico em inox utilizado no bombeamento inteligente, integrando componentes mecânicos e hidráulicos para operação do sistema.",
     "aplicacao": "Componentes hidráulicos e mecânicos para sistemas de bombeamento.",
@@ -1635,14 +1635,14 @@
       "componentes",
       "sbl"
     ],
-    "filtro": "SBL / Componentes"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-su-standard",
     "numero": "30",
     "rotulo": "SBL 30",
     "nome": "SBL-SU Standard",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-SU",
     "descricao": "Modelo SBL-SU, versão standard do Sistema de Bombeamento em Linha, com duas bombas e corpo hidráulico único.",
     "aplicacao": "Modelo standard de SBL com duas bombas e corpo hidráulico único.",
@@ -1658,14 +1658,14 @@
       "corpo hidráulico",
       "modelo sbl"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-su-fabricado",
     "numero": "32",
     "rotulo": "SBL 32",
     "nome": "SBL-SU fabricado",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-SU",
     "descricao": "Equipamento SBL-SU fabricado, com motores, conjunto moto-bomba, corpo hidráulico e base estrutural para aplicação em elevatórias.",
     "aplicacao": "Aplicação em elevatórias com conjunto moto-bomba e base estrutural.",
@@ -1682,14 +1682,14 @@
       "elevatórias",
       "base estrutural"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-sv-saidas-unificadas-valvulas",
     "numero": "34",
     "rotulo": "SBL 34",
     "nome": "SBL-SV com saídas unificadas e válvulas",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-SV",
     "descricao": "Modelo SBL-SV com saídas unificadas e válvulas, indicado para sistemas que exigem controle individualizado das bombas.",
     "aplicacao": "Controle individualizado das bombas em sistemas de bombeamento.",
@@ -1706,14 +1706,14 @@
       "valvulas",
       "controle individualizado"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-sv-fabricado",
     "numero": "36",
     "rotulo": "SBL 36",
     "nome": "SBL-SV fabricado",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-SV",
     "descricao": "Detalhe do equipamento SBL-SV fabricado, mostrando motores, válvulas, tubulações e estrutura do conjunto de bombeamento.",
     "aplicacao": "Detalhe técnico de equipamento fabricado para conjunto de bombeamento.",
@@ -1731,14 +1731,14 @@
       "tubulações",
       "bombeamento"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-ss-saidas-separadas-valvulas",
     "numero": "38",
     "rotulo": "SBL 38",
     "nome": "SBL-SS com saídas separadas e válvulas",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-SS",
     "descricao": "Modelo SBL-SS com saídas separadas e válvulas individuais, indicado para operações com maior controle hidráulico por bomba.",
     "aplicacao": "Operações com maior controle hidráulico individual por bomba.",
@@ -1754,14 +1754,14 @@
       "válvulas individuais",
       "controle hidráulico"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-ss-fabricado",
     "numero": "40",
     "rotulo": "SBL 40",
     "nome": "SBL-SS fabricado",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-SS",
     "descricao": "Equipamento SBL-SS fabricado, com motor, válvulas, corpo hidráulico e conexões para aplicação em sistemas de bombeamento.",
     "aplicacao": "Aplicação em sistemas de bombeamento com motor, válvulas e conexões.",
@@ -1779,14 +1779,14 @@
       "corpo hidráulico",
       "conexões"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-sbl-tri-tres-bombas",
     "numero": "42",
     "rotulo": "SBL 42",
     "nome": "SBL-TRI com três bombas",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "SBL-TRI",
     "descricao": "Modelo SBL-TRI com três bombas, desenvolvido para aplicações com maior demanda de vazão e operação contínua.",
     "aplicacao": "Aplicações com maior demanda de vazão e operação contínua.",
@@ -1803,14 +1803,14 @@
       "vazao",
       "operação contínua"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-mini-sbl",
     "numero": "46",
     "rotulo": "SBL 46",
     "nome": "Mini-SBL",
-    "categoria": "SBL / Pequenas aplicações",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Mini-SBL",
     "descricao": "Mini-SBL para pequenas aplicações, com uma bomba e corpo hidráulico compacto para soluções de bombeamento em menor escala.",
     "aplicacao": "Soluções compactas de bombeamento em menor escala.",
@@ -1827,14 +1827,14 @@
       "compacto",
       "bombeamento"
     ],
-    "filtro": "SBL / Pequenas aplicações"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "improv-modelos-bombeamento-sbl",
     "numero": "81",
     "rotulo": "SBL 81",
     "nome": "Modelos de bombeamento SBL",
-    "categoria": "SBL / Modelos",
+    "categoria": "Elevatória / Bombeamento em Linha",
     "subcategoria": "Comparativo de modelos",
     "descricao": "Imagem comparativa dos modelos de bombeamento SBL, incluindo SBL-SU, SBL-SV, SBL-SS, SBL-TRI e Mini-SBL.",
     "aplicacao": "Comparação visual dos modelos de bombeamento SBL.",
@@ -1852,7 +1852,7 @@
       "mini-sbl",
       "comparativo"
     ],
-    "filtro": "SBL / Modelos"
+    "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
     "id": "medidores-01-medidor-vazao-eletromagnetico-vms",
