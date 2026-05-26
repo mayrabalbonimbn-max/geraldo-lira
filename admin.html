@@ -256,6 +256,8 @@
       let authToken = "";
       let formSnapshot = "";
       let isFormDirty = false;
+      let currentSavedImageUrl = "";
+      let selectedImagePreviewUrl = "";
       const defaultTaxonomyOptions = [
         "Elevatória / Bombeamento em Linha",
         "REDES DE ESGOTO",
@@ -424,23 +426,32 @@
         imagePreview.innerHTML = `<img src="${escapeHtml(imagePreviewUrl(url))}" alt="Preview da imagem do produto" />`;
       }
 
+      function revokeSelectedImagePreviewUrl() {
+        if (!selectedImagePreviewUrl) return;
+        URL.revokeObjectURL(selectedImagePreviewUrl);
+        selectedImagePreviewUrl = "";
+      }
+
       function resetForm(force = false) {
         if (!force && isFormDirty && !confirmDiscardChanges()) return;
+        revokeSelectedImagePreviewUrl();
         productForm.reset();
         fields.id.value = "";
         fields.imageUrl.value = "";
         fields.imagePath.value = "";
+        currentSavedImageUrl = "";
         fields.sortOrder.value = "0";
         fields.isPublished.checked = true;
         fields.isFeatured.checked = false;
         document.querySelector("#editor-title").textContent = "Novo produto";
-        updateImagePreview("");
+        updateImagePreview(currentSavedImageUrl);
         togglePublishButton.textContent = "Ocultar do site";
         markFormClean();
       }
 
       function fillForm(product, force = false) {
         if (!force && isFormDirty && !confirmDiscardChanges()) return;
+        revokeSelectedImagePreviewUrl();
         fields.id.value = product.id;
         fields.name.value = product.name || "";
         fields.description.value = product.description || "";
@@ -449,12 +460,13 @@
         fields.sortOrder.value = product.sort_order || 0;
         fields.isPublished.checked = Boolean(product.is_published);
         fields.isFeatured.checked = Boolean(product.is_featured);
-        fields.imageUrl.value = product.image_url || "";
+        currentSavedImageUrl = product.image_url || "";
+        fields.imageUrl.value = currentSavedImageUrl;
         fields.imagePath.value = product.image_path || "";
         fields.imageFile.value = "";
         document.querySelector("#editor-title").textContent = "Editar produto";
         togglePublishButton.textContent = product.is_published ? "Ocultar do site" : "Publicar no site";
-        updateImagePreview(product.image_url || "");
+        updateImagePreview(currentSavedImageUrl);
         markFormClean();
       }
 
@@ -693,8 +705,9 @@
       }
 
       function clearImageSelection() {
+        revokeSelectedImagePreviewUrl();
         fields.imageFile.value = "";
-        updateImagePreview(fields.imageUrl.value);
+        updateImagePreview(currentSavedImageUrl);
         updateDirtyState();
         setMessage(adminMessage, "Seleção de imagem limpa. A imagem cadastrada foi mantida.", "success");
       }
@@ -781,19 +794,21 @@
       });
 
       fields.imageFile.addEventListener("change", () => {
+        revokeSelectedImagePreviewUrl();
         const file = fields.imageFile.files[0];
         if (!file) {
-          updateImagePreview(fields.imageUrl.value);
+          updateImagePreview(currentSavedImageUrl);
           return;
         }
         if (!allowedImageTypes.has(file.type)) {
           fields.imageFile.value = "";
-          updateImagePreview(fields.imageUrl.value);
+          updateImagePreview(currentSavedImageUrl);
           setMessage(adminMessage, "Envie uma imagem JPG, PNG, WEBP ou GIF.", "error");
           updateDirtyState();
           return;
         }
-        updateImagePreview(URL.createObjectURL(file));
+        selectedImagePreviewUrl = URL.createObjectURL(file);
+        updateImagePreview(selectedImagePreviewUrl);
         updateDirtyState();
       });
 
