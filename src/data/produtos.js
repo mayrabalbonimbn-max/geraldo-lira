@@ -2144,67 +2144,6 @@
     "filtro": "Trabalhos"
   },
   {
-    "id": "36-registro-historico-fabrica-1966",
-    "numero": "36",
-    "nome": "Registro histórico de fábrica - 1966",
-    "categoria": "Trabalhos",
-    "subcategoria": "História e estrutura",
-    "descricao": "Imagem histórica ligada ao início da operação, indicada para seção de trajetória, confiança e experiência da marca.",
-    "aplicacao": "Apoio institucional para trajetória, confiança e experiência da marca.",
-    "imagem": "/produtos/asperbras/trabalhos-36-fabrica-historica-1966.jpg",
-    "palavrasChave": [
-      "36",
-      "história",
-      "historia",
-      "1966",
-      "fábrica",
-      "fabrica",
-      "trajetória",
-      "experiência",
-      "marca"
-    ],
-    "filtro": "Trabalhos"
-  },
-  {
-    "id": "37-unidade-fabril-1985",
-    "numero": "37",
-    "nome": "Unidade fabril - 1985",
-    "categoria": "Trabalhos",
-    "subcategoria": "História e estrutura",
-    "descricao": "Imagem aérea de unidade fabril, boa para mostrar estrutura, operação e evolução industrial.",
-    "aplicacao": "Apoio institucional para estrutura, operação e evolução industrial.",
-    "imagem": "/produtos/asperbras/trabalhos-37-unidade-fabril-1985.jpg",
-    "palavrasChave": [
-      "37",
-      "unidade fabril",
-      "1985",
-      "estrutura",
-      "operação",
-      "operacao",
-      "evolução industrial"
-    ],
-    "filtro": "Trabalhos"
-  },
-  {
-    "id": "38-unidade-asperbras-atual",
-    "numero": "38",
-    "nome": "Unidade Asperbras atual",
-    "categoria": "Trabalhos",
-    "subcategoria": "Estrutura industrial",
-    "descricao": "Imagem aérea da unidade atual, indicada para seção institucional com foco em capacidade produtiva e estrutura.",
-    "aplicacao": "Apoio institucional para capacidade produtiva, estrutura e operação atual.",
-    "imagem": "/produtos/asperbras/trabalhos-38-unidade-asperbras-atual.jpg",
-    "palavrasChave": [
-      "38",
-      "asperbras",
-      "unidade atual",
-      "estrutura industrial",
-      "capacidade produtiva",
-      "operação"
-    ],
-    "filtro": "Trabalhos"
-  },
-  {
     "id": "39-atendimento-tecnico-em-fabrica",
     "numero": "39",
     "nome": "Atendimento técnico em fábrica",
