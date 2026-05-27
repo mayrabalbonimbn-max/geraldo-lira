@@ -214,6 +214,7 @@
                   </button>
                   <button class="btn btn-secondary" id="cancel-edit-button" type="button">Cancelar/voltar</button>
                   <button class="btn btn-secondary" id="clear-image-selection-button" type="button">Limpar seleção de imagem</button>
+                  <button class="btn btn-secondary admin-danger-button" id="delete-product-image-button" type="button">Remover imagem cadastrada</button>
                   <button class="btn btn-secondary" id="toggle-publish-button" type="button">Ocultar do site</button>
                   <button class="btn btn-secondary admin-danger-button" id="delete-product-button" type="button">Excluir definitivamente</button>
                 </div>
@@ -712,6 +713,39 @@
         setMessage(adminMessage, "Seleção de imagem limpa. A imagem cadastrada foi mantida.", "success");
       }
 
+      async function deleteProductImageOnly() {
+        if (!fields.id.value) {
+          setMessage(adminMessage, "Selecione um produto antes de remover a imagem.", "error");
+          return;
+        }
+
+        if (isFormDirty && !confirmDiscardChanges()) return;
+
+        if (!currentSavedImageUrl) {
+          clearImageSelection();
+          setMessage(adminMessage, "Este produto não tem imagem cadastrada.", "error");
+          return;
+        }
+
+        const confirmed = window.confirm("Remover a imagem cadastrada deste produto? O produto será mantido.");
+        if (!confirmed) return;
+
+        try {
+          setMessage(adminMessage, "Removendo imagem cadastrada...");
+          const product = await apiRequest(`/api/admin/products/${fields.id.value}/image`, {
+            method: "DELETE",
+          });
+
+          revokeSelectedImagePreviewUrl();
+          fields.imageFile.value = "";
+          setMessage(adminMessage, "Imagem removida. O produto foi mantido.", "success");
+          await loadProducts();
+          fillForm(product, true);
+        } catch (error) {
+          setMessage(adminMessage, error.message || "Não foi possível remover a imagem.", "error");
+        }
+      }
+
       function exportProducts(format) {
         if (!products.length) {
           setMessage(adminMessage, "Não há produtos para exportar.", "error");
@@ -784,6 +818,7 @@
       document.querySelector("#toggle-publish-button").addEventListener("click", togglePublishState);
       document.querySelector("#cancel-edit-button").addEventListener("click", resetForm);
       document.querySelector("#clear-image-selection-button").addEventListener("click", clearImageSelection);
+      document.querySelector("#delete-product-image-button").addEventListener("click", deleteProductImageOnly);
       document.querySelector("#delete-product-button").addEventListener("click", deleteProductPermanently);
       document.querySelector("#export-json-button").addEventListener("click", () => exportProducts("json"));
       document.querySelector("#export-csv-button").addEventListener("click", () => exportProducts("csv"));
