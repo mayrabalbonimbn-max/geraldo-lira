@@ -738,9 +738,9 @@
 
           revokeSelectedImagePreviewUrl();
           fields.imageFile.value = "";
-          setMessage(adminMessage, "Imagem removida. O produto foi mantido.", "success");
           await loadProducts();
           fillForm(product, true);
+          setMessage(adminMessage, "Imagem removida. O produto foi mantido.", "success");
         } catch (error) {
           setMessage(adminMessage, error.message || "Não foi possível remover a imagem.", "error");
         }
