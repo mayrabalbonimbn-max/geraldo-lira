@@ -313,40 +313,37 @@
             <div class="pdf-grid">
               <article class="pdf-card">
                 <div class="pdf-icon">
-                  <iconify-icon icon="solar:file-download-linear" width="30"></iconify-icon>
+                  <iconify-icon icon="solar:file-text-linear" width="30"></iconify-icon>
                 </div>
                 <span>PDF técnico</span>
                 <h3>Catálogo Linha Saneamento Asperbras Rotomoldagem</h3>
                 <p>Poços de inspeção, poços de visita, interceptadores, caixas, anéis, juntas e soluções rotomoldadas para saneamento.</p>
                 <div class="pdf-actions">
-                  <a href="./public/catalogos/catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" data-pdf-action="view">Visualizar catálogo</a>
-                  <a href="./public/catalogos/catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" download="catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" data-pdf-action="download">Baixar PDF</a>
+                  <a href="/catalogos/catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" target="_blank" rel="noopener noreferrer">Visualizar catálogo</a>
                   <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
                 </div>
               </article>
               <article class="pdf-card">
                 <div class="pdf-icon">
-                  <iconify-icon icon="solar:file-download-linear" width="30"></iconify-icon>
+                  <iconify-icon icon="solar:file-text-linear" width="30"></iconify-icon>
                 </div>
                 <span>PDF técnico</span>
                 <h3>Catálogo PEAD Asperbras</h3>
                 <p>Tubos de polietileno de alta densidade para adutoras, saneamento básico, irrigação e aplicações técnicas.</p>
                 <div class="pdf-actions">
-                  <a href="./public/catalogos/catalogo-pead-asperbras.pdf" data-pdf-action="view">Visualizar catálogo</a>
-                  <a href="./public/catalogos/catalogo-pead-asperbras.pdf" download="catalogo-pead-asperbras.pdf" data-pdf-action="download">Baixar PDF</a>
+                  <a href="/catalogos/catalogo-pead-asperbras.pdf" target="_blank" rel="noopener noreferrer">Visualizar catálogo</a>
                   <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
                 </div>
               </article>
               <article class="pdf-card">
                 <div class="pdf-icon">
-                  <iconify-icon icon="solar:file-download-linear" width="30"></iconify-icon>
+                  <iconify-icon icon="solar:file-text-linear" width="30"></iconify-icon>
                 </div>
                 <span>PDF técnico</span>
                 <h3>Catálogo Tubos Asperbras</h3>
                 <p>Tubos MPVC Defofo, PVC PBA, conexões para distribuição de água, tubos e conexões para coleta de esgoto.</p>
                 <div class="pdf-actions">
-                  <a href="./public/catalogos/catalogo-tubos-asperbras.pdf" data-pdf-action="view">Visualizar catálogo</a>
-                  <a href="./public/catalogos/catalogo-tubos-asperbras.pdf" download="catalogo-tubos-asperbras.pdf" data-pdf-action="download">Baixar PDF</a>
+                  <a href="/catalogos/catalogo-tubos-asperbras.pdf" target="_blank" rel="noopener noreferrer">Visualizar catálogo</a>
                   <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
                 </div>
               </article>
@@ -358,8 +355,7 @@
                 <h3>IMPROV Equipamentos / SBL</h3>
                 <p>Sistema de Bombeamento em Linha, otimização de bombeamento, tanques, abraçadeiras e soluções para infraestrutura de saneamento.</p>
                 <div class="pdf-actions">
-                  <a href="./public/catalogos/improv-equipamentos-sbl.pdf" data-pdf-action="view">Visualizar apresentação</a>
-                  <a href="./public/catalogos/improv-equipamentos-sbl.pdf" download="improv-equipamentos-sbl.pdf" data-pdf-action="download">Baixar PDF</a>
+                  <a href="/catalogos/improv-equipamentos-sbl.pdf" target="_blank" rel="noopener noreferrer">Visualizar apresentação</a>
                   <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
                 </div>
               </article>
@@ -850,29 +846,6 @@
         if (!link) return;
         event.preventDefault();
         showPage(link.dataset.pageLink);
-      });
-
-      document.addEventListener("click", (event) => {
-        const pdfLink = event.target.closest("[data-pdf-action]");
-        if (!pdfLink) return;
-
-        const pdfUrl = new URL(pdfLink.getAttribute("href"), window.location.href);
-
-        if (pdfLink.dataset.pdfAction === "view") {
-          event.preventDefault();
-          window.location.href = pdfUrl.href;
-          return;
-        }
-
-        if (pdfLink.dataset.pdfAction === "download") {
-          event.preventDefault();
-          const downloader = document.createElement("a");
-          downloader.href = pdfUrl.href;
-          downloader.download = pdfLink.getAttribute("download") || pdfUrl.pathname.split("/").pop() || "catalogo.pdf";
-          document.body.appendChild(downloader);
-          downloader.click();
-          downloader.remove();
-        }
       });
 
       document.querySelectorAll(".request-form").forEach((form) => {
