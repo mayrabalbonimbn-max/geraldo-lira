@@ -3,262 +3,350 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin do catálogo | Geraldo Lira</title>
+    <title>Meus produtos | Geraldo Lira</title>
+    <meta name="robots" content="noindex" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="assets/iconify-icon.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
   </head>
-  <body class="admin-page">
-    <header class="site-header admin-header">
-      <div class="container header-inner">
-        <a class="brand" href="/">
-          <span class="brand-mark">GL</span>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="3" />
+            <circle cx="24" cy="24" r="16.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.2 2.6" />
+            <text x="24" y="29.2" text-anchor="middle">GL</text>
+          </svg>
           <span>
             <strong>Geraldo Lira</strong>
-            <small>Admin do catálogo</small>
+            <small>Meus produtos do site</small>
           </span>
-        </a>
-        <div class="admin-header-actions">
-          <a class="btn btn-small btn-secondary" href="/">Ver site</a>
-          <button class="btn btn-small btn-dark" id="logout-button" type="button" hidden>Sair</button>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn btn-quiet-light" href="/" target="_blank" rel="noopener">
+            <iconify-icon icon="solar:global-linear" width="24"></iconify-icon>
+            <span>Ver o site</span>
+          </a>
+          <button class="btn btn-quiet-light" id="logout-button" type="button" hidden>
+            <iconify-icon icon="solar:logout-2-linear" width="24"></iconify-icon>
+            <span>Sair</span>
+          </button>
         </div>
       </div>
     </header>
 
-    <main class="admin-main">
-      <section class="admin-login-section" id="login-view">
-        <div class="admin-login-panel">
-          <div class="section-label">
-            <iconify-icon icon="solar:lock-keyhole-linear" width="18"></iconify-icon>
-            <span>Acesso administrativo</span>
-          </div>
-          <h1>Entrar no painel</h1>
-          <form class="admin-form" id="login-form">
-            <label>
-              <span>Email</span>
-              <input id="login-email" type="email" autocomplete="email" required />
+    <!-- Aviso grande, sempre no mesmo lugar -->
+    <div class="notice-area wrap" aria-live="polite">
+      <div class="notice" id="admin-message" role="status" hidden>
+        <iconify-icon class="notice-icon" width="32"></iconify-icon>
+        <p></p>
+        <button class="notice-close" type="button" aria-label="Fechar aviso">
+          <iconify-icon icon="solar:close-circle-linear" width="30"></iconify-icon>
+        </button>
+      </div>
+    </div>
+
+    <main>
+      <!-- ================= ENTRAR ================= -->
+      <section class="screen login" id="login-view">
+        <div class="login-card">
+          <h1>Bem-vindo</h1>
+          <p class="lead">Entre com o seu e-mail e a sua senha para cuidar dos produtos do site.</p>
+          <form class="form" id="login-form">
+            <label class="field">
+              <span class="field-label">Seu e-mail</span>
+              <input id="login-email" type="email" autocomplete="email" inputmode="email" required />
             </label>
-            <label>
-              <span>Senha</span>
-              <input id="login-password" type="password" autocomplete="current-password" required />
+            <label class="field">
+              <span class="field-label">Sua senha</span>
+              <span class="password-wrap">
+                <input id="login-password" type="password" autocomplete="current-password" required />
+                <button class="show-password" id="show-password" type="button" aria-pressed="false">
+                  <iconify-icon icon="solar:eye-linear" width="26"></iconify-icon>
+                  <span>Mostrar</span>
+                </button>
+              </span>
             </label>
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary btn-xl btn-block" type="submit">
               <span>Entrar</span>
-              <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
+              <iconify-icon icon="solar:arrow-right-linear" width="28"></iconify-icon>
             </button>
           </form>
-          <p class="admin-message" id="login-message" role="status"></p>
+          <p class="login-message" id="login-message" role="status"></p>
         </div>
       </section>
 
-      <section class="admin-dashboard" id="admin-view" hidden>
-        <div class="container admin-shell">
-          <div class="admin-title-row">
+      <!-- ================= LISTA ================= -->
+      <section class="screen" id="list-view" hidden>
+        <div class="wrap">
+          <div class="hello">
             <div>
-              <div class="section-label">
-                <iconify-icon icon="solar:chart-2-linear" width="18"></iconify-icon>
-                <span>Painel administrativo</span>
-              </div>
-              <h1>Catálogo administrável</h1>
-            </div>
-            <div class="admin-title-actions">
-              <button class="btn btn-secondary" id="export-json-button" type="button">
-                <span>Exportar JSON</span>
-                <iconify-icon icon="solar:download-linear" width="20"></iconify-icon>
-              </button>
-              <button class="btn btn-secondary" id="export-csv-button" type="button">
-                <span>Exportar CSV</span>
-                <iconify-icon icon="solar:file-text-linear" width="20"></iconify-icon>
-              </button>
-              <button class="btn btn-primary" id="new-product-button" type="button">
-                <span>Novo produto</span>
-                <iconify-icon icon="solar:add-circle-linear" width="20"></iconify-icon>
-              </button>
+              <h1>Olá! O que você quer fazer hoje?</h1>
+              <p class="lead" id="summary-line">Carregando seus produtos...</p>
             </div>
           </div>
 
-          <p class="admin-message" id="admin-message" role="status"></p>
+          <div class="big-actions">
+            <button class="big-action big-action-primary" id="new-product-button" type="button">
+              <iconify-icon icon="solar:add-circle-bold" width="48"></iconify-icon>
+              <span>
+                <strong>Cadastrar produto novo</strong>
+                <small>Colocar um produto novo no site</small>
+              </span>
+            </button>
+            <label class="big-action big-action-search" for="product-search">
+              <iconify-icon icon="solar:magnifer-linear" width="40"></iconify-icon>
+              <span class="search-body">
+                <strong>Procurar um produto</strong>
+                <input id="product-search" type="search" placeholder="Escreva o nome, por exemplo: tubo" autocomplete="off" />
+              </span>
+            </label>
+          </div>
 
-          <section class="admin-summary" aria-label="Resumo do catálogo">
-            <article class="admin-stat-card">
-              <small>Total de produtos</small>
-              <strong id="stat-total-products">0</strong>
-            </article>
-            <article class="admin-stat-card">
-              <small>Publicados</small>
-              <strong id="stat-published-products">0</strong>
-            </article>
-            <article class="admin-stat-card">
-              <small>Ocultos</small>
-              <strong id="stat-hidden-products">0</strong>
-            </article>
-            <article class="admin-stat-card">
-              <small>Categorias/filtros</small>
-              <strong id="stat-taxonomies">0</strong>
-            </article>
-          </section>
-
-          <section class="admin-recent-panel" aria-label="Últimos produtos criados ou editados">
-            <div class="admin-list-head">
-              <strong>Últimas alterações</strong>
-              <span id="last-refresh-label">Ainda não carregado</span>
+          <div class="list-head">
+            <h2 id="product-count">Seus produtos</h2>
+            <div class="segmented" role="radiogroup" aria-label="Quais produtos mostrar">
+              <label><input type="radio" name="status-filter" value="all" checked /><span>Todos</span></label>
+              <label><input type="radio" name="status-filter" value="published" /><span>No site</span></label>
+              <label><input type="radio" name="status-filter" value="hidden" /><span>Escondidos</span></label>
             </div>
-            <div class="admin-recent-list" id="recent-products"></div>
-          </section>
+          </div>
+          <p class="hint">Toque em um produto para mudar o texto, a foto ou tirar ele do site.</p>
 
-          <div class="admin-grid">
-            <section class="admin-list-panel" aria-label="Produtos cadastrados">
-              <div class="admin-list-head">
-                <strong id="product-count">0 produtos</strong>
-                <button class="admin-link-button" id="refresh-products-button" type="button">Atualizar</button>
+          <div class="product-list" id="product-list"></div>
+
+          <details class="more-options">
+            <summary>
+              <iconify-icon icon="solar:settings-linear" width="26"></iconify-icon>
+              <span>Mais opções</span>
+              <iconify-icon class="chev" icon="solar:alt-arrow-down-linear" width="24"></iconify-icon>
+            </summary>
+            <div class="more-body">
+              <label class="field">
+                <span class="field-label">Mostrar só uma categoria</span>
+                <select id="category-filter"><option value="">Todas as categorias</option></select>
+              </label>
+              <label class="field">
+                <span class="field-label">Arrumar a lista por</span>
+                <select id="sort-filter">
+                  <option value="sort_order">Ordem do site</option>
+                  <option value="name">Nome (A a Z)</option>
+                  <option value="updated_at">Mexidos por último</option>
+                  <option value="created_at">Cadastrados por último</option>
+                </select>
+              </label>
+              <div class="more-buttons">
+                <button class="btn btn-outline" id="refresh-products-button" type="button">
+                  <iconify-icon icon="solar:refresh-linear" width="24"></iconify-icon>
+                  <span>Recarregar a lista</span>
+                </button>
+                <button class="btn btn-outline" id="export-csv-button" type="button">
+                  <iconify-icon icon="solar:file-download-linear" width="24"></iconify-icon>
+                  <span>Baixar planilha dos produtos</span>
+                </button>
+                <button class="btn btn-outline" id="export-json-button" type="button">
+                  <iconify-icon icon="solar:shield-check-linear" width="24"></iconify-icon>
+                  <span>Baixar cópia de segurança</span>
+                </button>
               </div>
-              <div class="admin-filters" aria-label="Busca e filtros administrativos">
-                <label>
-                  <span>Buscar por nome</span>
-                  <input id="product-search" type="search" placeholder="Digite parte do nome" />
-                </label>
-                <div class="admin-field-grid">
-                  <label>
-                    <span>Categoria</span>
-                    <select id="category-filter">
-                      <option value="">Todas</option>
-                    </select>
+              <p class="hint" id="last-refresh-label"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ================= EDITAR ================= -->
+      <section class="screen" id="edit-view" hidden>
+        <div class="wrap wrap-narrow">
+          <button class="btn btn-back" id="cancel-edit-button" type="button">
+            <iconify-icon icon="solar:arrow-left-linear" width="28"></iconify-icon>
+            <span>Voltar para a lista</span>
+          </button>
+
+          <form class="form editor" id="product-form" novalidate>
+            <input id="product-id" type="hidden" />
+            <input id="product-image-url" type="hidden" />
+            <input id="product-image-path" type="hidden" />
+
+            <div class="editor-head">
+              <h1 id="editor-title">Cadastrar produto novo</h1>
+              <span class="dirty" id="dirty-badge" hidden>
+                <iconify-icon icon="solar:pen-2-linear" width="22"></iconify-icon>
+                Você mudou algo e ainda não salvou
+              </span>
+            </div>
+
+            <!-- 1. Foto -->
+            <fieldset class="step">
+              <legend><span class="step-n">1</span> Foto do produto</legend>
+              <div class="photo-box">
+                <div class="photo-preview" id="image-preview"></div>
+                <div class="photo-actions">
+                  <label class="btn btn-outline btn-lg file-button">
+                    <iconify-icon icon="solar:camera-add-linear" width="28"></iconify-icon>
+                    <span id="choose-photo-label">Escolher foto</span>
+                    <input id="product-image-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" />
                   </label>
-                  <label>
-                    <span>Status</span>
-                    <select id="status-filter">
-                      <option value="all">Todos</option>
-                      <option value="published">Publicados</option>
-                      <option value="hidden">Ocultos</option>
-                    </select>
-                  </label>
-                </div>
-                <label>
-                  <span>Ordenar por</span>
-                  <select id="sort-filter">
-                    <option value="sort_order">Ordem</option>
-                    <option value="name">Nome</option>
-                    <option value="updated_at">Data de edição</option>
-                    <option value="created_at">Data de criação</option>
-                  </select>
-                </label>
-              </div>
-              <div class="admin-product-list" id="product-list"></div>
-            </section>
-
-            <section class="admin-editor-panel" aria-label="Editor de produto">
-              <form class="admin-form" id="product-form">
-                <input id="product-id" type="hidden" />
-                <input id="product-image-url" type="hidden" />
-                <input id="product-image-path" type="hidden" />
-
-                <div class="admin-editor-head">
-                  <h2 id="editor-title">Novo produto</h2>
-                  <span class="admin-dirty-badge" id="dirty-badge" hidden>Alterações não salvas</span>
-                </div>
-
-                <label>
-                  <span>Nome</span>
-                  <input id="product-name" type="text" required />
-                </label>
-
-                <label>
-                  <span>Descrição</span>
-                  <textarea id="product-description" rows="5"></textarea>
-                </label>
-
-                <div class="admin-field-grid">
-                  <label>
-                    <span>Categoria</span>
-                    <input id="product-category" type="text" list="category-options" placeholder="Selecione ou digite uma nova" />
-                  </label>
-                  <label>
-                    <span>Filtro</span>
-                    <input id="product-filter" type="text" list="filter-options" placeholder="Selecione ou digite um novo" />
-                  </label>
-                </div>
-                <datalist id="category-options"></datalist>
-                <datalist id="filter-options"></datalist>
-
-                <div class="admin-field-grid">
-                  <label>
-                    <span>Ordem</span>
-                    <input id="product-sort-order" type="number" min="0" step="1" value="0" />
-                  </label>
-                  <label class="admin-check">
-                    <input id="product-is-published" type="checkbox" checked />
-                    <span>Publicado no site</span>
-                  </label>
-                </div>
-
-                <label class="admin-check">
-                  <input id="product-is-featured" type="checkbox" />
-                  <span>Destacar produto no admin</span>
-                </label>
-
-                <label>
-                  <span>Imagem</span>
-                  <input id="product-image-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" />
-                </label>
-
-                <div class="admin-image-preview" id="image-preview">
-                  <span>Sem imagem</span>
-                </div>
-
-                <div class="admin-form-actions">
-                  <button class="btn btn-primary" type="submit">
-                    <span>Salvar produto</span>
-                    <iconify-icon icon="solar:diskette-linear" width="20"></iconify-icon>
+                  <button class="btn btn-link" id="clear-image-selection-button" type="button" hidden>
+                    Desistir desta foto
                   </button>
-                  <button class="btn btn-secondary" id="cancel-edit-button" type="button">Cancelar/voltar</button>
-                  <button class="btn btn-secondary" id="clear-image-selection-button" type="button">Limpar seleção de imagem</button>
-                  <button class="btn btn-secondary admin-danger-button" id="delete-product-image-button" type="button">Remover imagem cadastrada</button>
-                  <button class="btn btn-secondary" id="toggle-publish-button" type="button">Ocultar do site</button>
-                  <button class="btn btn-secondary admin-danger-button" id="delete-product-button" type="button">Excluir definitivamente</button>
+                  <button class="btn btn-link btn-link-danger" id="delete-product-image-button" type="button" hidden>
+                    Tirar a foto do produto
+                  </button>
+                  <p class="hint">Pode ser foto do celular. Ela só vai para o site quando você apertar <strong>Salvar</strong>.</p>
                 </div>
-              </form>
-            </section>
-          </div>
+              </div>
+            </fieldset>
+
+            <!-- 2. Nome e descrição -->
+            <fieldset class="step">
+              <legend><span class="step-n">2</span> Nome e descrição</legend>
+              <label class="field">
+                <span class="field-label">Nome do produto <em>(obrigatório)</em></span>
+                <input id="product-name" type="text" required placeholder="Exemplo: Tubo PEAD DN110 PN10" />
+                <span class="field-error" id="name-error" hidden>Escreva o nome do produto antes de salvar.</span>
+              </label>
+              <label class="field">
+                <span class="field-label">Descrição</span>
+                <span class="field-help">Para que serve, medidas, onde usar. Escreva do seu jeito.</span>
+                <textarea id="product-description" rows="6"></textarea>
+              </label>
+            </fieldset>
+
+            <!-- 3. Onde aparece -->
+            <fieldset class="step">
+              <legend><span class="step-n">3</span> Onde ele aparece no site</legend>
+              <label class="field">
+                <span class="field-label">Seção do catálogo</span>
+                <span class="field-help">É o botão do catálogo onde o cliente vai achar este produto.</span>
+                <select id="product-filter-select"></select>
+                <input id="product-filter" type="text" class="other-input" placeholder="Escreva o nome da seção nova" hidden />
+              </label>
+              <label class="field">
+                <span class="field-label">Categoria</span>
+                <span class="field-help">Serve para você achar o produto aqui na lista.</span>
+                <select id="product-category-select"></select>
+                <input id="product-category" type="text" class="other-input" placeholder="Escreva o nome da categoria nova" hidden />
+              </label>
+            </fieldset>
+
+            <!-- 4. Mostrar no site -->
+            <fieldset class="step">
+              <legend><span class="step-n">4</span> O cliente pode ver este produto?</legend>
+              <div class="choice">
+                <label class="choice-card">
+                  <input type="radio" name="publish" value="yes" id="product-is-published" checked />
+                  <span>
+                    <iconify-icon icon="solar:eye-bold" width="32"></iconify-icon>
+                    <strong>Sim, mostrar no site</strong>
+                  </span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="publish" value="no" id="product-is-hidden" />
+                  <span>
+                    <iconify-icon icon="solar:eye-closed-bold" width="32"></iconify-icon>
+                    <strong>Não, deixar escondido</strong>
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+
+            <details class="more-options more-options-inline">
+              <summary>
+                <iconify-icon icon="solar:settings-linear" width="26"></iconify-icon>
+                <span>Opções avançadas (não precisa mexer)</span>
+                <iconify-icon class="chev" icon="solar:alt-arrow-down-linear" width="24"></iconify-icon>
+              </summary>
+              <div class="more-body">
+                <label class="field">
+                  <span class="field-label">Posição na lista do site</span>
+                  <span class="field-help">Número menor aparece primeiro. Se não souber, deixe como está.</span>
+                  <input id="product-sort-order" type="number" min="0" step="1" value="0" inputmode="numeric" />
+                </label>
+                <label class="check">
+                  <input id="product-is-featured" type="checkbox" />
+                  <span>Marcar como destaque aqui na lista</span>
+                </label>
+              </div>
+            </details>
+
+            <div class="danger-zone" id="danger-zone" hidden>
+              <h2>Apagar este produto</h2>
+              <p>Apaga o produto do site e daqui para sempre. Se só quer tirar do site por um tempo, use a pergunta 4 e escolha <strong>Não, deixar escondido</strong>.</p>
+              <button class="btn btn-danger-outline" id="delete-product-button" type="button">
+                <iconify-icon icon="solar:trash-bin-trash-linear" width="24"></iconify-icon>
+                <span>Apagar para sempre</span>
+              </button>
+            </div>
+
+            <div class="save-bar">
+              <div class="wrap wrap-narrow save-bar-inner">
+                <button class="btn btn-ghost btn-lg" id="cancel-edit-bottom" type="button">Cancelar</button>
+                <button class="btn btn-primary btn-xl" id="save-button" type="submit">
+                  <iconify-icon icon="solar:check-circle-bold" width="30"></iconify-icon>
+                  <span>Salvar</span>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </section>
     </main>
 
+    <!-- Caixa de confirmação grande (substitui as janelinhas do navegador) -->
+    <dialog class="confirm" id="confirm-dialog">
+      <form method="dialog">
+        <iconify-icon class="confirm-icon" id="confirm-icon" icon="solar:question-circle-bold" width="56"></iconify-icon>
+        <h2 id="confirm-title"></h2>
+        <p id="confirm-text"></p>
+        <div class="confirm-actions">
+          <button class="btn btn-outline btn-lg" value="no" id="confirm-no">Não</button>
+          <button class="btn btn-primary btn-lg" value="yes" id="confirm-yes">Sim</button>
+        </div>
+      </form>
+    </dialog>
+
     <script type="module">
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
-      const loginView = document.querySelector("#login-view");
-      const adminView = document.querySelector("#admin-view");
-      const loginForm = document.querySelector("#login-form");
-      const productForm = document.querySelector("#product-form");
-      const productList = document.querySelector("#product-list");
-      const logoutButton = document.querySelector("#logout-button");
-      const loginMessage = document.querySelector("#login-message");
-      const adminMessage = document.querySelector("#admin-message");
-      const productCount = document.querySelector("#product-count");
-      const imagePreview = document.querySelector("#image-preview");
-      const recentProducts = document.querySelector("#recent-products");
-      const lastRefreshLabel = document.querySelector("#last-refresh-label");
-      const dirtyBadge = document.querySelector("#dirty-badge");
-      const togglePublishButton = document.querySelector("#toggle-publish-button");
+      const apiBaseUrl = (import.meta.env && import.meta.env.VITE_API_BASE_URL) || "";
+      const TOKEN_KEY = "geraldo-admin-token";
+      const OTHER = "__other__";
+
+      const $ = (s) => document.querySelector(s);
+      const loginView = $("#login-view");
+      const listView = $("#list-view");
+      const editView = $("#edit-view");
+      const loginForm = $("#login-form");
+      const productForm = $("#product-form");
+      const productList = $("#product-list");
+      const logoutButton = $("#logout-button");
+      const loginMessage = $("#login-message");
+      const notice = $("#admin-message");
+      const productCount = $("#product-count");
+      const summaryLine = $("#summary-line");
+      const imagePreview = $("#image-preview");
+      const lastRefreshLabel = $("#last-refresh-label");
+      const dirtyBadge = $("#dirty-badge");
+      const confirmDialog = $("#confirm-dialog");
       const filterControls = {
-        search: document.querySelector("#product-search"),
-        category: document.querySelector("#category-filter"),
-        status: document.querySelector("#status-filter"),
-        sort: document.querySelector("#sort-filter"),
+        search: $("#product-search"),
+        category: $("#category-filter"),
+        sort: $("#sort-filter"),
       };
-      const stats = {
-        total: document.querySelector("#stat-total-products"),
-        published: document.querySelector("#stat-published-products"),
-        hidden: document.querySelector("#stat-hidden-products"),
-        taxonomies: document.querySelector("#stat-taxonomies"),
-      };
+
       let products = [];
       let authToken = "";
       let formSnapshot = "";
       let isFormDirty = false;
       let currentSavedImageUrl = "";
       let selectedImagePreviewUrl = "";
+      let noticeTimer = 0;
+
       const defaultTaxonomyOptions = [
         "Elevatória / Bombeamento em Linha",
         "REDES DE ESGOTO",
@@ -279,75 +367,107 @@
       ];
 
       const fields = {
-        id: document.querySelector("#product-id"),
-        name: document.querySelector("#product-name"),
-        description: document.querySelector("#product-description"),
-        category: document.querySelector("#product-category"),
-        filter: document.querySelector("#product-filter"),
-        sortOrder: document.querySelector("#product-sort-order"),
-        isPublished: document.querySelector("#product-is-published"),
-        isFeatured: document.querySelector("#product-is-featured"),
-        imageFile: document.querySelector("#product-image-file"),
-        imageUrl: document.querySelector("#product-image-url"),
-        imagePath: document.querySelector("#product-image-path"),
+        id: $("#product-id"),
+        name: $("#product-name"),
+        description: $("#product-description"),
+        category: $("#product-category"),
+        categorySelect: $("#product-category-select"),
+        filter: $("#product-filter"),
+        filterSelect: $("#product-filter-select"),
+        sortOrder: $("#product-sort-order"),
+        isPublished: $("#product-is-published"),
+        isHidden: $("#product-is-hidden"),
+        isFeatured: $("#product-is-featured"),
+        imageFile: $("#product-image-file"),
+        imageUrl: $("#product-image-url"),
+        imagePath: $("#product-image-path"),
       };
 
       const allowedImageTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
 
-      function setMessage(target, message, type = "") {
-        target.textContent = message || "";
-        target.dataset.type = type;
-      }
-
-      function slugify(value) {
-        return String(value || "")
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/^-+|-+$/g, "")
-          .slice(0, 80);
-      }
-
+      /* ---------- utilidades ---------- */
       function escapeHtml(value) {
         const div = document.createElement("div");
-        div.textContent = value || "";
-        return div.innerHTML;
+        div.textContent = value ?? "";
+        return div.innerHTML.replace(/"/g, "&quot;");
       }
 
       function normalizeText(value) {
-        return String(value || "")
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .toLowerCase();
+        return String(value || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+      }
+
+      function prettyLabel(value) {
+        if (!value) return "";
+        if (["ETE", "ETA"].includes(value)) return value;
+        if (value === value.toUpperCase()) {
+          const lower = value.toLowerCase();
+          return lower.charAt(0).toUpperCase() + lower.slice(1);
+        }
+        return value;
       }
 
       function imagePreviewUrl(url) {
         if (!url) return "";
-        if (/^https?:\/\//i.test(url)) return url;
+        if (/^https?:\/\//i.test(url) || url.startsWith("blob:")) return url;
         if (apiBaseUrl && url.startsWith("/uploads/")) return `${apiBaseUrl}${url}`;
         return url;
       }
 
       function formatDate(value) {
-        if (!value) return "Sem data";
-        return new Intl.DateTimeFormat("pt-BR", {
-          dateStyle: "short",
-          timeStyle: "short",
-        }).format(new Date(value));
+        if (!value) return "";
+        return new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "long", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
       }
 
-      function productStatusLabel(product) {
-        return product.is_published ? "Publicado no site" : "Oculto do site";
+      /* ---------- aviso grande ---------- */
+      function setMessage(target, message, type = "") {
+        if (target === loginMessage) {
+          loginMessage.textContent = message || "";
+          loginMessage.dataset.type = type;
+          return;
+        }
+        clearTimeout(noticeTimer);
+        if (!message) {
+          notice.hidden = true;
+          return;
+        }
+        const icons = {
+          success: "solar:check-circle-bold",
+          error: "solar:danger-triangle-bold",
+          "": "solar:hourglass-line-duotone",
+        };
+        notice.dataset.type = type;
+        notice.querySelector(".notice-icon").setAttribute("icon", icons[type] || icons[""]);
+        notice.querySelector("p").textContent = message;
+        notice.hidden = false;
+        if (type === "success") noticeTimer = setTimeout(() => { notice.hidden = true; }, 7000);
+      }
+      notice.querySelector(".notice-close").addEventListener("click", () => setMessage(notice, ""));
+
+      /* ---------- confirmação grande ---------- */
+      function askConfirm({ title, text, yes = "Sim", no = "Não", danger = false }) {
+        $("#confirm-title").textContent = title;
+        $("#confirm-text").textContent = text || "";
+        $("#confirm-yes").textContent = yes;
+        $("#confirm-no").textContent = no;
+        $("#confirm-yes").className = `btn btn-lg ${danger ? "btn-danger" : "btn-primary"}`;
+        $("#confirm-icon").setAttribute("icon", danger ? "solar:danger-triangle-bold" : "solar:question-circle-bold");
+        confirmDialog.dataset.danger = danger ? "true" : "false";
+        confirmDialog.returnValue = "";
+        return new Promise((resolve) => {
+          confirmDialog.addEventListener("close", () => resolve(confirmDialog.returnValue === "yes"), { once: true });
+          confirmDialog.showModal();
+          $("#confirm-no").focus();
+        });
       }
 
+      /* ---------- estado do formulário ---------- */
       function currentFormSnapshot() {
         return JSON.stringify({
           id: fields.id.value,
           name: fields.name.value,
           description: fields.description.value,
-          category: fields.category.value,
-          filter: fields.filter.value,
+          category: readTaxonomy("category"),
+          filter: readTaxonomy("filter"),
           sortOrder: fields.sortOrder.value,
           isPublished: fields.isPublished.checked,
           isFeatured: fields.isFeatured.checked,
@@ -368,63 +488,77 @@
         dirtyBadge.hidden = !isFormDirty;
       }
 
-      function confirmDiscardChanges() {
-        return !isFormDirty || window.confirm("Existem alterações não salvas. Deseja descartá-las?");
+      async function confirmDiscardChanges() {
+        if (!isFormDirty) return true;
+        return askConfirm({
+          title: "Sair sem salvar?",
+          text: "Você mudou este produto e ainda não apertou Salvar. Se sair agora, as mudanças se perdem.",
+          yes: "Sair sem salvar",
+          no: "Continuar aqui",
+          danger: true,
+        });
       }
 
-      function handleExpiredSession(message = "Sua sessão expirou. Entre novamente para continuar.") {
+      /* ---------- API ---------- */
+      function handleExpiredSession(message = "Por segurança, o acesso expirou. Entre de novo com o seu e-mail e senha.") {
         authToken = "";
-        showLoginView();
+        try { sessionStorage.removeItem(TOKEN_KEY); } catch {}
+        showScreen("login");
         setMessage(loginMessage, message, "error");
       }
 
       async function apiRequest(path, options = {}) {
         const headers = new Headers(options.headers || {});
         headers.set("Accept", "application/json");
+        if (authToken) headers.set("Authorization", `Bearer ${authToken}`);
+        if (options.body && !(options.body instanceof FormData)) headers.set("Content-Type", "application/json");
 
-        if (authToken) {
-          headers.set("Authorization", `Bearer ${authToken}`);
+        let response;
+        try {
+          response = await fetch(`${apiBaseUrl}${path}`, { ...options, headers });
+        } catch {
+          throw new Error("Sem conexão com a internet. Confira o Wi-Fi e tente de novo.");
         }
-
-        if (options.body && !(options.body instanceof FormData)) {
-          headers.set("Content-Type", "application/json");
-        }
-
-        const response = await fetch(`${apiBaseUrl}${path}`, {
-          ...options,
-          headers,
-        });
 
         const data = await response.json().catch(() => null);
         if (!response.ok) {
-          if (response.status === 401 && authToken) {
-            handleExpiredSession();
-          }
-          throw new Error(data?.error || `Erro ${response.status}`);
+          if (response.status === 401 && authToken) handleExpiredSession();
+          throw new Error(data?.error || `Algo deu errado (código ${response.status}). Tente de novo em instantes.`);
         }
-
         return data;
       }
 
-      function showAdminView() {
-        loginView.hidden = true;
-        adminView.hidden = false;
-        logoutButton.hidden = false;
+      /* ---------- telas ---------- */
+      function showScreen(name) {
+        loginView.hidden = name !== "login";
+        listView.hidden = name !== "list";
+        editView.hidden = name !== "edit";
+        logoutButton.hidden = name === "login";
+        document.body.dataset.screen = name;
+        window.scrollTo({ top: 0, behavior: "auto" });
       }
 
-      function showLoginView() {
-        loginView.hidden = false;
-        adminView.hidden = true;
-        logoutButton.hidden = true;
+      async function goToList() {
+        if (!(await confirmDiscardChanges())) return;
+        revokeSelectedImagePreviewUrl();
+        isFormDirty = false;
+        showScreen("list");
+        renderProductList();
       }
 
+      /* ---------- foto ---------- */
       function updateImagePreview(url) {
+        const hasSaved = Boolean(currentSavedImageUrl);
+        const hasNew = Boolean(fields.imageFile.files[0]);
+        $("#choose-photo-label").textContent = url ? "Trocar foto" : "Escolher foto";
+        $("#clear-image-selection-button").hidden = !hasNew;
+        $("#delete-product-image-button").hidden = !(fields.id.value && hasSaved && !hasNew);
+
         if (!url) {
-          imagePreview.innerHTML = "<span>Sem imagem</span>";
+          imagePreview.innerHTML = `<span class="photo-empty"><iconify-icon icon="solar:gallery-add-linear" width="56"></iconify-icon>Ainda sem foto</span>`;
           return;
         }
-
-        imagePreview.innerHTML = `<img src="${escapeHtml(imagePreviewUrl(url))}" alt="Preview da imagem do produto" />`;
+        imagePreview.innerHTML = `<img src="${escapeHtml(imagePreviewUrl(url))}" alt="Foto do produto" />${hasNew ? '<span class="photo-tag">Foto nova, falta salvar</span>' : ""}`;
       }
 
       function revokeSelectedImagePreviewUrl() {
@@ -433,8 +567,83 @@
         selectedImagePreviewUrl = "";
       }
 
-      function resetForm(force = false) {
-        if (!force && isFormDirty && !confirmDiscardChanges()) return;
+      /* ---------- categoria e seção (lista + "outra") ---------- */
+      function uniqueValues(key) {
+        return [...new Set([
+          ...(key === "filter" ? defaultTaxonomyOptions : []),
+          ...products.map((product) => product[key]).filter(Boolean),
+        ])].sort((a, b) => prettyLabel(a).localeCompare(prettyLabel(b), "pt-BR"));
+      }
+
+      function fillTaxonomySelect(key) {
+        const select = key === "category" ? fields.categorySelect : fields.filterSelect;
+        const values = uniqueValues(key);
+        select.innerHTML = [
+          `<option value="">Escolha uma opção</option>`,
+          ...values.map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(prettyLabel(v))}</option>`),
+          `<option value="${OTHER}">Outra (escrever uma nova)</option>`,
+        ].join("");
+      }
+
+      function setTaxonomy(key, value) {
+        const select = key === "category" ? fields.categorySelect : fields.filterSelect;
+        const input = key === "category" ? fields.category : fields.filter;
+        const exists = [...select.options].some((o) => o.value === value && value !== OTHER);
+        if (!value) {
+          select.value = "";
+          input.value = "";
+          input.hidden = true;
+        } else if (exists) {
+          select.value = value;
+          input.value = value;
+          input.hidden = true;
+        } else {
+          select.value = OTHER;
+          input.value = value;
+          input.hidden = false;
+        }
+      }
+
+      function readTaxonomy(key) {
+        const select = key === "category" ? fields.categorySelect : fields.filterSelect;
+        const input = key === "category" ? fields.category : fields.filter;
+        if (select.value === OTHER) return input.value.trim();
+        return select.value;
+      }
+
+      [["category", fields.categorySelect, fields.category], ["filter", fields.filterSelect, fields.filter]].forEach(([, select, input]) => {
+        select.addEventListener("change", () => {
+          const isOther = select.value === OTHER;
+          input.hidden = !isOther;
+          if (isOther) {
+            input.value = "";
+            input.focus();
+          } else {
+            input.value = select.value;
+          }
+          updateDirtyState();
+        });
+      });
+
+      function refreshTaxonomyOptions() {
+        const categories = uniqueValues("category");
+        const current = filterControls.category.value;
+        filterControls.category.innerHTML = [
+          '<option value="">Todas as categorias</option>',
+          ...categories.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(prettyLabel(c))}</option>`),
+        ].join("");
+        filterControls.category.value = categories.includes(current) ? current : "";
+        fillTaxonomySelect("category");
+        fillTaxonomySelect("filter");
+      }
+
+      /* ---------- formulário ---------- */
+      function setPublished(value) {
+        fields.isPublished.checked = Boolean(value);
+        fields.isHidden.checked = !value;
+      }
+
+      function openNewProduct() {
         revokeSelectedImagePreviewUrl();
         productForm.reset();
         fields.id.value = "";
@@ -442,266 +651,214 @@
         fields.imagePath.value = "";
         currentSavedImageUrl = "";
         fields.sortOrder.value = "0";
-        fields.isPublished.checked = true;
+        setPublished(true);
         fields.isFeatured.checked = false;
-        document.querySelector("#editor-title").textContent = "Novo produto";
-        updateImagePreview(currentSavedImageUrl);
-        togglePublishButton.textContent = "Ocultar do site";
+        refreshTaxonomyOptions();
+        setTaxonomy("category", "");
+        setTaxonomy("filter", "");
+        $("#editor-title").textContent = "Cadastrar produto novo";
+        $("#danger-zone").hidden = true;
+        $("#name-error").hidden = true;
+        updateImagePreview("");
         markFormClean();
+        showScreen("edit");
       }
 
-      function fillForm(product, force = false) {
-        if (!force && isFormDirty && !confirmDiscardChanges()) return;
+      function fillForm(product) {
         revokeSelectedImagePreviewUrl();
         fields.id.value = product.id;
         fields.name.value = product.name || "";
         fields.description.value = product.description || "";
-        fields.category.value = product.category || "";
-        fields.filter.value = product.filter || "";
+        refreshTaxonomyOptions();
+        setTaxonomy("category", product.category || "");
+        setTaxonomy("filter", product.filter || "");
         fields.sortOrder.value = product.sort_order || 0;
-        fields.isPublished.checked = Boolean(product.is_published);
+        setPublished(product.is_published);
         fields.isFeatured.checked = Boolean(product.is_featured);
         currentSavedImageUrl = product.image_url || "";
         fields.imageUrl.value = currentSavedImageUrl;
         fields.imagePath.value = product.image_path || "";
         fields.imageFile.value = "";
-        document.querySelector("#editor-title").textContent = "Editar produto";
-        togglePublishButton.textContent = product.is_published ? "Ocultar do site" : "Publicar no site";
+        $("#editor-title").textContent = product.name || "Mudar produto";
+        $("#danger-zone").hidden = false;
+        $("#name-error").hidden = true;
         updateImagePreview(currentSavedImageUrl);
         markFormClean();
       }
 
-      function uniqueValues(key) {
-        return [...new Set([
-          ...defaultTaxonomyOptions,
-          ...products.map((product) => product[key]).filter(Boolean),
-        ])]
-          .sort((a, b) => String(a).localeCompare(String(b), "pt-BR"));
+      function openProduct(productId) {
+        const product = products.find((item) => item.id === productId);
+        if (!product) return;
+        fillForm(product);
+        showScreen("edit");
       }
 
-      function refreshTaxonomyOptions() {
-        const categories = uniqueValues("category");
-        const filters = uniqueValues("filter");
-        const currentFilterValue = filterControls.category.value;
-        filterControls.category.innerHTML = [
-          '<option value="">Todas</option>',
-          ...categories.map((category) => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`),
-        ].join("");
-        filterControls.category.value = categories.includes(currentFilterValue) ? currentFilterValue : "";
-
-        document.querySelector("#category-options").innerHTML = categories
-          .map((category) => `<option value="${escapeHtml(category)}"></option>`)
-          .join("");
-        document.querySelector("#filter-options").innerHTML = filters
-          .map((filter) => `<option value="${escapeHtml(filter)}"></option>`)
-          .join("");
+      /* ---------- lista ---------- */
+      function statusFilterValue() {
+        return document.querySelector('input[name="status-filter"]:checked')?.value || "all";
       }
 
       function filteredProducts() {
         const query = normalizeText(filterControls.search.value.trim());
         const category = filterControls.category.value;
-        const status = filterControls.status.value;
+        const status = statusFilterValue();
         const sortBy = filterControls.sort.value;
 
         return products
           .filter((product) => {
-            const matchesName = !query || normalizeText(product.name).includes(query);
+            const matchesName = !query || normalizeText(`${product.name} ${product.category} ${product.filter}`).includes(query);
             const matchesCategory = !category || product.category === category;
-            const matchesStatus =
-              status === "all" ||
-              (status === "published" && product.is_published) ||
-              (status === "hidden" && !product.is_published);
+            const matchesStatus = status === "all" || (status === "published" && product.is_published) || (status === "hidden" && !product.is_published);
             return matchesName && matchesCategory && matchesStatus;
           })
           .sort((a, b) => {
             if (sortBy === "name") return String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
-            if (sortBy === "updated_at" || sortBy === "created_at") {
-              return new Date(b[sortBy] || 0) - new Date(a[sortBy] || 0);
-            }
-            return Number(a.sort_order || 0) - Number(b.sort_order || 0) ||
-              String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
+            if (sortBy === "updated_at" || sortBy === "created_at") return new Date(b[sortBy] || 0) - new Date(a[sortBy] || 0);
+            return Number(a.sort_order || 0) - Number(b.sort_order || 0) || String(a.name || "").localeCompare(String(b.name || ""), "pt-BR");
           });
       }
 
-      function renderDashboard() {
-        const published = products.filter((product) => product.is_published).length;
+      function renderSummary() {
+        const published = products.filter((p) => p.is_published).length;
         const hidden = products.length - published;
-        const taxonomyTotal = new Set([
-          ...products.map((product) => product.category).filter(Boolean),
-          ...products.map((product) => product.filter).filter(Boolean),
-        ]).size;
-        stats.total.textContent = products.length;
-        stats.published.textContent = published;
-        stats.hidden.textContent = hidden;
-        stats.taxonomies.textContent = taxonomyTotal;
-
-        const recent = [...products]
-          .sort((a, b) => new Date(b.updated_at || b.created_at || 0) - new Date(a.updated_at || a.created_at || 0))
-          .slice(0, 5);
-
-        recentProducts.innerHTML = recent.length
-          ? recent.map((product) => `
-              <button class="admin-recent-item" type="button" data-product-id="${escapeHtml(product.id)}">
-                <strong>${escapeHtml(product.name)}</strong>
-                <span>${escapeHtml(productStatusLabel(product))} · ${escapeHtml(formatDate(product.updated_at || product.created_at))}</span>
-              </button>
-            `).join("")
-          : '<p class="admin-empty-list">Nenhuma alteração recente.</p>';
+        summaryLine.textContent = `Você tem ${products.length} ${products.length === 1 ? "produto" : "produtos"}: ${published} ${published === 1 ? "aparece" : "aparecem"} no site${hidden ? ` e ${hidden} ${hidden === 1 ? "está escondido" : "estão escondidos"}` : ""}.`;
       }
 
       function renderProductList() {
-        const visibleProducts = filteredProducts();
-        productCount.textContent = `${visibleProducts.length} de ${products.length} ${products.length === 1 ? "produto" : "produtos"}`;
+        const visible = filteredProducts();
+        const filtered = visible.length !== products.length;
+        productCount.textContent = filtered
+          ? `${visible.length} ${visible.length === 1 ? "produto encontrado" : "produtos encontrados"}`
+          : "Seus produtos";
 
-        if (!visibleProducts.length) {
-          productList.innerHTML = '<p class="admin-empty-list">Nenhum produto encontrado com estes filtros.</p>';
+        if (!visible.length) {
+          productList.innerHTML = `
+            <div class="empty">
+              <iconify-icon icon="solar:magnifer-bug-linear" width="56"></iconify-icon>
+              <p>Nenhum produto com esse nome.</p>
+              <button class="btn btn-outline btn-lg" type="button" data-clear-search>Mostrar todos os produtos</button>
+            </div>`;
           return;
         }
 
-        productList.innerHTML = visibleProducts.map((product) => `
-          <div class="admin-product-row" role="button" tabindex="0" data-product-id="${escapeHtml(product.id)}">
-            <span class="admin-row-thumb">
-              ${product.image_url ? `<img src="${escapeHtml(imagePreviewUrl(product.image_url))}" alt="" />` : "<iconify-icon icon=\"solar:box-linear\" width=\"22\"></iconify-icon>"}
+        productList.innerHTML = visible.map((product) => `
+          <button class="product-row" type="button" data-product-id="${escapeHtml(product.id)}">
+            <span class="row-thumb">
+              ${product.image_url
+                ? `<img src="${escapeHtml(imagePreviewUrl(product.image_url))}" alt="" loading="lazy" />`
+                : `<span class="no-photo"><iconify-icon icon="solar:camera-linear" width="30"></iconify-icon>Sem foto</span>`}
             </span>
-            <span class="admin-row-main">
+            <span class="row-main">
               <strong>${escapeHtml(product.name)}</strong>
-              <small>${escapeHtml(product.category || "Sem categoria")} · ${escapeHtml(productStatusLabel(product))}${product.is_featured ? " · Destaque" : ""}</small>
+              <span class="row-meta">${escapeHtml(prettyLabel(product.filter || product.category) || "Sem seção")}${product.is_featured ? " · Destaque" : ""}</span>
             </span>
-            <span class="admin-row-order">
-              <small>Ordem</small>
-              <input class="admin-order-input" type="number" min="0" step="1" value="${Number(product.sort_order || 0)}" data-order-product-id="${escapeHtml(product.id)}" aria-label="Ordem de ${escapeHtml(product.name)}" />
+            <span class="row-status ${product.is_published ? "is-on" : "is-off"}">
+              <iconify-icon icon="${product.is_published ? "solar:eye-bold" : "solar:eye-closed-bold"}" width="22"></iconify-icon>
+              ${product.is_published ? "No site" : "Escondido"}
             </span>
-          </div>
+            <span class="row-go">
+              <span>Mudar</span>
+              <iconify-icon icon="solar:alt-arrow-right-linear" width="26"></iconify-icon>
+            </span>
+          </button>
         `).join("");
       }
 
       async function loadProducts() {
         products = await apiRequest("/api/admin/products");
         refreshTaxonomyOptions();
-        renderDashboard();
+        renderSummary();
         renderProductList();
-        lastRefreshLabel.textContent = `Atualizado em ${formatDate(new Date().toISOString())}`;
+        lastRefreshLabel.textContent = `Lista atualizada em ${formatDate(new Date().toISOString())}.`;
       }
 
+      /* ---------- salvar ---------- */
       async function uploadImage(productId, file) {
-        if (!allowedImageTypes.has(file.type)) {
-          throw new Error("Envie uma imagem JPG, PNG, WEBP ou GIF.");
-        }
-
+        if (!allowedImageTypes.has(file.type)) throw new Error("Essa foto não é aceita. Use uma foto JPG, PNG ou WEBP.");
         const formData = new FormData();
         formData.append("image", file);
-        return apiRequest(`/api/admin/products/${productId}/image`, {
-          method: "POST",
-          body: formData,
-        });
+        return apiRequest(`/api/admin/products/${productId}/image`, { method: "POST", body: formData });
       }
 
       async function saveProduct(event) {
         event.preventDefault();
-        setMessage(adminMessage, "Salvando produto...");
+        const name = fields.name.value.trim();
+        if (!name) {
+          $("#name-error").hidden = false;
+          fields.name.focus();
+          fields.name.scrollIntoView({ block: "center", behavior: "smooth" });
+          setMessage(notice, "Falta o nome do produto. Escreva o nome e aperte Salvar de novo.", "error");
+          return;
+        }
+        $("#name-error").hidden = true;
+
+        const saveButton = $("#save-button");
+        saveButton.disabled = true;
+        saveButton.querySelector("span").textContent = "Salvando...";
+        setMessage(notice, "Salvando, aguarde um instante...");
 
         try {
           const existingId = fields.id.value;
           const payload = {
-            name: fields.name.value.trim(),
+            name,
             description: fields.description.value.trim(),
-            category: fields.category.value.trim(),
-            filter: fields.filter.value.trim(),
+            category: readTaxonomy("category"),
+            filter: readTaxonomy("filter"),
             is_published: fields.isPublished.checked,
             is_featured: fields.isFeatured.checked,
             sort_order: Number(fields.sortOrder.value || 0),
           };
 
-          let product = await apiRequest(
-            existingId ? `/api/admin/products/${existingId}` : "/api/admin/products",
-            {
-              method: existingId ? "PUT" : "POST",
-              body: JSON.stringify(payload),
-            },
-          );
+          let product = await apiRequest(existingId ? `/api/admin/products/${existingId}` : "/api/admin/products", {
+            method: existingId ? "PUT" : "POST",
+            body: JSON.stringify(payload),
+          });
 
           if (fields.imageFile.files[0]) {
             product = await uploadImage(product.id, fields.imageFile.files[0]);
           }
 
-          setMessage(adminMessage, "Produto salvo com sucesso.", "success");
           await loadProducts();
-          fillForm(product, true);
+          fillForm(product);
+          setMessage(
+            notice,
+            payload.is_published
+              ? `Pronto! "${product.name}" foi salvo e já aparece no site.`
+              : `Pronto! "${product.name}" foi salvo. Ele está escondido do site.`,
+            "success",
+          );
+          window.scrollTo({ top: 0, behavior: "smooth" });
         } catch (error) {
-          setMessage(adminMessage, error.message || "Não foi possível salvar o produto. Revise os campos e tente novamente.", "error");
+          setMessage(notice, error.message || "Não deu para salvar. Confira os campos e tente de novo.", "error");
+        } finally {
+          saveButton.disabled = false;
+          saveButton.querySelector("span").textContent = "Salvar";
         }
       }
 
-      async function togglePublishState() {
-        if (!fields.id.value) return;
-        if (isFormDirty && !confirmDiscardChanges()) return;
-        try {
-          const currentProduct = products.find((item) => item.id === fields.id.value);
-          const nextState = !Boolean(currentProduct?.is_published);
-          const product = await apiRequest(`/api/admin/products/${fields.id.value}/publish`, {
-            method: "PATCH",
-            body: JSON.stringify({ is_published: nextState }),
-          });
-          setMessage(adminMessage, nextState ? "Produto publicado no site." : "Produto oculto do site.", "success");
-          await loadProducts();
-          fillForm(product, true);
-        } catch (error) {
-          setMessage(adminMessage, error.message, "error");
-        }
-      }
-
-      async function updateProductOrder(productId, sortOrder) {
-        const product = products.find((item) => item.id === productId);
-        if (!product) return;
-        try {
-          const updated = await apiRequest(`/api/admin/products/${productId}`, {
-            method: "PUT",
-            body: JSON.stringify({
-              name: product.name,
-              description: product.description || "",
-              category: product.category || "",
-              filter: product.filter || "",
-              is_published: Boolean(product.is_published),
-              is_featured: Boolean(product.is_featured),
-              sort_order: Number(sortOrder || 0),
-            }),
-          });
-          setMessage(adminMessage, "Ordem atualizada.", "success");
-          await loadProducts();
-          if (fields.id.value === productId) fillForm(updated, true);
-        } catch (error) {
-          setMessage(adminMessage, error.message, "error");
-          renderProductList();
-        }
-      }
-
+      /* ---------- apagar ---------- */
       async function deleteProductPermanently() {
-        if (!fields.id.value) {
-          setMessage(adminMessage, "Selecione um produto antes de excluir.", "error");
-          return;
-        }
-
+        if (!fields.id.value) return;
         const productName = fields.name.value || "este produto";
-        const confirmed = window.confirm("Tem certeza que deseja excluir definitivamente este produto? Essa ação não pode ser desfeita.");
-        if (!confirmed) return;
-
-        const typedConfirmation = window.prompt(`Para confirmar a exclusão definitiva de "${productName}", digite EXCLUIR.`);
-        if (typedConfirmation !== "EXCLUIR") {
-          setMessage(adminMessage, "Exclusão cancelada. O produto foi mantido.", "error");
-          return;
-        }
+        const ok = await askConfirm({
+          title: `Apagar "${productName}" para sempre?`,
+          text: "Ele some do site e daqui. Não tem como desfazer. Se quiser só tirar do site por um tempo, escolha Não e marque Não, deixar escondido.",
+          yes: "Sim, apagar para sempre",
+          no: "Não, manter o produto",
+          danger: true,
+        });
+        if (!ok) return;
 
         try {
-          const result = await apiRequest(`/api/admin/products/${fields.id.value}`, {
-            method: "DELETE",
-          });
-
-          resetForm(true);
+          setMessage(notice, "Apagando...");
+          const result = await apiRequest(`/api/admin/products/${fields.id.value}`, { method: "DELETE" });
+          isFormDirty = false;
           await loadProducts();
-          const warning = result.image_warning ? ` ${result.image_warning}` : "";
-          setMessage(adminMessage, `Produto excluído definitivamente.${warning}`, result.image_warning ? "error" : "success");
+          showScreen("list");
+          const warning = result?.image_warning ? ` ${result.image_warning}` : "";
+          setMessage(notice, `"${productName}" foi apagado.${warning}`, result?.image_warning ? "error" : "success");
         } catch (error) {
-          setMessage(adminMessage, error.message || "Não foi possível excluir o produto.", "error");
+          setMessage(notice, error.message || "Não deu para apagar o produto.", "error");
         }
       }
 
@@ -710,64 +867,49 @@
         fields.imageFile.value = "";
         updateImagePreview(currentSavedImageUrl);
         updateDirtyState();
-        setMessage(adminMessage, "Seleção de imagem limpa. A imagem cadastrada foi mantida.", "success");
       }
 
       async function deleteProductImageOnly() {
-        if (!fields.id.value) {
-          setMessage(adminMessage, "Selecione um produto antes de remover a imagem.", "error");
-          return;
-        }
-
-        if (isFormDirty && !confirmDiscardChanges()) return;
-
-        if (!currentSavedImageUrl) {
-          clearImageSelection();
-          setMessage(adminMessage, "Este produto não tem imagem cadastrada.", "error");
-          return;
-        }
-
-        const confirmed = window.confirm("Remover a imagem cadastrada deste produto? O produto será mantido.");
-        if (!confirmed) return;
+        if (!fields.id.value || !currentSavedImageUrl) return;
+        if (!(await confirmDiscardChanges())) return;
+        const ok = await askConfirm({
+          title: "Tirar a foto deste produto?",
+          text: "O produto continua no site, só fica sem foto. Depois você pode escolher outra.",
+          yes: "Sim, tirar a foto",
+          no: "Não, manter a foto",
+        });
+        if (!ok) return;
 
         try {
-          setMessage(adminMessage, "Removendo imagem cadastrada...");
-          const product = await apiRequest(`/api/admin/products/${fields.id.value}/image`, {
-            method: "DELETE",
-          });
-
+          setMessage(notice, "Tirando a foto...");
+          const product = await apiRequest(`/api/admin/products/${fields.id.value}/image`, { method: "DELETE" });
           revokeSelectedImagePreviewUrl();
           fields.imageFile.value = "";
           await loadProducts();
-          fillForm(product, true);
-          setMessage(adminMessage, "Imagem removida. O produto foi mantido.", "success");
+          fillForm(product);
+          setMessage(notice, "Pronto! A foto foi tirada. O produto continua salvo.", "success");
         } catch (error) {
-          setMessage(adminMessage, error.message || "Não foi possível remover a imagem.", "error");
+          setMessage(notice, error.message || "Não deu para tirar a foto.", "error");
         }
       }
 
+      /* ---------- exportar ---------- */
       function exportProducts(format) {
         if (!products.length) {
-          setMessage(adminMessage, "Não há produtos para exportar.", "error");
+          setMessage(notice, "Ainda não há produtos para baixar.", "error");
           return;
         }
-
         const filename = `produtos-catalogo-${new Date().toISOString().slice(0, 10)}.${format}`;
         let content = "";
         let type = "application/json;charset=utf-8";
-
         if (format === "json") {
           content = JSON.stringify(products, null, 2);
         } else {
           type = "text/csv;charset=utf-8";
           const columns = ["id", "name", "slug", "description", "category", "filter", "image_url", "is_published", "is_featured", "sort_order", "created_at", "updated_at"];
           const escapeCsv = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
-          content = [
-            columns.join(","),
-            ...products.map((product) => columns.map((column) => escapeCsv(product[column])).join(",")),
-          ].join("\n");
+          content = "﻿" + [columns.join(","), ...products.map((p) => columns.map((c) => escapeCsv(p[c])).join(","))].join("\n");
         }
-
         const blob = new Blob([content], { type });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
@@ -775,58 +917,73 @@
         link.download = filename;
         link.click();
         URL.revokeObjectURL(url);
-        setMessage(adminMessage, `Exportação ${format.toUpperCase()} gerada.`, "success");
+        setMessage(notice, format === "csv" ? "A planilha foi baixada. Ela fica na pasta Downloads." : "A cópia de segurança foi baixada. Ela fica na pasta Downloads.", "success");
       }
+
+      /* ---------- eventos ---------- */
+      $("#show-password").addEventListener("click", (e) => {
+        const input = $("#login-password");
+        const showing = input.type === "text";
+        input.type = showing ? "password" : "text";
+        e.currentTarget.setAttribute("aria-pressed", String(!showing));
+        e.currentTarget.querySelector("span").textContent = showing ? "Mostrar" : "Esconder";
+        e.currentTarget.querySelector("iconify-icon").setAttribute("icon", showing ? "solar:eye-linear" : "solar:eye-closed-linear");
+      });
 
       loginForm.addEventListener("submit", async (event) => {
         event.preventDefault();
         setMessage(loginMessage, "Entrando...");
-
         try {
           const data = await apiRequest("/api/auth/login", {
             method: "POST",
             body: JSON.stringify({
-              email: document.querySelector("#login-email").value.trim(),
-              password: document.querySelector("#login-password").value,
+              email: $("#login-email").value.trim(),
+              password: $("#login-password").value,
             }),
           });
-
           authToken = data.token;
-          showAdminView();
+          try { sessionStorage.setItem(TOKEN_KEY, authToken); } catch {}
           setMessage(loginMessage, "");
-          productForm.reset();
-          markFormClean();
-          resetForm(true);
+          showScreen("list");
           await loadProducts();
         } catch (error) {
-          setMessage(loginMessage, error.message, "error");
+          setMessage(loginMessage, /401|inv[aá]lid|incorret/i.test(error.message) ? "E-mail ou senha não conferem. Confira e tente de novo." : error.message, "error");
         }
       });
 
-      logoutButton.addEventListener("click", () => {
-        if (isFormDirty && !confirmDiscardChanges()) return;
+      logoutButton.addEventListener("click", async () => {
+        if (!(await confirmDiscardChanges())) return;
+        isFormDirty = false;
         authToken = "";
-        showLoginView();
-        setMessage(loginMessage, "Você saiu do painel com segurança.", "success");
+        try { sessionStorage.removeItem(TOKEN_KEY); } catch {}
+        setMessage(notice, "");
+        showScreen("login");
+        setMessage(loginMessage, "Você saiu com segurança. Até logo!", "success");
       });
 
       productForm.addEventListener("submit", saveProduct);
       productForm.addEventListener("input", updateDirtyState);
       productForm.addEventListener("change", updateDirtyState);
-      document.querySelector("#new-product-button").addEventListener("click", resetForm);
-      document.querySelector("#refresh-products-button").addEventListener("click", loadProducts);
-      document.querySelector("#toggle-publish-button").addEventListener("click", togglePublishState);
-      document.querySelector("#cancel-edit-button").addEventListener("click", resetForm);
-      document.querySelector("#clear-image-selection-button").addEventListener("click", clearImageSelection);
-      document.querySelector("#delete-product-image-button").addEventListener("click", deleteProductImageOnly);
-      document.querySelector("#delete-product-button").addEventListener("click", deleteProductPermanently);
-      document.querySelector("#export-json-button").addEventListener("click", () => exportProducts("json"));
-      document.querySelector("#export-csv-button").addEventListener("click", () => exportProducts("csv"));
+      fields.name.addEventListener("input", () => { if (fields.name.value.trim()) $("#name-error").hidden = true; });
+
+      $("#new-product-button").addEventListener("click", openNewProduct);
+      $("#refresh-products-button").addEventListener("click", async () => {
+        try { await loadProducts(); setMessage(notice, "A lista foi recarregada.", "success"); }
+        catch (error) { setMessage(notice, error.message, "error"); }
+      });
+      $("#cancel-edit-button").addEventListener("click", goToList);
+      $("#cancel-edit-bottom").addEventListener("click", goToList);
+      $("#clear-image-selection-button").addEventListener("click", clearImageSelection);
+      $("#delete-product-image-button").addEventListener("click", deleteProductImageOnly);
+      $("#delete-product-button").addEventListener("click", deleteProductPermanently);
+      $("#export-json-button").addEventListener("click", () => exportProducts("json"));
+      $("#export-csv-button").addEventListener("click", () => exportProducts("csv"));
 
       Object.values(filterControls).forEach((control) => {
         control.addEventListener("input", renderProductList);
         control.addEventListener("change", renderProductList);
       });
+      document.querySelectorAll('input[name="status-filter"]').forEach((r) => r.addEventListener("change", renderProductList));
 
       fields.imageFile.addEventListener("change", () => {
         revokeSelectedImagePreviewUrl();
@@ -838,7 +995,7 @@
         if (!allowedImageTypes.has(file.type)) {
           fields.imageFile.value = "";
           updateImagePreview(currentSavedImageUrl);
-          setMessage(adminMessage, "Envie uma imagem JPG, PNG, WEBP ou GIF.", "error");
+          setMessage(notice, "Essa foto não é aceita. Use uma foto JPG, PNG ou WEBP.", "error");
           updateDirtyState();
           return;
         }
@@ -848,34 +1005,15 @@
       });
 
       productList.addEventListener("click", (event) => {
-        if (event.target.closest("[data-order-product-id]")) return;
+        if (event.target.closest("[data-clear-search]")) {
+          filterControls.search.value = "";
+          filterControls.category.value = "";
+          document.querySelector('input[name="status-filter"][value="all"]').checked = true;
+          renderProductList();
+          return;
+        }
         const row = event.target.closest("[data-product-id]");
-        if (!row) return;
-        const product = products.find((item) => item.id === row.dataset.productId);
-        if (product) fillForm(product);
-      });
-
-      productList.addEventListener("keydown", (event) => {
-        if (!["Enter", " "].includes(event.key)) return;
-        if (event.target.closest("[data-order-product-id]")) return;
-        const row = event.target.closest("[data-product-id]");
-        if (!row) return;
-        event.preventDefault();
-        const product = products.find((item) => item.id === row.dataset.productId);
-        if (product) fillForm(product);
-      });
-
-      productList.addEventListener("change", (event) => {
-        const input = event.target.closest("[data-order-product-id]");
-        if (!input) return;
-        updateProductOrder(input.dataset.orderProductId, input.value);
-      });
-
-      recentProducts.addEventListener("click", (event) => {
-        const row = event.target.closest("[data-product-id]");
-        if (!row) return;
-        const product = products.find((item) => item.id === row.dataset.productId);
-        if (product) fillForm(product);
+        if (row) openProduct(row.dataset.productId);
       });
 
       window.addEventListener("beforeunload", (event) => {
@@ -884,8 +1022,24 @@
         event.returnValue = "";
       });
 
-      showLoginView();
-      markFormClean();
+      /* ---------- início: mantém a pessoa logada enquanto a aba estiver aberta ---------- */
+      (async function start() {
+        let saved = "";
+        try { saved = sessionStorage.getItem(TOKEN_KEY) || ""; } catch {}
+        if (saved) {
+          authToken = saved;
+          showScreen("list");
+          try {
+            await loadProducts();
+            return;
+          } catch {
+            if (authToken) handleExpiredSession();
+            return;
+          }
+        }
+        showScreen("login");
+        markFormClean();
+      })();
     </script>
   </body>
 </html>
