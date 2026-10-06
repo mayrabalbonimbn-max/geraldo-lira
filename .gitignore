@@ -6,3 +6,6 @@ server/.env
 server/node_modules/
 server/storage/catalog-products/*
 !server/storage/catalog-products/.gitkeep
+
+# prévias locais, não sobem
+previa-*.html
