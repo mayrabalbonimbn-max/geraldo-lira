@@ -3,450 +3,538 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Catálogo técnico para saneamento e infraestrutura</title>
+    <title>Geraldo Lira | Materiais para saneamento e infraestrutura</title>
     <meta
       name="description"
-      content="Catálogo institucional de materiais, produtos e equipamentos para saneamento e infraestrutura, com atendimento técnico para cotação."
+      content="Consultoria técnica e fornecimento de tubos, poços de visita, conexões, ferro fundido e sistemas de bombeamento para redes de água, esgoto e drenagem. Cotação direto no WhatsApp."
     />
+    <meta name="theme-color" content="#0a1f33" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="site.css" />
     <script src="assets/iconify-icon.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#inicio" data-page-link="inicio" aria-label="Ir para o início">
-          <span class="brand-mark">
-            G
-          </span>
-          <span>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap header-inner">
+        <a class="brand" href="#inicio" data-page-link="inicio" aria-label="Geraldo Lira, ir para o início">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="3" />
+            <circle cx="24" cy="24" r="16.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.2 2.6" />
+            <text x="24" y="29.2" text-anchor="middle">GL</text>
+          </svg>
+          <span class="brand-text">
             <strong>Geraldo Lira</strong>
-            <small>Saneamento & Infraestrutura</small>
+            <small>Saneamento e infraestrutura</small>
           </span>
         </a>
 
-        <input class="mobile-nav-toggle" type="checkbox" id="mobile-nav-toggle" aria-label="Abrir menu" />
-        <label class="menu-button" for="mobile-nav-toggle" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+        <input class="nav-toggle" type="checkbox" id="mobile-nav-toggle" aria-label="Abrir menu" />
+        <label class="nav-burger" for="mobile-nav-toggle" aria-hidden="true"><span></span><span></span></label>
 
         <nav class="main-nav" aria-label="Menu principal">
           <a href="#inicio" data-page-link="inicio" aria-current="page">Início</a>
           <a href="#catalogo" data-page-link="catalogo">Catálogo</a>
           <a href="#trabalhos" data-page-link="trabalhos">Trabalhos</a>
           <a href="#pdfs" data-page-link="pdfs">Catálogos PDF</a>
+          <a href="#sbl" data-page-link="sbl">SBL em linha</a>
           <a href="#sobre" data-page-link="sobre">Sobre</a>
           <a href="#contato" data-page-link="contato">Contato</a>
-          <a class="nav-quote" href="#contato" data-page-link="contato">Solicitar cotação</a>
+          <a class="btn btn-ocre nav-cta" href="#contato" data-page-link="contato">Pedir cotação</a>
         </nav>
-
-        <a class="btn btn-small btn-dark header-cta" href="#contato" data-page-link="contato">
-          Solicitar cotação
-        </a>
       </div>
     </header>
 
-    <main class="site-pages">
+    <main class="site-pages" id="conteudo">
+      <!-- ============ INÍCIO ============ -->
       <section class="page-view is-active" data-page="inicio">
         <section class="hero">
-          <div class="container hero-grid">
+          
+
+          <div class="wrap hero-grid">
             <div class="hero-copy">
-              <div class="status-pill">
-                <span></span>
-                <strong>Atendimento técnico direto com especialista do setor</strong>
-              </div>
-
-              <h1>
-                <span>Catálogo técnico</span>
-                <span>de materiais para</span>
-                <span>saneamento e</span>
-                <span>infraestrutura</span>
+              <p class="hero-kicker"><span class="dot" aria-hidden="true"></span>Consultoria técnica e fornecimento para saneamento</p>
+              <h1 class="hero-title">
+                <span class="line"><span>O material certo</span></span>
+                <span class="line"><span>para a sua rede</span></span>
+                <span class="line"><span>de água, esgoto</span></span>
+                <span class="line"><span>e drenagem.</span></span>
               </h1>
-              <p class="hero-text">
-                Conheça materiais, produtos e soluções para redes de água, esgoto,
-                drenagem e obras de infraestrutura, com atendimento técnico
-                especializado para cotação e orientação.
+              <p class="hero-lead">
+                Tubos, poços de visita, conexões, ferro fundido e sistemas de bombeamento
+                de fabricantes como Asperbras e IMPROV, com indicação técnica de quem conhece obra.
+                Você descreve o que precisa e recebe a cotação direto no WhatsApp.
               </p>
-
               <div class="hero-actions">
-                <a class="btn btn-primary" href="#catalogo" data-page-link="catalogo">
+                <a class="btn btn-ocre btn-lg" href="https://wa.me/5584999723810?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">
+                  <iconify-icon icon="solar:chat-round-dots-bold" width="22"></iconify-icon>
+                  <span>Pedir cotação no WhatsApp</span>
+                </a>
+                <a class="btn btn-ghost-light btn-lg" href="#catalogo" data-page-link="catalogo">
                   <span>Ver catálogo</span>
-                  <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
                 </a>
-                <a class="btn btn-secondary" href="#contato" data-page-link="contato">
-                  <iconify-icon icon="solar:document-add-linear" width="20"></iconify-icon>
-                  <span>Solicitar cotação</span>
-                </a>
-              </div>
-
-              <div class="trust-row" aria-label="Áreas de atuação">
-                <span>Redes públicas</span>
-                <span>Obras civis</span>
-                <span>Fornecimento técnico</span>
               </div>
             </div>
 
-            <div class="hero-visual" aria-label="Foto profissional e recursos técnicos">
-              <div class="visual-composition">
-                <div class="professional-panel">
-                  <img
-                    src="professional-photo.jpg"
-                    alt="Profissional especialista em saneamento e infraestrutura"
-                  />
-                </div>
-
-                <article class="floating-quote-seal">
-                  <iconify-icon icon="solar:verified-check-linear" width="22"></iconify-icon>
-                  <div>
-                    <span>Cotação sob consulta</span>
-                    <strong>Atendimento direto</strong>
-                  </div>
-                </article>
-
-                <article class="floating-catalog-card">
-                  <div class="catalog-card-head">
-                    <iconify-icon icon="solar:file-text-linear" width="24"></iconify-icon>
-                    <div>
-                      <span>Catálogo PDF</span>
-                      <strong>Materiais sob consulta</strong>
-                    </div>
-                  </div>
-                  <p>
-                    PDFs reais de fornecedores e linhas de produtos organizadas
-                    por aplicação técnica.
-                  </p>
-                  <div class="catalog-card-lines" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </article>
+            <figure class="hero-portrait">
+              <svg class="hero-network" viewBox="0 0 2400 1400" aria-hidden="true">
+                <g class="pipe pipe-a">
+                  <path d="M1200 700 H1720 Q1760 700 1760 740 V1400" />
+                  <path d="M1200 700 H1720 Q1760 700 1760 740 V1400" class="flow" />
+                </g>
+                <g class="pipe pipe-b">
+                  <path d="M1200 700 V300 Q1200 260 1240 260 H2400" />
+                  <path d="M1200 700 V300 Q1200 260 1240 260 H2400" class="flow" />
+                </g>
+                <g class="pipe pipe-c">
+                  <path d="M1200 700 H950 Q910 700 910 740 V1400" />
+                  <path d="M1200 700 H950 Q910 700 910 740 V1400" class="flow" />
+                </g>
+                <g class="joints">
+                  <rect x="1580" y="684" width="14" height="32" rx="3" />
+                  <rect x="1184" y="380" width="32" height="14" rx="3" />
+                  <rect x="894" y="980" width="32" height="14" rx="3" />
+                </g>
+              </svg>
+                            <div class="pipe-section" aria-hidden="true">
+                <span class="ring ring-outer"></span>
+                <span class="ring ring-stripe"></span>
+                <span class="ring ring-inner"></span>
               </div>
+              <img src="professional-photo.jpg" alt="Geraldo Lira, especialista em saneamento e infraestrutura" width="1086" height="1448" />
+              <figcaption class="portrait-tag">
+                <strong>Geraldo Lira</strong>
+                <span>Atendimento técnico direto</span>
+              </figcaption>
+            </figure>
+          </div>
 
-              <div class="tech-tags" aria-label="Categorias técnicas">
-                <span>Redes de esgoto</span>
-                <span>Poços de inspeção</span>
-                <span>Poços de visita</span>
-                <span>Interceptores</span>
-                <span>Drenagem</span>
-                <span>Estações elevatórias</span>
-                <span>Catálogos técnicos</span>
-                <span>ETE</span>
-                <span>ETA</span>
-                <span>Automação</span>
-                <span>Ferro fundido</span>
-                <span>Registros e válvulas</span>
-                <span>Berço para redes de esgoto</span>
+          <div class="wrap">
+            <nav class="pipe-bar" aria-label="Buscar no catálogo por aplicação">
+              <span class="pipe-bar-label">Por aplicação</span>
+              <div class="pipe-bar-track">
+                <a href="#catalogo" data-page-link="catalogo" data-jump-application="Água-adutora">Água e adutora</a>
+                <a href="#catalogo" data-page-link="catalogo" data-jump-application="REDES DE ESGOTO">Esgoto</a>
+                <a href="#catalogo" data-page-link="catalogo" data-jump-application="DRENAGEM">Drenagem</a>
+                <a href="#catalogo" data-page-link="catalogo" data-jump-application="ESTAÇÕES ELEVATÓRIAS">Elevatórias</a>
+                <a href="#catalogo" data-page-link="catalogo" data-jump-application="FERRO FUNDIDO">Ferro fundido</a>
+              </div>
+            </nav>
+          </div>
+        </section>
+
+        <section class="block lines-block">
+          <div class="wrap">
+            <header class="block-head">
+              <h2>Linhas de produto</h2>
+              <p>Do ramal predial à adutora. Escolha uma linha para ver os itens disponíveis e pedir cotação.</p>
+            </header>
+
+            <div class="lines">
+              <ol class="lines-list" data-lines-list>
+                <li>
+                  <a class="line-row" href="#catalogo" data-page-link="catalogo" data-jump-category="Tubos PEAD" data-preview="/produtos/asperbras/pead-01-hero-tubos-pead-listras-laranja-azul.webp">
+                    <img class="line-thumb" src="/produtos/asperbras/pead-09-tubos-pead-stack-banner-final.webp" alt="" loading="lazy" />
+                    <span class="line-name">Tubos PEAD</span>
+                    <span class="line-meta">Adutora, ramal, irrigação, esgoto</span>
+                    <span class="line-count" data-count-category="Tubos PEAD"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="line-row" href="#catalogo" data-page-link="catalogo" data-jump-category="Tubos PVC / MPVC" data-preview="/produtos/asperbras/tubos-33-tubos-azuis-empilhados-hero.jpg">
+                    <img class="line-thumb" src="/produtos/asperbras/tubos-04-tubo-pvc-pba-junta-elastica.png" alt="" loading="lazy" />
+                    <span class="line-name">Tubos PVC e MPVC</span>
+                    <span class="line-meta">PBA, DEFOFO, distribuição de água</span>
+                    <span class="line-count" data-count-category="Tubos PVC / MPVC"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="line-row" href="#catalogo" data-page-link="catalogo" data-jump-category="Esgoto" data-preview="/produtos/asperbras/tubos-34-tubos-ocre-coletor-esgoto.jpg">
+                    <img class="line-thumb" src="/produtos/asperbras/tubos-15-tubo-pvc-coletor-esgoto-ocre-parede-macica.png" alt="" loading="lazy" />
+                    <span class="line-name">Coleta de esgoto</span>
+                    <span class="line-meta">Tubos ocre, curvas, tês, selins</span>
+                    <span class="line-count" data-count-category="Esgoto"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="line-row" href="#catalogo" data-page-link="catalogo" data-jump-category="Poços de Visita em PEAD" data-preview="/produtos/asperbras/saneamento-26-instalacao-poco-visita-inspecao.webp">
+                    <img class="line-thumb" src="/produtos/asperbras/saneamento-04-poco-visita-dn800.webp" alt="" loading="lazy" />
+                    <span class="line-name">Poços e caixas</span>
+                    <span class="line-meta">Poços de visita e inspeção, interceptores</span>
+                    <span class="line-count" data-count-category="Poços de Visita em PEAD"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="line-row" href="#catalogo" data-page-link="catalogo" data-jump-category="Elevatória / Bombeamento em Linha" data-preview="/produtos/asperbras/improv-sbl-p34-sbl-sv-render-do-equipamento.webp">
+                    <img class="line-thumb" src="/produtos/asperbras/improv-sbl-p34-sbl-sv-render-do-equipamento.webp" alt="" loading="lazy" />
+                    <span class="line-name">Elevatórias e bombeamento</span>
+                    <span class="line-meta">SBL em linha, estações elevatórias</span>
+                    <span class="line-count" data-count-category="Elevatória / Bombeamento em Linha"></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="line-row" href="#catalogo" data-page-link="catalogo" data-jump-application="FERRO FUNDIDO" data-preview="/produtos/ferro-fundido/02_valvula-registro-gaveta-flangeada-corpo-longo-com-volante.webp">
+                    <img class="line-thumb" src="/produtos/ferro-fundido/07_tampao-dn-600.webp" alt="" loading="lazy" />
+                    <span class="line-name">Ferro fundido</span>
+                    <span class="line-meta">Válvulas, registros, conexões, tampões</span>
+                    <span class="line-count" data-count-application="FERRO FUNDIDO"></span>
+                  </a>
+                </li>
+              </ol>
+
+              <div class="lines-preview" aria-hidden="true">
+                <img data-lines-preview src="/produtos/asperbras/pead-01-hero-tubos-pead-listras-laranja-azul.webp" alt="" />
+              </div>
+            </div>
+
+            <a class="link-arrow" href="#catalogo" data-page-link="catalogo">
+              Abrir o catálogo completo <span data-total-count></span>
+              <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
+            </a>
+          </div>
+        </section>
+
+        <section class="block steps-block">
+          <div class="wrap">
+            <header class="block-head">
+              <h2>Como a cotação funciona</h2>
+              <p>Sem formulário longo e sem catálogo para decifrar sozinho.</p>
+            </header>
+            <ol class="steps">
+              <li>
+                <span class="step-n">1</span>
+                <h3>Você descreve a obra</h3>
+                <p>Mande a lista de materiais, o projeto ou só a aplicação: tipo de rede, diâmetro, extensão.</p>
+              </li>
+              <li>
+                <span class="step-n">2</span>
+                <h3>Geraldo indica a solução</h3>
+                <p>A especificação é conferida com você: material, classe de pressão, conexões e acessórios compatíveis.</p>
+              </li>
+              <li>
+                <span class="step-n">3</span>
+                <h3>Você recebe a cotação</h3>
+                <p>Preço e condições com quem vai acompanhar o fornecimento do pedido até a entrega.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="block sbl-band">
+          <div class="wrap sbl-grid">
+            <a class="sbl-media" href="#sbl" data-page-link="sbl" aria-label="Assistir ao vídeo do SBL em linha">
+              <img src="/videos/sbl-em-linha-poster.jpg" alt="" loading="lazy" />
+              <span class="play"><iconify-icon icon="solar:play-bold" width="28"></iconify-icon></span>
+            </a>
+            <div class="sbl-copy">
+              <p class="kicker-light">Solução em destaque</p>
+              <h2>Bombeamento em linha para estações elevatórias de esgoto</h2>
+              <p>
+                O SBL da IMPROV tira a bomba de dentro do poço: menos área ocupada,
+                acesso direto aos equipamentos e manutenção sem içamento.
+                Veja em 4 minutos como funciona.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-light" href="#sbl" data-page-link="sbl">
+                  <iconify-icon icon="solar:play-circle-linear" width="20"></iconify-icon>
+                  <span>Assistir ao vídeo</span>
+                </a>
+                <a class="btn btn-ghost-light" href="/catalogos/improv-equipamentos-sbl.pdf" target="_blank" rel="noopener noreferrer">Apresentação em PDF</a>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="section home-route-section">
-          <div class="container">
-            <div class="section-heading compact-heading">
-              <div>
-                <div class="section-label">
-                  <iconify-icon icon="solar:layers-linear" width="18"></iconify-icon>
-                  <span>Entrada rápida</span>
-                </div>
-                <h2>Linhas principais para consulta rápida.</h2>
-              </div>
-              <p>
-                A Home fica curta. O catálogo completo, os PDFs e o contato ficam
-                organizados em páginas próprias.
+        <section class="block about-teaser">
+          <div class="wrap about-teaser-grid">
+            <div class="about-teaser-photo">
+              <img src="professional-photo.jpg" alt="Geraldo Lira" loading="lazy" />
+            </div>
+            <div>
+              <h2>Atendimento técnico de pessoa para pessoa.</h2>
+              <p class="lead">
+                Com atuação no setor de saneamento e infraestrutura, Geraldo orienta empresas,
+                engenheiros, compradores e obras que precisam do material adequado para cada
+                projeto, da especificação até o pedido.
               </p>
-            </div>
-
-            <div class="preview-grid">
-              <article class="category-card preview-card">
-                <iconify-icon icon="solar:map-point-wave-linear" width="28"></iconify-icon>
-                <h3>Poços de inspeção</h3>
-                <p>Acesso técnico para inspeção, manutenção e conexão de redes.</p>
-                <a href="#catalogo" data-page-link="catalogo">Abrir catálogo</a>
-              </article>
-              <article class="category-card preview-card">
-                <iconify-icon icon="solar:map-point-wave-linear" width="28"></iconify-icon>
-                <h3>Poços de visita</h3>
-                <p>Estruturas para acesso interno e manutenção de redes enterradas.</p>
-                <a href="#catalogo" data-page-link="catalogo">Abrir catálogo</a>
-              </article>
-              <article class="category-card preview-card">
-                <iconify-icon icon="solar:filter-linear" width="28"></iconify-icon>
-                <h3>Interceptores</h3>
-                <p>Retenção de gordura e proteção do sistema hidráulico.</p>
-                <a href="#catalogo" data-page-link="catalogo">Abrir catálogo</a>
-              </article>
-              <article class="category-card preview-card category-card-dark">
-                <iconify-icon icon="solar:settings-linear" width="28"></iconify-icon>
-                <h3>Estações elevatórias</h3>
-                <p>Soluções para bombeamento e condução de efluentes.</p>
-                <a href="#catalogo" data-page-link="catalogo">Abrir catálogo</a>
-              </article>
-            </div>
-
-            <div class="home-cta-card">
-              <div>
-                <span>Atendimento técnico</span>
-                <h3>Precisa encontrar o material correto para uma obra?</h3>
-              </div>
-              <a class="btn btn-primary" href="#contato" data-page-link="contato">
-                <span>Solicitar cotação</span>
-                <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
+              <ul class="audience">
+                <li>Construtoras e empreiteiras</li>
+                <li>Engenheiros e projetistas</li>
+                <li>Compradores e suprimentos</li>
+                <li>Obras públicas e privadas</li>
+              </ul>
+              <a class="link-arrow" href="#sobre" data-page-link="sobre">
+                Conhecer o atendimento <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
               </a>
             </div>
           </div>
         </section>
-      </section>
 
-      <section class="page-view" data-page="catalogo" hidden>
-        <section class="section page-hero-section section-light">
-          <div class="container page-intro">
-            <div class="section-label">
-              <iconify-icon icon="solar:layers-linear" width="18"></iconify-icon>
-              <span>Catálogo de materiais</span>
-            </div>
-            <h1>Catálogo de materiais</h1>
-            <p>
-              Consulte categorias, produtos e aplicações para saneamento, redes de
-              água, esgoto, drenagem e infraestrutura.
-            </p>
+        <section class="block docs-block">
+          <div class="wrap">
+            <header class="block-head">
+              <h2>Catálogos dos fabricantes</h2>
+              <p>Arquivos técnicos completos para consulta e especificação.</p>
+            </header>
+            <ul class="doc-list">
+              <li><a href="/catalogos/catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-maker">Asperbras</span><span class="doc-title">Linha saneamento rotomoldagem</span><span class="doc-open">Abrir PDF <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon></span></a></li>
+              <li><a href="/catalogos/catalogo-pead-asperbras.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-maker">Asperbras</span><span class="doc-title">Tubos PEAD</span><span class="doc-open">Abrir PDF <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon></span></a></li>
+              <li><a href="/catalogos/catalogo-tubos-asperbras.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-maker">Asperbras</span><span class="doc-title">Tubos e conexões PVC</span><span class="doc-open">Abrir PDF <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon></span></a></li>
+              <li><a href="/catalogos/improv-equipamentos-sbl.pdf" target="_blank" rel="noopener noreferrer"><span class="doc-maker">IMPROV</span><span class="doc-title">Equipamentos e SBL</span><span class="doc-open">Abrir PDF <iconify-icon icon="solar:arrow-right-up-linear" width="18"></iconify-icon></span></a></li>
+            </ul>
           </div>
         </section>
+      </section>
 
-        <section class="section catalog-section">
-          <div class="container">
-            <div class="catalog-toolbar" aria-label="Busca e filtros do catálogo">
+      <!-- ============ CATÁLOGO ============ -->
+      <section class="page-view" data-page="catalogo" hidden>
+        <header class="page-head">
+          <div class="wrap">
+            <h1>Catálogo de materiais</h1>
+            <p>Tubos, conexões, poços, equipamentos e acessórios para redes de água, esgoto, drenagem e infraestrutura. Encontrou o item? Peça a cotação direto pelo card.</p>
+          </div>
+        </header>
+
+        <section class="catalog">
+          <div class="catalog-toolbar" aria-label="Busca e filtros do catálogo">
+            <div class="wrap toolbar-inner">
               <label class="catalog-search" for="catalog-search">
-                <iconify-icon icon="solar:magnifer-linear" width="24"></iconify-icon>
-                <input
-                  id="catalog-search"
-                  type="search"
-                  placeholder="Buscar por produto, categoria ou aplicação…"
-                  autocomplete="off"
-                />
+                <iconify-icon icon="solar:magnifer-linear" width="22"></iconify-icon>
+                <span class="sr-only">Buscar no catálogo</span>
+                <input id="catalog-search" type="search" placeholder="Buscar produto ou aplicação" autocomplete="off" />
               </label>
-
-              <div class="catalog-filter-group" aria-label="Filtro principal">
-                <div class="catalog-tabs" id="catalog-tabs" role="tablist" aria-label="Filtro principal do catálogo"></div>
-              </div>
-
-              <details class="catalog-advanced-filter">
+              <div class="catalog-tabs" id="catalog-tabs" role="tablist" aria-label="Linha de produto"></div>
+              <details class="catalog-advanced">
                 <summary>
+                  <iconify-icon icon="solar:tuning-2-linear" width="18"></iconify-icon>
                   <span id="catalog-application-summary">Filtrar por aplicação</span>
-                  <iconify-icon icon="solar:alt-arrow-down-linear" width="18"></iconify-icon>
+                  <iconify-icon class="chev" icon="solar:alt-arrow-down-linear" width="16"></iconify-icon>
                 </summary>
-                <div class="catalog-tabs catalog-application-tabs" id="catalog-application-tabs" role="tablist" aria-label="Filtro de aplicação do catálogo"></div>
+                <div class="catalog-tabs catalog-application-tabs" id="catalog-application-tabs" role="tablist" aria-label="Aplicação"></div>
               </details>
             </div>
+          </div>
 
-            <div class="catalog-result-bar">
+          <div class="wrap">
+            <div class="result-bar">
               <span id="catalog-result-count">0 produtos encontrados</span>
-              <span>Consulta técnica para cotação sob demanda.</span>
+              <span>Preço e disponibilidade sob consulta.</span>
             </div>
-
-            <div class="product-grid catalog-product-grid" id="catalog-product-grid" aria-live="polite"></div>
-
+            <div class="product-grid" id="catalog-product-grid" aria-live="polite"></div>
             <div class="catalog-empty" id="catalog-empty" hidden>
-              <iconify-icon icon="solar:document-medicine-linear" width="36"></iconify-icon>
-              <p>Nenhum produto encontrado para essa busca. Fale conosco para consultar disponibilidade.</p>
-              <a class="btn btn-primary" href="#contato" data-page-link="contato">
-                <span>Solicitar atendimento</span>
-                <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
-              </a>
+              <h2>Nenhum item com esse filtro.</h2>
+              <p>O catálogo não lista tudo o que Geraldo fornece. Descreva o material e ele confere a disponibilidade para você.</p>
+              <a class="btn btn-ocre" href="#contato" data-page-link="contato">Consultar disponibilidade</a>
             </div>
           </div>
         </section>
       </section>
 
+      <!-- ============ TRABALHOS ============ -->
       <section class="page-view" data-page="trabalhos" hidden>
-        <section class="section page-hero-section section-light">
-          <div class="container page-intro">
-            <div class="section-label">
-              <iconify-icon icon="solar:case-round-linear" width="18"></iconify-icon>
-              <span>Trabalhos</span>
-            </div>
-            <h1>Trabalhos e aplicações em obra.</h1>
-            <p>
-              Fotos de instalação, aplicação em campo e materiais institucionais
-              de apoio, separadas do catálogo de produtos.
-            </p>
+        <header class="page-head">
+          <div class="wrap">
+            <h1>Trabalhos e aplicações em obra</h1>
+            <p>Registros de instalação, aplicação em campo e materiais institucionais dos fabricantes.</p>
           </div>
-        </section>
-
-        <section class="section catalog-section">
-          <div class="container">
-            <div class="catalog-result-bar work-result-bar">
+        </header>
+        <section class="block">
+          <div class="wrap">
+            <div class="result-bar">
               <span id="work-result-count">0 trabalhos cadastrados</span>
-              <span>Registros visuais de aplicação, instalação e contexto técnico.</span>
+              <span>Instalação, aplicação e contexto técnico.</span>
             </div>
-
-            <div class="product-grid catalog-product-grid work-grid" id="work-grid" aria-live="polite"></div>
+            <div class="work-grid" id="work-grid" aria-live="polite"></div>
           </div>
         </section>
       </section>
 
+      <!-- ============ PDFs ============ -->
       <section class="page-view" data-page="pdfs" hidden>
-        <section class="section page-hero-section section-light">
-          <div class="container page-intro">
-            <div class="section-label">
-              <iconify-icon icon="solar:file-text-linear" width="18"></iconify-icon>
-              <span>Catálogos PDF</span>
-            </div>
-            <h1>Arquivos técnicos e fichas de produto.</h1>
-            <p>
-              Catálogos completos dos fabricantes para consulta, especificação e
-              apoio em solicitação de cotação.
-            </p>
+        <header class="page-head">
+          <div class="wrap">
+            <h1>Catálogos técnicos em PDF</h1>
+            <p>Catálogos completos dos fabricantes para consulta, especificação e apoio na sua solicitação de cotação.</p>
           </div>
-        </section>
-
-        <section class="section">
-          <div class="container">
-            <div class="pdf-grid">
-              <article class="pdf-card">
-                <div class="pdf-icon">
-                  <iconify-icon icon="solar:file-text-linear" width="30"></iconify-icon>
-                </div>
-                <span>PDF técnico</span>
-                <h3>Catálogo Linha Saneamento Asperbras Rotomoldagem</h3>
-                <p>Poços de inspeção, poços de visita, interceptadores, caixas, anéis, juntas e soluções rotomoldadas para saneamento.</p>
+        </header>
+        <section class="block">
+          <div class="wrap pdf-grid">
+            <article class="pdf-card">
+              <div class="pdf-sheet" aria-hidden="true"><span>PDF</span></div>
+              <div>
+                <p class="pdf-maker">Asperbras</p>
+                <h2>Linha saneamento rotomoldagem</h2>
+                <p>Poços de inspeção, poços de visita, interceptores, caixas, anéis, juntas e soluções rotomoldadas para saneamento.</p>
                 <div class="pdf-actions">
-                  <a href="/catalogos/catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" target="_blank" rel="noopener noreferrer">Visualizar catálogo</a>
-                  <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
+                  <a class="btn btn-dark" href="/catalogos/catalogo-linha-saneamento-asperbras-rotomoldagem.pdf" target="_blank" rel="noopener noreferrer">Abrir catálogo</a>
+                  <a class="btn btn-outline" href="#contato" data-page-link="contato">Pedir cotação</a>
                 </div>
-              </article>
-              <article class="pdf-card">
-                <div class="pdf-icon">
-                  <iconify-icon icon="solar:file-text-linear" width="30"></iconify-icon>
-                </div>
-                <span>PDF técnico</span>
-                <h3>Catálogo PEAD Asperbras</h3>
+              </div>
+            </article>
+            <article class="pdf-card">
+              <div class="pdf-sheet" aria-hidden="true"><span>PDF</span></div>
+              <div>
+                <p class="pdf-maker">Asperbras</p>
+                <h2>Tubos PEAD</h2>
                 <p>Tubos de polietileno de alta densidade para adutoras, saneamento básico, irrigação e aplicações técnicas.</p>
                 <div class="pdf-actions">
-                  <a href="/catalogos/catalogo-pead-asperbras.pdf" target="_blank" rel="noopener noreferrer">Visualizar catálogo</a>
-                  <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
+                  <a class="btn btn-dark" href="/catalogos/catalogo-pead-asperbras.pdf" target="_blank" rel="noopener noreferrer">Abrir catálogo</a>
+                  <a class="btn btn-outline" href="#contato" data-page-link="contato">Pedir cotação</a>
                 </div>
-              </article>
-              <article class="pdf-card">
-                <div class="pdf-icon">
-                  <iconify-icon icon="solar:file-text-linear" width="30"></iconify-icon>
-                </div>
-                <span>PDF técnico</span>
-                <h3>Catálogo Tubos Asperbras</h3>
-                <p>Tubos MPVC Defofo, PVC PBA, conexões para distribuição de água, tubos e conexões para coleta de esgoto.</p>
+              </div>
+            </article>
+            <article class="pdf-card">
+              <div class="pdf-sheet" aria-hidden="true"><span>PDF</span></div>
+              <div>
+                <p class="pdf-maker">Asperbras</p>
+                <h2>Tubos e conexões PVC</h2>
+                <p>Tubos MPVC DEFOFO, PVC PBA, conexões para distribuição de água, tubos e conexões para coleta de esgoto.</p>
                 <div class="pdf-actions">
-                  <a href="/catalogos/catalogo-tubos-asperbras.pdf" target="_blank" rel="noopener noreferrer">Visualizar catálogo</a>
-                  <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
+                  <a class="btn btn-dark" href="/catalogos/catalogo-tubos-asperbras.pdf" target="_blank" rel="noopener noreferrer">Abrir catálogo</a>
+                  <a class="btn btn-outline" href="#contato" data-page-link="contato">Pedir cotação</a>
                 </div>
-              </article>
-              <article class="pdf-card">
-                <div class="pdf-icon">
-                  <iconify-icon icon="solar:presentation-graph-linear" width="30"></iconify-icon>
-                </div>
-                <span>Apresentação técnica</span>
-                <h3>IMPROV Equipamentos / SBL</h3>
+              </div>
+            </article>
+            <article class="pdf-card">
+              <div class="pdf-sheet pdf-sheet-ocre" aria-hidden="true"><span>PDF</span></div>
+              <div>
+                <p class="pdf-maker">IMPROV Equipamentos</p>
+                <h2>Equipamentos e SBL</h2>
                 <p>Sistema de Bombeamento em Linha, otimização de bombeamento, tanques, abraçadeiras e soluções para infraestrutura de saneamento.</p>
                 <div class="pdf-actions">
-                  <a href="/catalogos/improv-equipamentos-sbl.pdf" target="_blank" rel="noopener noreferrer">Visualizar apresentação</a>
-                  <a href="#contato" data-page-link="contato">Solicitar atendimento</a>
+                  <a class="btn btn-dark" href="/catalogos/improv-equipamentos-sbl.pdf" target="_blank" rel="noopener noreferrer">Abrir apresentação</a>
+                  <a class="btn btn-outline" href="#contato" data-page-link="contato">Pedir cotação</a>
                 </div>
-              </article>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- ============ SBL ============ -->
+      <section class="page-view" data-page="sbl" hidden>
+        <header class="page-head">
+          <div class="wrap">
+            <h1>Como funciona o Sistema de Bombeamento em Linha</h1>
+            <p>Vídeo didático da IMPROV Equipamentos sobre o SBL aplicado em estações elevatórias de esgoto.</p>
+          </div>
+        </header>
+        <section class="block">
+          <div class="wrap video-grid">
+            <div class="video-frame">
+              <video class="sbl-video" controls playsinline preload="metadata" poster="/videos/sbl-em-linha-poster.jpg">
+                <source src="/videos/video-didatico-sbl.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="video-copy">
+              <h2>SBL para estações elevatórias de esgoto</h2>
+              <p>
+                O material mostra a diferença entre sistemas submersíveis e o bombeamento
+                em linha, com foco em ocupação de área, acesso aos equipamentos e operação
+                em aplicações de saneamento.
+              </p>
+              <dl class="facts">
+                <div><dt>Fabricante</dt><dd>IMPROV Equipamentos</dd></div>
+                <div><dt>Duração</dt><dd>4 min 29 s</dd></div>
+                <div><dt>Áudio</dt><dd>Português</dd></div>
+              </dl>
+              <div class="hero-actions">
+                <a class="btn btn-ocre" href="https://wa.me/5584999723810?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20SBL%20em%20linha." target="_blank" rel="noopener noreferrer">
+                  <iconify-icon icon="solar:chat-round-dots-bold" width="20"></iconify-icon>
+                  <span>Falar sobre o SBL</span>
+                </a>
+                <a class="btn btn-outline" href="/catalogos/improv-equipamentos-sbl.pdf" target="_blank" rel="noopener noreferrer">Apresentação em PDF</a>
+              </div>
             </div>
           </div>
         </section>
       </section>
 
+      <!-- ============ SOBRE ============ -->
       <section class="page-view" data-page="sobre" hidden>
-        <section class="section about-section">
-          <div class="container about-page-grid">
-            <div class="about-photo-card">
-              <img src="professional-photo.jpg" alt="Profissional especialista em saneamento e infraestrutura" />
-            </div>
-            <div class="about-content">
-              <div class="section-label">
-                <iconify-icon icon="solar:user-check-linear" width="18"></iconify-icon>
-                <span>Sobre o atendimento</span>
-              </div>
+        <section class="about">
+          <div class="wrap about-grid">
+            <figure class="about-photo">
+              <img src="professional-photo.jpg" alt="Geraldo Lira, especialista em saneamento e infraestrutura" />
+            </figure>
+            <div class="about-copy">
+              <p class="hero-kicker hero-kicker-dark"><span class="dot" aria-hidden="true"></span>Sobre o atendimento</p>
               <h1>Experiência técnica para orientar compras, obras e especificações.</h1>
-              <p>
-                Com atuação no setor de saneamento e infraestrutura, oferecemos
-                atendimento técnico para empresas, engenheiros, compradores e obras
-                que precisam encontrar materiais adequados para seus projetos.
+              <p class="lead">
+                Com atuação no setor de saneamento e infraestrutura, Geraldo Lira oferece
+                atendimento técnico para empresas, engenheiros, compradores e obras que
+                precisam encontrar o material adequado para cada projeto.
               </p>
-              <div class="area-list" aria-label="Áreas atendidas">
-                <span>Empresas</span>
-                <span>Engenheiros</span>
-                <span>Compradores</span>
-                <span>Obras públicas e privadas</span>
+              <p>
+                A conversa começa pela aplicação, não pelo código do produto. Assim a
+                cotação já chega com a especificação conferida: diâmetro, material, classe,
+                conexões e acessórios compatíveis com a rede.
+              </p>
+              <ul class="audience">
+                <li>Construtoras e empreiteiras</li>
+                <li>Engenheiros e projetistas</li>
+                <li>Compradores e suprimentos</li>
+                <li>Obras públicas e privadas</li>
+              </ul>
+              <div class="hero-actions">
+                <a class="btn btn-ocre btn-lg" href="#contato" data-page-link="contato">Pedir orientação técnica</a>
               </div>
-              <div class="signature-card">
-                <img src="professional-photo.jpg" alt="Foto menor do profissional" />
-                <div>
-                  <span>Atendimento especializado</span>
-                  <strong>Geraldo Lira</strong>
-                  <small>Consultoria técnica e fornecimento sob consulta</small>
-                </div>
-              </div>
-              <a class="btn btn-primary about-cta" href="#contato" data-page-link="contato">
-                <span>Solicitar orientação técnica</span>
-                <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
-              </a>
             </div>
           </div>
         </section>
       </section>
 
+      <!-- ============ CONTATO ============ -->
       <section class="page-view" data-page="contato" hidden>
-        <section class="section contact-section">
-          <div class="container contact-grid">
+        <section class="contact">
+          <div class="wrap contact-grid">
             <div class="contact-copy">
-              <span class="quote-kicker">Solicite uma cotação</span>
-              <h1>Precisa de materiais ou orientação técnica para sua obra?</h1>
-              <p>
-                Envie uma descrição do material, aplicação, quantidade estimada ou
-                arquivo técnico. O atendimento é direcionado para cotação e indicação.
+              <h1>Precisa de materiais ou orientação para a sua obra?</h1>
+              <p class="lead">
+                Descreva o material, a aplicação e a quantidade estimada. Se tiver projeto ou
+                planilha, mande junto no WhatsApp. O retorno vem com a indicação técnica.
               </p>
-              <div class="quote-actions contact-actions">
-                <a class="btn btn-accent" href="https://wa.me/5584999723810" target="_blank" rel="noreferrer">
-                  <span>Falar no WhatsApp</span>
-                  <iconify-icon icon="solar:chat-round-call-linear" width="20"></iconify-icon>
-                </a>
-                <a class="btn btn-light" href="mailto:geraldolirasan@gmail.com?subject=Solicitação%20de%20cotação">
-                  <iconify-icon icon="solar:mailbox-linear" width="20"></iconify-icon>
-                  <span>Solicitar cotação por e-mail</span>
-                </a>
-              </div>
+              <ul class="contact-list">
+                <li>
+                  <a href="https://wa.me/5584999723810" target="_blank" rel="noopener noreferrer">
+                    <iconify-icon icon="solar:chat-round-dots-linear" width="24"></iconify-icon>
+                    <span><small>WhatsApp</small>(84) 99972-3810</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:geraldolirasan@gmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20cota%C3%A7%C3%A3o">
+                    <iconify-icon icon="solar:letter-linear" width="24"></iconify-icon>
+                    <span><small>E-mail</small>geraldolirasan@gmail.com</span>
+                  </a>
+                </li>
+              </ul>
             </div>
 
             <div class="request-card">
-              <div class="section-label">
-                <iconify-icon icon="solar:document-add-linear" width="18"></iconify-icon>
-                <span>Bloco de solicitação</span>
-              </div>
+              <h2>Montar pedido de cotação</h2>
+              <p>Preencha e a mensagem abre pronta no WhatsApp.</p>
               <form class="request-form" data-whatsapp-number="5584999723810">
                 <label>
-                  <span>Nome</span>
-                  <input name="name" type="text" placeholder="Seu nome ou empresa" />
+                  <span>Nome ou empresa</span>
+                  <input name="name" type="text" autocomplete="name" placeholder="Como devemos te chamar" />
                 </label>
                 <label>
                   <span>Contato</span>
-                  <input name="contact" type="text" placeholder="WhatsApp ou e-mail" />
+                  <input name="contact" type="text" autocomplete="tel" placeholder="WhatsApp ou e-mail" />
                 </label>
                 <label>
                   <span>Material ou aplicação</span>
-                  <textarea name="message" rows="5" placeholder="Ex.: tubos, conexões, válvulas, drenagem, obra, aplicação..."></textarea>
+                  <textarea name="message" rows="5" placeholder="Ex.: 300 m de tubo PEAD DN110 PN10 para adutora, 4 poços de visita DN1000"></textarea>
                 </label>
-                <button class="btn btn-primary" type="submit">
-                  <span>Preparar solicitação</span>
-                  <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
+                <button class="btn btn-ocre btn-lg btn-block" type="submit">
+                  <iconify-icon icon="solar:chat-round-dots-bold" width="20"></iconify-icon>
+                  <span>Enviar pelo WhatsApp</span>
                 </button>
               </form>
             </div>
@@ -455,18 +543,54 @@
       </section>
     </main>
 
+    <section class="closing" data-closing>
+      <div class="wrap closing-inner">
+        <h2>Tem uma lista de materiais para cotar?</h2>
+        <a class="btn btn-dark btn-lg" href="https://wa.me/5584999723810?text=Ol%C3%A1%2C%20tenho%20uma%20lista%20de%20materiais%20para%20cotar." target="_blank" rel="noopener noreferrer">
+          <iconify-icon icon="solar:chat-round-dots-bold" width="20"></iconify-icon>
+          <span>Mandar no WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <strong>Geraldo Lira</strong>
+          <span>Consultoria técnica e fornecimento para saneamento e infraestrutura.</span>
+        </div>
+        <nav aria-label="Rodapé">
+          <a href="#catalogo" data-page-link="catalogo">Catálogo</a>
+          <a href="#trabalhos" data-page-link="trabalhos">Trabalhos</a>
+          <a href="#pdfs" data-page-link="pdfs">Catálogos PDF</a>
+          <a href="#sbl" data-page-link="sbl">SBL em linha</a>
+          <a href="#sobre" data-page-link="sobre">Sobre</a>
+        </nav>
+        <div class="footer-contact">
+          <a href="https://wa.me/5584999723810" target="_blank" rel="noopener noreferrer">(84) 99972-3810</a>
+          <a href="mailto:geraldolirasan@gmail.com">geraldolirasan@gmail.com</a>
+        </div>
+      </div>
+      <div class="wrap footer-base">
+        <span>© <span data-year></span> Geraldo Lira</span>
+      </div>
+    </footer>
+
     <script src="./src/data/produtos.js"></script>
     <script type="module">
-      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "";
+      const apiBaseUrl = (import.meta.env && import.meta.env.VITE_API_BASE_URL) || "";
+      const whatsappNumber = "5584999723810";
       const pages = document.querySelectorAll("[data-page]");
       const navToggle = document.querySelector("#mobile-nav-toggle");
-      const validPages = ["inicio", "catalogo", "trabalhos", "pdfs", "sobre", "contato"];
+      const header = document.querySelector("[data-header]");
+      const closing = document.querySelector("[data-closing]");
+      const validPages = ["inicio", "catalogo", "trabalhos", "pdfs", "sbl", "sobre", "contato"];
       const catalogCategories = [
         "Todos",
         "Tubos PEAD",
         "Tubos PVC / MPVC",
         "Conexões",
-        "Poços e caixas",
+        "Poços de Visita em PEAD",
         "Esgoto",
         "Equipamentos",
         "Medidores de vazão",
@@ -515,14 +639,23 @@
       function normalizeText(value) {
         return String(value || "")
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[̀-ͯ]/g, "")
           .toLowerCase();
       }
 
       function escapeHtml(value) {
         const div = document.createElement("div");
         div.textContent = value || "";
-        return div.innerHTML;
+        return div.innerHTML.replace(/"/g, "&quot;");
+      }
+
+      function formatFilterLabel(value) {
+        if (["Todos", "ETE", "ETA"].includes(value)) return value;
+        if (value === value.toUpperCase()) {
+          const lower = value.toLowerCase();
+          return lower.charAt(0).toUpperCase() + lower.slice(1);
+        }
+        return value;
       }
 
       function publicAssetUrl(url) {
@@ -530,6 +663,11 @@
         if (/^https?:\/\//i.test(url)) return url;
         if (apiBaseUrl && url.startsWith("/uploads/")) return `${apiBaseUrl}${url}`;
         return url;
+      }
+
+      function getCatalogCategoryLabel(value) {
+        if (value === "Poços e caixas") return "Poços de Visita em PEAD";
+        return value;
       }
 
       function mapApiProduct(product, index) {
@@ -554,8 +692,7 @@
 
       async function loadCatalogProductsFromApi() {
         // Em producao, a API propria em /api/products e a fonte principal.
-        // Este fallback estatico existe apenas para desenvolvimento enquanto
-        // o backend/PostgreSQL ainda nao estiverem disponiveis.
+        // O fallback estatico (src/data/produtos.js) cobre a ausencia da API.
         try {
           const response = await fetch(`${apiBaseUrl}/api/products`, {
             headers: { Accept: "application/json" },
@@ -572,10 +709,10 @@
       }
 
       function getProductDisplayCategory(product) {
-        if (product.filtro) return product.filtro;
+        if (product.filtro) return getCatalogCategoryLabel(product.filtro);
         const directCategory = catalogCategories.includes(product.categoria) && product.categoria !== "Todos";
         if (directCategory) return product.categoria;
-        if (product.id.startsWith("pead-")) return "Tubos PEAD";
+        if (String(product.id).startsWith("pead-")) return "Tubos PEAD";
         if (["Tubos para água/adutora", "Tubos para saneamento", "Linha saneamento"].includes(product.categoria)) return "Tubos PVC / MPVC";
         if (product.categoria === "Conexões PBA água") return "Conexões";
         if (product.categoria === "Tubos para esgoto" || product.categoria === "Conexões esgoto") return "Esgoto";
@@ -584,11 +721,12 @@
         if (product.subcategoria === "Estações Elevatórias") return "Equipamentos";
         if (["Juntas e Vedações", "Serras Copo"].includes(product.subcategoria)) return "Acessórios técnicos";
         if (product.categoria === "Produtos sob consulta") return "Produtos sob consulta";
-        return "Poços e caixas";
+        return "Poços de Visita em PEAD";
       }
 
       function getProductDetailTag(product) {
         if (!product.subcategoria || ["Catálogo Tubos", "Tubos PEAD"].includes(product.subcategoria)) return "";
+        if (product.subcategoria === getProductDisplayCategory(product)) return "";
         return product.subcategoria;
       }
 
@@ -631,28 +769,32 @@
         return false;
       }
 
-      function renderCatalogTabs() {
-        const tabs = document.querySelector("#catalog-tabs");
-        if (!tabs) return;
-
-        tabs.innerHTML = catalogCategories.map((category) => {
-          const active = category === catalogState.category;
+      function renderTabs(container, values, activeValue, dataAttr) {
+        container.innerHTML = values.map((value) => {
+          const active = value === activeValue;
           return `
             <button
-              class="catalog-tab ${active ? "is-active" : ""}"
+              class="chip ${active ? "is-active" : ""}"
               type="button"
-              data-catalog-category="${escapeHtml(category)}"
+              data-${dataAttr}="${escapeHtml(value)}"
               role="tab"
               aria-selected="${active ? "true" : "false"}"
-            >
-              ${escapeHtml(category)}
-            </button>
+            >${escapeHtml(dataAttr === "catalog-application" ? formatFilterLabel(value) : value)}</button>
           `;
         }).join("");
 
         requestAnimationFrame(() => {
-          tabs.querySelector(".catalog-tab.is-active")?.scrollIntoView({ block: "nearest", inline: "nearest" });
+          const activeTab = container.querySelector(".chip.is-active");
+          if (activeTab && container.scrollWidth > container.clientWidth) {
+            const first = container.firstElementChild;
+            container.scrollTo({ left: Math.max(0, activeTab.offsetLeft - first.offsetLeft - 16), behavior: "smooth" });
+          }
         });
+      }
+
+      function renderCatalogTabs() {
+        const tabs = document.querySelector("#catalog-tabs");
+        if (tabs) renderTabs(tabs, catalogCategories, catalogState.category, "catalog-category");
       }
 
       function renderCatalogApplicationTabs() {
@@ -663,90 +805,52 @@
         if (summary) {
           summary.textContent = catalogState.application === "Todos"
             ? "Filtrar por aplicação"
-            : `Aplicação: ${catalogState.application}`;
+            : `Aplicação: ${formatFilterLabel(catalogState.application)}`;
+          summary.closest("details")?.classList.toggle("has-value", catalogState.application !== "Todos");
         }
 
-        tabs.innerHTML = catalogApplicationFilters.map((application) => {
-          const active = application === catalogState.application;
-          return `
-            <button
-              class="catalog-tab ${active ? "is-active" : ""}"
-              type="button"
-              data-catalog-application="${escapeHtml(application)}"
-              role="tab"
-              aria-selected="${active ? "true" : "false"}"
-            >
-              ${escapeHtml(application)}
-            </button>
-          `;
-        }).join("");
-
-        requestAnimationFrame(() => {
-          tabs.querySelector(".catalog-tab.is-active")?.scrollIntoView({ block: "nearest", inline: "nearest" });
-        });
+        renderTabs(tabs, catalogApplicationFilters, catalogState.application, "catalog-application");
       }
 
-      function renderProductCard(product, index) {
-        const mediaClass = index % 3 === 1 ? "product-media-blue" : index % 3 === 2 ? "product-media-neutral" : "";
+      function quoteLink(itemName) {
+        const text = `Olá, gostaria de uma cotação de: ${itemName}`;
+        return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+      }
+
+      function renderProductCard(product) {
         const displayCategory = getProductDisplayCategory(product);
         const detailTag = getProductDetailTag(product);
         const productMedia = product.imagem
           ? `<img src="${escapeHtml(product.imagem)}" alt="${escapeHtml(product.nome)}" loading="lazy" />`
-          : `
-              <iconify-icon icon="${escapeHtml(product.icon || "solar:box-linear")}" width="50"></iconify-icon>
-              <span>Consulta técnica</span>
-            `;
+          : `<span class="media-empty"><iconify-icon icon="${escapeHtml(product.icon || "solar:box-linear")}" width="44"></iconify-icon>Imagem sob consulta</span>`;
 
         return `
-          <article class="product-card catalog-product-card">
-            <div class="product-media ${mediaClass}">
-              ${productMedia}
-            </div>
+          <article class="product-card">
+            <div class="product-media">${productMedia}</div>
             <div class="product-body">
-              <div class="product-tags">
-                <span class="tag">${escapeHtml(product.rotulo || `Foto ${product.numero}`)}</span>
-                <span class="tag">${escapeHtml(displayCategory)}</span>
-                ${detailTag ? `<span class="tag">${escapeHtml(detailTag)}</span>` : ""}
-              </div>
+              <p class="product-cat">${escapeHtml(displayCategory)}${detailTag ? ` <span>/ ${escapeHtml(detailTag)}</span>` : ""}</p>
               <h3>${escapeHtml(product.nome)}</h3>
-              <p>${escapeHtml(product.descricao)}</p>
-              <dl>
-                <dt>Aplicação</dt>
-                <dd>${escapeHtml(product.aplicacao)}</dd>
-              </dl>
-              <div class="catalog-card-actions">
-                <a class="catalog-card-action" href="#contato" data-page-link="contato">Solicitar cotação</a>
-              </div>
+              <p class="product-desc">${escapeHtml(product.descricao)}</p>
+              <p class="product-app"><strong>Aplicação</strong> ${escapeHtml(product.aplicacao)}</p>
+              <a class="product-quote" href="${quoteLink(product.nome)}" target="_blank" rel="noopener noreferrer">
+                <iconify-icon icon="solar:chat-round-dots-linear" width="18"></iconify-icon>
+                <span>Pedir cotação deste item</span>
+              </a>
             </div>
           </article>
         `;
       }
 
-      function renderWorkCard(work, index) {
-        const mediaClass = index % 3 === 1 ? "product-media-blue" : index % 3 === 2 ? "product-media-neutral" : "";
-
+      function renderWorkCard(work) {
         return `
-          <article class="product-card catalog-product-card work-card">
-            <div class="product-media ${mediaClass}">
-              <img src="${escapeHtml(work.imagem)}" alt="${escapeHtml(work.nome)}" loading="lazy" />
-            </div>
-            <div class="product-body">
-              <div class="product-tags">
-                <span class="tag">Foto ${escapeHtml(work.numero)}</span>
-                <span class="tag">${escapeHtml(work.categoria)}</span>
-                <span class="tag">${escapeHtml(work.subcategoria)}</span>
-              </div>
+          <figure class="work-card">
+            <div class="work-media"><img src="${escapeHtml(work.imagem)}" alt="${escapeHtml(work.nome)}" loading="lazy" /></div>
+            <figcaption>
+              <p class="product-cat">${escapeHtml(work.subcategoria || work.categoria)}</p>
               <h3>${escapeHtml(work.nome)}</h3>
               <p>${escapeHtml(work.descricao)}</p>
-              <dl>
-                <dt>Aplicação</dt>
-                <dd>${escapeHtml(work.aplicacao)}</dd>
-              </dl>
-              <div class="catalog-card-actions">
-                <a class="catalog-card-action" href="#contato" data-page-link="contato">Solicitar atendimento</a>
-              </div>
-            </div>
-          </article>
+            </figcaption>
+          </figure>
         `;
       }
 
@@ -778,7 +882,43 @@
         if (!grid || !resultCount) return;
 
         grid.innerHTML = workItems.map(renderWorkCard).join("");
-        resultCount.textContent = `${workItems.length} ${workItems.length === 1 ? "trabalho cadastrado" : "trabalhos cadastrados"}`;
+        resultCount.textContent = `${workItems.length} ${workItems.length === 1 ? "registro" : "registros"}`;
+      }
+
+      function renderHomeCounts() {
+        document.querySelectorAll("[data-count-category]").forEach((el) => {
+          const n = catalogProducts.filter((p) => productMatchesCategory(p, el.dataset.countCategory)).length;
+          el.textContent = n ? `${n} ${n === 1 ? "item" : "itens"}` : "";
+        });
+        document.querySelectorAll("[data-count-application]").forEach((el) => {
+          const n = catalogProducts.filter((p) => productMatchesApplication(p, el.dataset.countApplication)).length;
+          el.textContent = n ? `${n} ${n === 1 ? "item" : "itens"}` : "";
+        });
+        document.querySelectorAll("[data-total-count]").forEach((el) => {
+          el.textContent = catalogProducts.length ? `(${catalogProducts.length} itens)` : "";
+        });
+      }
+
+      function setupLinesPreview() {
+        const preview = document.querySelector("[data-lines-preview]");
+        const list = document.querySelector("[data-lines-list]");
+        if (!preview || !list) return;
+        list.querySelectorAll("[data-preview]").forEach((row) => {
+          const swap = () => {
+            if (preview.getAttribute("src") === row.dataset.preview) return;
+            preview.classList.add("is-swapping");
+            const img = new Image();
+            img.onload = () => {
+              preview.src = row.dataset.preview;
+              preview.classList.remove("is-swapping");
+            };
+            img.src = row.dataset.preview;
+            list.querySelectorAll(".line-row").forEach((r) => r.classList.toggle("is-current", r === row));
+          };
+          row.addEventListener("mouseenter", swap);
+          row.addEventListener("focus", swap);
+        });
+        list.querySelector(".line-row")?.classList.add("is-current");
       }
 
       function setupCatalog() {
@@ -808,9 +948,21 @@
           const tab = event.target.closest("[data-catalog-application]");
           if (!tab) return;
           catalogState.application = tab.dataset.catalogApplication;
+          tab.closest("details")?.removeAttribute("open");
           renderCatalogApplicationTabs();
           renderCatalogProducts();
         });
+      }
+
+      function applyCatalogJump(link) {
+        if (!link.dataset.jumpCategory && !link.dataset.jumpApplication) return;
+        catalogState.category = link.dataset.jumpCategory || "Todos";
+        catalogState.application = link.dataset.jumpApplication || "Todos";
+        const searchInput = document.querySelector("#catalog-search");
+        if (searchInput) searchInput.value = "";
+        renderCatalogTabs();
+        renderCatalogApplicationTabs();
+        renderCatalogProducts();
       }
 
       function showPage(pageName, updateHash = true) {
@@ -830,6 +982,9 @@
           }
         });
 
+        if (closing) closing.hidden = targetPage === "contato";
+        document.body.dataset.page = targetPage;
+
         if (navToggle) {
           navToggle.checked = false;
         }
@@ -845,6 +1000,7 @@
         const link = event.target.closest("[data-page-link]");
         if (!link) return;
         event.preventDefault();
+        applyCatalogJump(link);
         showPage(link.dataset.pageLink);
       });
 
@@ -855,7 +1011,7 @@
           const name = String(formData.get("name") || "").trim();
           const contact = String(formData.get("contact") || "").trim();
           const message = String(formData.get("message") || "").trim();
-          const whatsappNumber = form.dataset.whatsappNumber || "5584999723810";
+          const number = form.dataset.whatsappNumber || whatsappNumber;
           const whatsappMessage = [
             "Olá, gostaria de solicitar uma cotação.",
             name ? `Nome: ${name}` : "",
@@ -863,7 +1019,7 @@
             message ? `Material ou aplicação: ${message}` : "",
           ].filter(Boolean).join("\n");
 
-          window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener,noreferrer");
+          window.open(`https://wa.me/${number}?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener,noreferrer");
         });
       });
 
@@ -871,21 +1027,23 @@
         showPage(window.location.hash.replace("#", ""), false);
       });
 
+      const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 8);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
+
       async function initSite() {
+        showPage(window.location.hash.replace("#", ""), false);
         await loadCatalogProductsFromApi();
         setupCatalog();
         renderWorkItems();
-        showPage(window.location.hash.replace("#", ""), false);
+        renderHomeCounts();
+        setupLinesPreview();
+        requestAnimationFrame(() => document.body.classList.add("is-ready"));
       }
 
       initSite();
     </script>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <span>Geraldo Lira Saneamento & Infraestrutura</span>
-        <span>Catálogo técnico institucional</span>
-      </div>
-    </footer>
   </body>
 </html>

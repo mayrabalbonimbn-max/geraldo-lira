@@ -1855,6 +1855,195 @@
     "filtro": "Elevatória / Bombeamento em Linha"
   },
   {
+    "id": "ferro-fundido-03-valvula-registro-de-gaveta-com-bolsas-pvc-pba-com-cabecote",
+    "numero": "01",
+    "rotulo": "FERRO 01",
+    "nome": "Válvula/Registro de Gaveta com Bolsas para Tubo PVC PBA com Cabeçote",
+    "categoria": "Válvulas/Registros de Gaveta Importados",
+    "subcategoria": "DN 50/60, 75/85 e 100/110",
+    "descricao": "Registro de gaveta em ferro fundido com bolsas para tubo PVC PBA e acionamento por cabeçote.",
+    "aplicacao": "Redes de água e saneamento com tubo PVC PBA.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "VÁLVULAS E REGISTROS DE GAVETA",
+      "Distribuição de água",
+      "Saneamento básico"
+    ],
+    "imagem": "/produtos/ferro-fundido/01_valvula-registro-gaveta-bolsas-pvc-pba-cabecote.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "registro de gaveta",
+      "válvula",
+      "valvula",
+      "bolsas pvc pba",
+      "cabeçote",
+      "cabecote",
+      "dn 50/60",
+      "dn 75/85",
+      "dn 100/110"
+    ],
+    "filtro": "Válvulas/Registros de Gaveta Importados"
+  },
+  {
+    "id": "ferro-fundido-02-valvula-registro-de-gaveta-flangeada-com-volante",
+    "numero": "02",
+    "rotulo": "FERRO 02",
+    "nome": "Válvula/Registro de Gaveta Flangeada Corpo Longo com Volante",
+    "categoria": "Válvulas/Registros de Gaveta Nacionais",
+    "subcategoria": "DN 50 a 300",
+    "descricao": "Registro de gaveta flangeado, de corpo longo, em ferro fundido, com acionamento por volante.",
+    "aplicacao": "Redes flangeadas de água, adutoras e saneamento.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "VÁLVULAS E REGISTROS DE GAVETA",
+      "REGISTROS E VÁLVULAS",
+      "Água-adutora",
+      "Saneamento básico"
+    ],
+    "imagem": "/produtos/ferro-fundido/02_valvula-registro-gaveta-flangeada-corpo-longo-com-volante.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "registro de gaveta",
+      "válvula",
+      "valvula",
+      "flangeada",
+      "corpo longo",
+      "volante",
+      "dn 50 a 300"
+    ],
+    "filtro": "Válvulas/Registros de Gaveta Nacionais"
+  },
+  {
+    "id": "ferro-fundido-06-tee-com-flanges",
+    "numero": "03",
+    "rotulo": "FERRO 03",
+    "nome": "Tee com Flanges",
+    "categoria": "Conexões em Ferro Fundido",
+    "subcategoria": "DNs a consultar",
+    "descricao": "Conexão tipo tee em ferro fundido, com três extremidades flangeadas.",
+    "aplicacao": "Derivação em redes hidráulicas e sistemas de saneamento.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "Saneamento básico",
+      "Distribuição de água"
+    ],
+    "imagem": "/produtos/ferro-fundido/03_tee-com-flanges.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "tee",
+      "tê",
+      "te",
+      "flanges",
+      "conexão",
+      "conexao",
+      "derivação",
+      "derivacao"
+    ],
+    "filtro": "Conexões em Ferro Fundido"
+  },
+  {
+    "id": "ferro-fundido-08-curva-90-com-flanges",
+    "numero": "04",
+    "rotulo": "FERRO 04",
+    "nome": "Curva 90° com Flanges",
+    "categoria": "Conexões em Ferro Fundido",
+    "subcategoria": "DN 50 a 1200",
+    "descricao": "Curva de 90 graus em ferro fundido, com flanges nas duas extremidades.",
+    "aplicacao": "Mudança de direção em redes flangeadas de água e saneamento.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "Saneamento básico",
+      "Distribuição de água"
+    ],
+    "imagem": "/produtos/ferro-fundido/04_curva-90-com-flanges.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "curva 90",
+      "curva 90 graus",
+      "flanges",
+      "conexão",
+      "conexao",
+      "dn 50 a 1200"
+    ],
+    "filtro": "Conexões em Ferro Fundido"
+  },
+  {
+    "id": "ferro-fundido-13-toco-com-flanges",
+    "numero": "05",
+    "rotulo": "FERRO 05",
+    "nome": "Toco com Flanges",
+    "categoria": "Conexões em Ferro Fundido",
+    "subcategoria": "DN 50 a 1200",
+    "descricao": "Trecho reto curto em ferro fundido, com flange nas duas extremidades.",
+    "aplicacao": "Interligação curta em redes flangeadas de água e saneamento.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "Saneamento básico",
+      "Distribuição de água"
+    ],
+    "imagem": "/produtos/ferro-fundido/05_toco-com-flanges.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "toco",
+      "flanges",
+      "trecho reto",
+      "conexão",
+      "conexao",
+      "dn 50 a 1200"
+    ],
+    "filtro": "Conexões em Ferro Fundido"
+  },
+  {
+    "id": "ferro-fundido-14-junta-de-desmontagem-travada-axialmente",
+    "numero": "06",
+    "rotulo": "FERRO 06",
+    "nome": "Junta de Desmontagem Travada Axialmente",
+    "categoria": "Juntas de Desmontagem",
+    "subcategoria": "DN 80 a 600",
+    "descricao": "Junta de desmontagem em ferro fundido, travada axialmente por tirantes e flanges.",
+    "aplicacao": "Montagem, manutenção e ajuste de redes flangeadas.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "Saneamento básico",
+      "Distribuição de água"
+    ],
+    "imagem": "/produtos/ferro-fundido/06_junta-de-desmontagem-travada-axialmente.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "junta de desmontagem",
+      "travada axialmente",
+      "tirantes",
+      "flanges",
+      "dn 80 a 600"
+    ],
+    "filtro": "Juntas de Desmontagem"
+  },
+  {
+    "id": "ferro-fundido-15-tampao-dn-600",
+    "numero": "07",
+    "rotulo": "FERRO 07",
+    "nome": "Tampão DN 600",
+    "categoria": "Tampões e Hidrante",
+    "subcategoria": "DN 600",
+    "descricao": "Tampão circular em ferro fundido, diâmetro nominal DN 600.",
+    "aplicacao": "Fechamento e acesso técnico em redes de saneamento e infraestrutura urbana.",
+    "aplicacoes": [
+      "FERRO FUNDIDO",
+      "TAMPÕES E HIDRANTE",
+      "Saneamento básico"
+    ],
+    "imagem": "/produtos/ferro-fundido/07_tampao-dn-600.webp",
+    "palavrasChave": [
+      "ferro fundido",
+      "tampão",
+      "tampao",
+      "dn 600",
+      "saneamento",
+      "infraestrutura urbana"
+    ],
+    "filtro": "Tampões e Hidrante"
+  },
+  {
     "id": "medidores-01-medidor-vazao-eletromagnetico-vms",
     "numero": "01",
     "rotulo": "MEDIDOR 01",
@@ -2160,6 +2349,287 @@
       "profissionais",
       "rotomoldado",
       "confiança"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "40-instalacao-poco-visita-pead-escavacao",
+    "numero": "40",
+    "nome": "Instalação de poço de visita em PEAD - escavação",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Registro de obra com vala aberta, tubulação e posicionamento de poço de visita em PEAD.",
+    "aplicacao": "Apoio visual para instalação de poço de visita em redes de esgoto.",
+    "imagem": "/produtos/trabalhos/40_instalacao-poco-visita-pead-escavacao.jpg",
+    "palavrasChave": [
+      "40",
+      "instalação",
+      "instalacao",
+      "poço de visita",
+      "poco de visita",
+      "pead",
+      "vala",
+      "rede de esgoto"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "41-assentamento-poco-visita-pead",
+    "numero": "41",
+    "nome": "Assentamento de poço de visita em PEAD",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Equipe em campo durante o assentamento de poço de visita em PEAD na vala.",
+    "aplicacao": "Apoio visual para montagem e posicionamento de poço de visita.",
+    "imagem": "/produtos/trabalhos/41_assentamento-poco-visita-pead.jpg",
+    "palavrasChave": [
+      "41",
+      "assentamento",
+      "poço de visita",
+      "poco de visita",
+      "pead",
+      "obra",
+      "saneamento"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "42-interligacao-tubulacao-poco-visita",
+    "numero": "42",
+    "nome": "Interligação de tubulação ao poço de visita",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Registro de interligação da tubulação de esgoto ao poço de visita em PEAD.",
+    "aplicacao": "Apoio visual para conexão de redes de esgoto e poços de visita.",
+    "imagem": "/produtos/trabalhos/42_interligacao-tubulacao-poco-visita.jpg",
+    "palavrasChave": [
+      "42",
+      "interligação",
+      "interligacao",
+      "tubulação",
+      "tubulacao",
+      "poço de visita",
+      "rede de esgoto"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "43-preparacao-base-poco-visita",
+    "numero": "43",
+    "nome": "Preparação de base para poço de visita",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Preparação da base e entorno do poço de visita antes da finalização da instalação.",
+    "aplicacao": "Apoio visual para preparação de vala e base de instalação.",
+    "imagem": "/produtos/trabalhos/43_preparacao-base-poco-visita.jpg",
+    "palavrasChave": [
+      "43",
+      "preparação",
+      "preparacao",
+      "base",
+      "poço de visita",
+      "vala",
+      "instalação"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "44-posicionamento-poco-visita-em-vala",
+    "numero": "44",
+    "nome": "Posicionamento de poço de visita em vala",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Poço de visita posicionado em vala de obra para conexão com rede de esgoto.",
+    "aplicacao": "Apoio visual para posicionamento de poço de visita em campo.",
+    "imagem": "/produtos/trabalhos/44_posicionamento-poco-visita-em-vala.jpg",
+    "palavrasChave": [
+      "44",
+      "posicionamento",
+      "poço de visita",
+      "poco de visita",
+      "vala",
+      "rede de esgoto",
+      "pead"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "45-poco-visita-instalado-com-tubulacao",
+    "numero": "45",
+    "nome": "Poço de visita instalado com tubulação",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Poço de visita em PEAD instalado em vala, com tubulação conectada ao sistema.",
+    "aplicacao": "Apoio visual para poço de visita aplicado em rede de esgoto.",
+    "imagem": "/produtos/trabalhos/45_poco-visita-instalado-com-tubulacao.jpg",
+    "palavrasChave": [
+      "45",
+      "poço de visita",
+      "poco de visita",
+      "tubulação",
+      "tubulacao",
+      "instalado",
+      "rede de esgoto"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "46-detalhe-encaixe-poco-visita",
+    "numero": "46",
+    "nome": "Detalhe de encaixe do poço de visita",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Detalhe da região de encaixe e conexão do poço de visita com a tubulação.",
+    "aplicacao": "Apoio visual para conexão e vedação em poços de visita.",
+    "imagem": "/produtos/trabalhos/46_detalhe-encaixe-poco-visita.jpg",
+    "palavrasChave": [
+      "46",
+      "detalhe",
+      "encaixe",
+      "conexão",
+      "conexao",
+      "poço de visita",
+      "tubulação"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "47-poco-visita-pead-em-vala",
+    "numero": "47",
+    "nome": "Poço de visita em PEAD aplicado em vala",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Poço de visita em PEAD instalado em vala com rede conectada e entorno preparado.",
+    "aplicacao": "Apoio visual para aplicação de poço de visita em obra de saneamento.",
+    "imagem": "/produtos/trabalhos/47_poco-visita-pead-em-vala.jpg",
+    "palavrasChave": [
+      "47",
+      "poço de visita",
+      "poco de visita",
+      "pead",
+      "vala",
+      "saneamento",
+      "instalação"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "48-orientacao-tecnica-em-obra",
+    "numero": "48",
+    "nome": "Orientação técnica em obra",
+    "categoria": "Trabalhos",
+    "subcategoria": "Atendimento técnico",
+    "descricao": "Registro de orientação técnica em campo com equipe de obra e materiais de saneamento.",
+    "aplicacao": "Apoio visual para treinamento, orientação e acompanhamento técnico.",
+    "imagem": "/produtos/trabalhos/48_orientacao-tecnica-em-obra.jpg",
+    "palavrasChave": [
+      "48",
+      "orientação técnica",
+      "orientacao tecnica",
+      "obra",
+      "treinamento",
+      "atendimento técnico",
+      "saneamento"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "49-instalacao-tampao-laje-concreto",
+    "numero": "49",
+    "nome": "Instalação de tampão em laje de concreto",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Registro de instalação de tampão sobre laje de concreto em ponto de acesso técnico.",
+    "aplicacao": "Apoio visual para fechamento e acesso em sistemas enterrados.",
+    "imagem": "/produtos/trabalhos/49_instalacao-tampao-laje-concreto.jpg",
+    "palavrasChave": [
+      "49",
+      "tampão",
+      "tampao",
+      "laje",
+      "concreto",
+      "acesso técnico",
+      "instalação"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "50-berco-para-rede-esgoto",
+    "numero": "50",
+    "nome": "Berço para rede de esgoto",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Berço aplicado no fundo da vala para apoio e alinhamento da tubulação de esgoto.",
+    "aplicacao": "Apoio visual para assentamento de redes de esgoto em vala.",
+    "imagem": "/produtos/trabalhos/50_berco-para-rede-esgoto.jpg",
+    "palavrasChave": [
+      "50",
+      "berço",
+      "berco",
+      "rede de esgoto",
+      "vala",
+      "tubulação",
+      "assentamento"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "51-rede-esgoto-com-poco-visita",
+    "numero": "51",
+    "nome": "Rede de esgoto com poço de visita",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Rede de esgoto em vala com poço de visita em PEAD posicionado no trecho.",
+    "aplicacao": "Apoio visual para instalação conjunta de rede e poço de visita.",
+    "imagem": "/produtos/trabalhos/51_rede-esgoto-com-poco-visita.jpg",
+    "palavrasChave": [
+      "51",
+      "rede de esgoto",
+      "poço de visita",
+      "poco de visita",
+      "pead",
+      "vala",
+      "obra"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "52-preparo-vala-rede-esgoto",
+    "numero": "52",
+    "nome": "Preparo de vala para rede de esgoto",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Preparação de vala urbana para assentamento de tubulação e componentes de rede de esgoto.",
+    "aplicacao": "Apoio visual para execução de rede de esgoto em área urbana.",
+    "imagem": "/produtos/trabalhos/52_preparo-vala-rede-esgoto.jpg",
+    "palavrasChave": [
+      "52",
+      "preparo de vala",
+      "rede de esgoto",
+      "tubulação",
+      "tubulacao",
+      "obra urbana",
+      "saneamento"
+    ],
+    "filtro": "Trabalhos"
+  },
+  {
+    "id": "53-instalacao-berco-rede-esgoto",
+    "numero": "53",
+    "nome": "Instalação de berço para rede de esgoto",
+    "categoria": "Trabalhos",
+    "subcategoria": "Instalação",
+    "descricao": "Instalação de berço e tubulação em vala para rede de esgoto.",
+    "aplicacao": "Apoio visual para apoio, alinhamento e montagem de rede de esgoto.",
+    "imagem": "/produtos/trabalhos/53_instalacao-berco-rede-esgoto.jpg",
+    "palavrasChave": [
+      "53",
+      "berço",
+      "berco",
+      "rede de esgoto",
+      "tubulação",
+      "tubulacao",
+      "instalação"
     ],
     "filtro": "Trabalhos"
   }
